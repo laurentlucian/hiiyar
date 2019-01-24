@@ -36,3 +36,7 @@ export const Paragraph = ({ children, ...props }) => {
     </div>
   );
 };
+
+export const NavLink = () => {
+  
+}

@@ -9,8 +9,7 @@ import CurveSvg from "../vectors/curve";
 import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
-import Logo from "../vectors/logo";
-import Hiiyar from "../vectors/hiiyar";
+
 
 const Hero = () => {
   return (
@@ -24,17 +23,7 @@ const Hero = () => {
         position: relative;
       `}
     >
-      <div
-        css={css`
-          display: flex;
-          position: relative;
-          width: 100vw;
-          background: lightblue;
-        `}
-      >
-        <Logo />
-        <Hiiyar css={css``} />
-      </div>
+
       <Content
         css={css`
           display: flex;
@@ -49,7 +38,7 @@ const Hero = () => {
             width: 128px;
           `}
         />
-        <Heading1>Go hiiyar Go higher !! </Heading1>
+        <Heading1>Go hiiyar Go higher</Heading1>
         <Paragraph white center>
           Create real and memorable content to compel the senses through a seamless
           encounter. There is no secret formula behind our successful metrics. <br />

@@ -42,12 +42,26 @@ const ghosted = css`
   font-weight: 600;
 `;
 
+const raised = css`
+  background-color: #ffffff;
+  width: 157px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #a11846;
+  font-family: Nunito;
+  &:hover {
+    box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.3);
+  }
+`;
+
 export default props => {
   const Component = props.href ? "a" : "button";
 
   let style = primary;
   if (props.secondary) style = secondary;
   if (props.ghosted) style = ghosted;
+  if (props.raised) style = raised;
 
   return <Component css={[base, style]}>{props.children}</Component>;
 };
