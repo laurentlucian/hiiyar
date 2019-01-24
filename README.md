@@ -4,11 +4,11 @@
     <img alt="Hiiyar" src="/src/images/hiiyar-icon.svg" width="60" />
   </a>
 </p>
-<h1 align="center">
+<h3 align="center">
   Hiiyar Site
-</h1>
+</h3>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+<!-- Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
@@ -90,4 +90,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+AUTO-GENERATED-CONTENT:END -->
