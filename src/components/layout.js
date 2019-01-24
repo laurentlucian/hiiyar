@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
-import "./layout.css";
+import "./normalize.css";
+import { Global, css } from "@emotion/core";
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -18,6 +19,15 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <Global
+          styles={css`
+            body {
+              font-family: "Nunito", -apple-system, BlinkMacSystemFont, Segoe UI,
+                Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+                Segoe UI Symbol;
+            }
+          `}
+        />
         <Header siteTitle={data.site.siteMetadata.title} />
 
         <main>{children}</main>
