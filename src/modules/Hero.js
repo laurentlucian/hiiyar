@@ -8,6 +8,7 @@ import CurveSvg from "../vectors/curve";
 import WhiteLogoSvg from "../vectors/white-logo";
 import Logo from "../vectors/logo";
 import Hiiyar from "../vectors/hiiyar";
+import TalkBtn from "../vectors/talk-btn";
 
 const Hero = () => {
   return (
@@ -24,13 +25,29 @@ const Hero = () => {
       <div
         css={css`
           display: flex;
-          position: relative;
           width: 100vw;
           background: lightblue;
+          padding: 52px 145px 0px 250px;
         `}
       >
-        <Logo />
-        <Hiiyar css={css``} />
+        <Logo
+          css={css`
+            width: 100.8px;
+          `}
+        />
+        <Hiiyar
+          css={css`
+            width: 133.6px;
+          `}
+        />
+        <div
+          css={css`
+            align-self: flex-end;
+            background: lightpink;
+          `}
+        >
+          <TalkBtn />
+        </div>
       </div>
       <Content
         css={css`
@@ -46,7 +63,7 @@ const Hero = () => {
             width: 128px;
           `}
         />
-        <Heading1>Go hiiyar Go higher !! </Heading1>
+        <Heading1>Go hiiyar Go higher</Heading1>
         <Paragraph white center>
           Create real and memorable content to compel the senses through a seamless
           encounter. There is no secret formula behind our successful metrics. Let Hiiyar
