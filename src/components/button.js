@@ -43,7 +43,16 @@ const ghosted = css`
 `;
 
 const raised = css`
-
+  background-color: #ffffff;
+  width: 157px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 1.38;
+  color: #a11846;
+  font-family: Nunito;
+  &:hover {
+    box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.3);
+  }
 `;
 
 export default props => {

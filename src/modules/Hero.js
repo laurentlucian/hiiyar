@@ -11,7 +11,6 @@ import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
 import Logo from "../vectors/logo";
 import Hiiyar from "../vectors/hiiyar";
-import TalkBtn from "../vectors/talk-btn";
 
 const Hero = () => {
   return (
@@ -28,7 +27,7 @@ const Hero = () => {
       <div
         css={css`
           display: flex;
-          width: 100vw;
+          width: 100%;
           background: lightblue;
           padding: 52px 145px 0px 250px;
         `}
@@ -45,11 +44,15 @@ const Hero = () => {
         />
         <div
           css={css`
-            align-self: flex-end;
+            margin: 0 auto;
             background: lightpink;
           `}
         >
-          <TalkBtn />
+          <p>WHAT WE DO</p>
+          <p>TALENTS</p>
+          <p>CLIENTS</p>
+          <p>WORK</p>
+          <Button raised>Let's Talk</Button>
         </div>
       </div>
       <Content
