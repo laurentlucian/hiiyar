@@ -9,7 +9,6 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`hiiyar`, `content`, `creator`]} />
     <Hero />
-    <Nav />
   </Layout>
 );
 
