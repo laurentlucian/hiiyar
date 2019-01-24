@@ -50,6 +50,7 @@ const raised = css`
   line-height: 1.38;
   color: #a11846;
   font-family: Nunito;
+  margin-left: 64px;
   &:hover {
     box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.3);
   }

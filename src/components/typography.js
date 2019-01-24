@@ -37,6 +37,19 @@ export const Paragraph = ({ children, ...props }) => {
   );
 };
 
-export const NavLink = () => {
-  
-}
+export const NavLink = ({ children }) => {
+  return (
+    <a
+      css={css`
+        font-weight: 900;
+        margin: 0 15px;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02px;
+        color: #ffffff;
+      `}
+    >
+      {children}
+    </a>
+  );
+};

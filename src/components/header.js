@@ -6,6 +6,7 @@ import Logo from "../vectors/logo";
 import Hiiyar from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import Button from "./../components/button";
+import { NavLink } from "./typography";
 
 const Header = ({ siteTitle }) => (
   <header
@@ -13,14 +14,13 @@ const Header = ({ siteTitle }) => (
       position: fixed;
       z-index: 1;
       width: 100%;
+      margin-top: 52px;
     `}
   >
     <Content
       css={css`
         display: flex;
         width: 100%;
-        background: lightblue;
-        /* padding: 52px 0px 0px 0px; */
       `}
     >
       <Logo
@@ -36,13 +36,12 @@ const Header = ({ siteTitle }) => (
       <div
         css={css`
           margin: 0 0 0 auto;
-          background: lightpink;
         `}
       >
-        <a>WHAT WE DO</a>
-        <a>TALENTS</a>
-        <a>CLIENTS</a>
-        <a>WORK</a>
+        <NavLink>WHAT WE DO</NavLink>
+        <NavLink>TALENTS</NavLink>
+        <NavLink>CLIENTS</NavLink>
+        <NavLink>WORK</NavLink>
         <Button raised>Let's Talk</Button>
       </div>
     </Content>
