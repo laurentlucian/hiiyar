@@ -9,8 +9,7 @@ import CurveSvg from "../vectors/curve";
 import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
-import Logo from "../vectors/logo";
-import Hiiyar from "../vectors/hiiyar";
+
 
 const Hero = () => {
   return (
@@ -24,37 +23,7 @@ const Hero = () => {
         position: relative;
       `}
     >
-      <div
-        css={css`
-          display: flex;
-          width: 100%;
-          background: lightblue;
-          padding: 52px 145px 0px 250px;
-        `}
-      >
-        <Logo
-          css={css`
-            width: 100.8px;
-          `}
-        />
-        <Hiiyar
-          css={css`
-            width: 133.6px;
-          `}
-        />
-        <div
-          css={css`
-            margin: 0 auto;
-            background: lightpink;
-          `}
-        >
-          <p>WHAT WE DO</p>
-          <p>TALENTS</p>
-          <p>CLIENTS</p>
-          <p>WORK</p>
-          <Button raised>Let's Talk</Button>
-        </div>
-      </div>
+
       <Content
         css={css`
           display: flex;
