@@ -42,12 +42,17 @@ const ghosted = css`
   font-weight: 600;
 `;
 
+const raised = css`
+
+`;
+
 export default props => {
   const Component = props.href ? "a" : "button";
 
   let style = primary;
   if (props.secondary) style = secondary;
   if (props.ghosted) style = ghosted;
+  if (props.raised) style = raised;
 
   return <Component css={[base, style]}>{props.children}</Component>;
 };
