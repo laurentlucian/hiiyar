@@ -52,8 +52,8 @@ const Hero = () => {
         <Heading1>Go hiiyar Go higher !! </Heading1>
         <Paragraph white center>
           Create real and memorable content to compel the senses through a seamless
-          encounter. There is no secret formula behind our successful metrics. Let Hiiyar
-          show you higher experiences!
+          encounter. There is no secret formula behind our successful metrics. <br />
+          Let Hiiyar show you higher experiences!
         </Paragraph>
 
         <div
