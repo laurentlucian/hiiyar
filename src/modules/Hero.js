@@ -3,9 +3,12 @@ import { css } from "@emotion/core";
 import Content from "./../components/content";
 
 import { Heading1, Paragraph } from "./../components/typography";
+import Button from "./../components/button";
 
 import CurveSvg from "../vectors/curve";
 import WhiteLogoSvg from "../vectors/white-logo";
+import JumpingGuySvg from "../vectors/jumping-guy";
+import JumpingGirlSvg from "../vectors/jumping-girl";
 import Logo from "../vectors/logo";
 import Hiiyar from "../vectors/hiiyar";
 import TalkBtn from "../vectors/talk-btn";
@@ -15,7 +18,7 @@ const Hero = () => {
     <section
       css={css`
         width: 100%;
-        height: 700px;
+        height: 750px;
         background-size: 100%;
         object-fit: contain;
         background-image: linear-gradient(354deg, #8f1840, #8f1840 52%, #4d1226);
@@ -69,6 +72,18 @@ const Hero = () => {
           encounter. There is no secret formula behind our successful metrics. Let Hiiyar
           show you higher experiences!
         </Paragraph>
+
+        <div
+          css={css`
+            width: 350px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+          `}
+        >
+          <Button>For Talents</Button>
+          <Button ghosted>For Clients</Button>
+        </div>
       </Content>
 
       <CurveSvg
@@ -76,6 +91,23 @@ const Hero = () => {
           fill: white;
           position: absolute;
           bottom: 0;
+          pointer-events: none;
+        `}
+      />
+      <JumpingGuySvg
+        css={css`
+          position: absolute;
+          left: 10%;
+          top: 250px;
+          width: 350px;
+        `}
+      />
+      <JumpingGirlSvg
+        css={css`
+          position: absolute;
+          right: 10%;
+          top: 250px;
+          width: 350px;
         `}
       />
     </section>
