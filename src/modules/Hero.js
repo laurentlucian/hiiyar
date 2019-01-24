@@ -5,6 +5,7 @@ import CurveSvg from "../vectors/curve";
 
 const Hero = () => {
   return (
+
     <section
       css={css`
         width: 100%;
