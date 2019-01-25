@@ -62,7 +62,6 @@ const Hero = () => {
           position: absolute;
           bottom: -375px;
           pointer-events: none;
-          z-index: 0;
         `}
       />
       <JumpingGuySvg
