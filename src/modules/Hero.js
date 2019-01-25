@@ -5,11 +5,10 @@ import Content from "./../components/content";
 import { Heading1, Paragraph } from "./../components/typography";
 import Button from "./../components/button";
 
-import CurveSvg from "../vectors/curve";
+import { FirstCurve } from "../vectors/curve";
 import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
-
 
 const Hero = () => {
   return (
@@ -23,7 +22,6 @@ const Hero = () => {
         position: relative;
       `}
     >
-
       <Content
         css={css`
           display: flex;
@@ -58,12 +56,13 @@ const Hero = () => {
         </div>
       </Content>
 
-      <CurveSvg
+      <FirstCurve
         css={css`
           fill: white;
           position: absolute;
-          bottom: 0;
+          bottom: -375px;
           pointer-events: none;
+          z-index: 0;
         `}
       />
       <JumpingGuySvg

@@ -1,17 +1,22 @@
 import React from "react";
 
-export default props => (
+export const FirstCurve = ({ ...props }) => (
   <svg
-    fillRule="evenodd"
-    clipRule="evenodd"
     xmlns="http://www.w3.org/2000/svg"
-    aria-labelledby="title"
-    viewBox="0 0 1920 240"
-    id="goop"
+    width="100%"
+    height="auto"
+    viewBox="0 0 1598.648 243.606"
     {...props}
   >
-    <g>
-      <path d="M1920,144.5l0,95.5l-1920,0l0,-65.5c196,-36 452.146,-15.726 657.5,8.5c229.698,27.098 870,57 1262.5,-38.5Z" />
+    <defs />
+    <g id="Testimonial" transform="rotate(180 799.324 385.303)">
+      <path
+        id="Path_534"
+        d="M0 664.271S99.981 855.2 699.981 722.953s898.667 0 898.667 0V526L0 532z"
+        style={{ fill: "#fff" }}
+        data-name="Path 534"
+        transform="translate(0 1)"
+      />
     </g>
   </svg>
 );

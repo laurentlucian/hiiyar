@@ -20,7 +20,7 @@ const Footer = () => (
       css={css`
         display: flex;
         width: 1000px; /* test size to keep it in the middle */
-        margin: 0 auto; 
+        margin: 0 auto;
         /* background-color: lightpink; */
       `}
     >
@@ -42,22 +42,31 @@ const Footer = () => (
         css={css`
           display: flex;
           flex-wrap: wrap;
-          /* background-color: lightseagreen; */
           width: 490px;
           height: 102px;
           padding-left: 55px;
           padding-top: 10.5px;
           padding-bottom: 24.5px;
           border-left: 1px solid white;
+          /* background-color: lightseagreen; */
         `}
       >
-      {/* im struggling to  align all this and idk how to individually css children*/}
+        {/* im struggling to  align all this and idk how to individually css children*/}
         <NavLink margin>WHAT WE DO</NavLink>
-        <NavLink>CLIENTS</NavLink>
+        <NavLink
+          css={css`
+            font-size: 50px;
+          `}
+        >
+          CLIENTS
+        </NavLink>
         <NavLink test>CONTACT</NavLink>
         <NavLink>WORK</NavLink>
         <NavLink>TALENTS</NavLink>
-        <NavLink noLink test>SOCIAL:</NavLink> {/* i was trying to take margin-right off contact and social so the social symbols dont have to be absolute*/}
+        <NavLink noLink test>
+          SOCIAL:
+        </NavLink>{" "}
+        {/* i was trying to take margin-right off contact and social for the social symbols*/}
       </div>
     </Content>
   </footer>
