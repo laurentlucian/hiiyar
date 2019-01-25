@@ -6,6 +6,7 @@ export default props => (
     width="100%"
     height="auto"
     viewBox="0 0 283.619 514.515"
+    style={{ pointerEvents: "none" }}
     {...props}
   >
     <g

@@ -53,11 +53,7 @@ const Footer = () => (
       >
         {/* im struggling to  align all this and idk how to individually css children*/}
         <NavLink margin>WHAT WE DO</NavLink>
-        <NavLink
-          css={css`
-            font-size: 50px;
-          `}
-        >
+        <NavLink>
           CLIENTS
         </NavLink>
         <NavLink test>CONTACT</NavLink>

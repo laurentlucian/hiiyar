@@ -6,6 +6,7 @@ export default props => (
     width="100%"
     height="auto"
     viewBox="0 0 324.272 518.954"
+    style={{ pointerEvents: "none" }}
     {...props}
   >
     <g id="Group_1543" data-name="Group 1543" transform="rotate(1 72743.512 20769.79)">
