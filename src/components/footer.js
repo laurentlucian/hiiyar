@@ -1,72 +1,91 @@
-import PropTypes from "prop-types";
 import React from "react";
 import Content from "./content";
 import Logo from "../vectors/logo";
 import Hiiyar from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import { NavLink } from "./typography";
+import { FooterCurve as CurveSvg } from "../vectors/curve";
 
 const Footer = () => (
   <footer
     css={css`
-      position: absolute;
-      bottom: 52px;
       width: 100%;
-      z-index: 2;
-      background-color: #a11846; /* test background */
+      height: 300px;
+      padding-top: 70px;
+      margin-top: 100px;
+      background-image: linear-gradient(82deg, #a11846, #4d1226);
+      display: flex;
+      position: relative;
+      align-items: center;
     `}
   >
+    <CurveSvg
+      css={css`
+        position: absolute;
+        width: 100%;
+        top: -130px;
+        fill: white;
+      `}
+    />
     <Content
       css={css`
         display: flex;
-        width: 1000px; /* test size to keep it in the middle */
-        margin: 0 auto;
-        /* background-color: lightpink; */
+        height: 100px;
+        justify-content: center;
       `}
     >
-      <Logo
+      <div
         css={css`
-          width: 51.8px;
-          height: 42.1px;
-          margin: 34.7px 0px 0px 0px;
+          padding-right: 50px;
+          border-right: 1px solid hsl(340, 74%, 36%);
+          display: flex;
+          align-items: center;
         `}
-      />
-      <Hiiyar
-        css={css`
-          width: 133.6px;
-          height: 49.2px;
-          margin: 34.7px 31.7px 0px 10px;
-        `}
-      />
+      >
+        <Logo
+          css={css`
+            width: 51px;
+            height: 42px;
+            margin-right: 10px;
+          `}
+        />
+        <Hiiyar
+          css={css`
+            width: 133.6px;
+            height: 49.2px;
+          `}
+        />
+      </div>
       <div
         css={css`
           display: flex;
-          flex-wrap: wrap;
-          width: 490px;
-          height: 102px;
-          padding-left: 55px;
-          padding-top: 10.5px;
-          padding-bottom: 24.5px;
-          border-left: 1px solid white;
-          /* background-color: lightseagreen; */
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          margin-left: 50px;
+          & > div {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin: 0px 30px;
+            & > a {
+              margin: 5px 0;
+            }
+          }
         `}
       >
-        {/* im struggling to  align all this and idk how to individually css children*/}
-        <NavLink margin>WHAT WE DO</NavLink>
-        <NavLink
-          css={css`
-            font-size: 50px;
-          `}
-        >
-          CLIENTS
-        </NavLink>
-        <NavLink test>CONTACT</NavLink>
-        <NavLink>WORK</NavLink>
-        <NavLink>TALENTS</NavLink>
-        <NavLink noLink test>
-          SOCIAL:
-        </NavLink>{" "}
-        {/* i was trying to take margin-right off contact and social for the social symbols*/}
+        <div>
+          <NavLink>WHAT WE DO</NavLink>
+          <NavLink>WORK</NavLink>
+        </div>
+        <div>
+          <NavLink>CLIENTS</NavLink>
+          <NavLink>TALENTS</NavLink>
+        </div>
+        <div>
+          <NavLink>CONTACT</NavLink>
+          <NavLink>SOCIAL:</NavLink>
+        </div>
       </div>
     </Content>
   </footer>

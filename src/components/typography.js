@@ -44,15 +44,13 @@ export const NavLink = ({ children, ...props }) => {
     <a
       css={css`
         font-weight: 900;
-        margin: ${props.margin ? "0 15px 23px 0" : "0 15px"};
+        margin: 0 15px;
         font-size: 16px;
         line-height: 1.5;
-        letter-spacing: ${props.noLink ? "0" : "0.02px"};
+        letter-spacing: 0.02px;
         color: ${props.red ? "#8f1840" : "#ffffff"};
-        user-select: none;
-        cursor: ${props.noLink ? "default" : "pointer"};
-        flex: 1 1 110px;
       `}
+      {...props}
     >
       {children}
     </a>

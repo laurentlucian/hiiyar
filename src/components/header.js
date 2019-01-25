@@ -1,5 +1,3 @@
-// import { Link } from "gatsby";
-import PropTypes from "prop-types";
 import React from "react";
 import Content from "./content";
 import Logo from "../vectors/logo";
@@ -47,10 +45,6 @@ const Header = ({ siteTitle }) => (
     </Content>
   </header>
 );
-
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// };
 
 Header.defaultProps = {
   siteTitle: `Hiiyar`,
