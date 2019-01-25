@@ -18,9 +18,24 @@ export const Heading1 = ({ children }) => (
   </h1>
 );
 
+export const SubHeading = ({ children }) => (
+  <h3
+    css={css`
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.33;
+      color: #4d1226;
+      text-transform: uppercase;
+      margin: 0;
+    `}
+  >
+    {children}
+  </h3>
+);
+
 export const Paragraph = ({ children, ...props }) => {
   return (
-    <div
+    <p
       css={css`
         font-size: 16px;
         font-weight: normal;
@@ -35,7 +50,7 @@ export const Paragraph = ({ children, ...props }) => {
       `}
     >
       {children}
-    </div>
+    </p>
   );
 };
 

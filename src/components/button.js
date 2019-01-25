@@ -45,17 +45,14 @@ const ghosted = css`
 
 const raised = css`
   background-color: #ffffff;
-  width: 157px;
-  height: 48px;
-  font-size: 16px;
   line-height: 1.38;
   color: #a11846;
-  font-family: Nunito;
-  margin-left: 64px;
   &:hover {
     box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.3);
   }
 `;
+
+const CTA = css``;
 
 export default props => {
   const Component = props.href ? "a" : "button";
@@ -64,6 +61,7 @@ export default props => {
   if (props.secondary) style = secondary;
   if (props.ghosted) style = ghosted;
   if (props.raised) style = raised;
+  if (props.CTA) style = CTA;
 
   return <Component css={[base, style]}>{props.children}</Component>;
 };

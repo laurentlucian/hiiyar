@@ -40,7 +40,9 @@ const Header = ({ siteTitle }) => (
         <NavLink>TALENTS</NavLink>
         <NavLink>CLIENTS</NavLink>
         <NavLink>WORK</NavLink>
-        <Button raised>Let's Talk</Button>
+        <Button raised style={{ marginLeft: 64 }}>
+          Let's Talk
+        </Button>
       </div>
     </Content>
   </header>
