@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Hiiyar`,
-    description: `Create real and memorable content to compel the senses through a seamless encounter`,
-    author: `@laurentlucian`,
+    description: `Let Hiiyar show you higher experiences.`,
+    author: `Pierre Andreis, Laurent Lucian`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

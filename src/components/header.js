@@ -48,12 +48,12 @@ const Header = ({ siteTitle }) => (
   </header>
 );
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// };
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Hiiyar`,
 };
 
 export default Header;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
+import Footer from "./footer";
 import "./normalize.css";
 import { Global, css } from "@emotion/core";
 
@@ -29,6 +30,7 @@ const Layout = ({ children }) => (
           `}
         />
         <Header siteTitle={data.site.siteMetadata.title} />
+        <Footer />
 
         <main>{children}</main>
         {/* <footer>

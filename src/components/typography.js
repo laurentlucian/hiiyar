@@ -11,6 +11,7 @@ export const Heading1 = ({ children }) => (
       line-height: 1.38;
       letter-spacing: 0.1px;
       color: white;
+      user-select: none;
     `}
   >
     {children}
@@ -30,6 +31,7 @@ export const Paragraph = ({ children, ...props }) => {
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};
         color: ${props.white ? "white" : "#4d4d4d"};
+        user-select: none;
       `}
     >
       {children}
@@ -37,16 +39,19 @@ export const Paragraph = ({ children, ...props }) => {
   );
 };
 
-export const NavLink = ({ children }) => {
+export const NavLink = ({ children, ...props }) => {
   return (
     <a
       css={css`
         font-weight: 900;
-        margin: 0 15px;
+        margin: ${props.margin ? "0 15px 23px 0" : "0 15px"};
         font-size: 16px;
         line-height: 1.5;
-        letter-spacing: 0.02px;
-        color: #ffffff;
+        letter-spacing: ${props.noLink ? "0" : "0.02px"};
+        color: ${props.red ? "#8f1840" : "#ffffff"};
+        user-select: none;
+        cursor: ${props.noLink ? "default" : "pointer"};
+        flex: 1 1 110px;
       `}
     >
       {children}

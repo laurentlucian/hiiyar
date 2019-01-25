@@ -78,8 +78,8 @@ const Hero = () => {
         css={css`
           position: absolute;
           right: 10%;
-          top: 250px;
-          width: 350px;
+          top: 170px;
+          width: 380px;
         `}
       />
     </section>
