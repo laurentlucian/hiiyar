@@ -63,12 +63,11 @@ export default ({ href, children, style, ...props }) => {
   const Component = href ? "a" : "button";
 
   let modifier = primary;
-  if (props.secondary) modifier = secondary; // n tirei do props. pq o nome ta repetindo
+  if (props.secondary) modifier = secondary;
   if (props.ghosted) modifier = ghosted;
   if (props.raised) modifier = raised;
   if (props.CTA) modifier = CTA;
 
-  console.log("button", ...props);
 
   return (
     <Component css={[base, modifier]} style={style}>
