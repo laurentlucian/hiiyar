@@ -52,10 +52,16 @@ const raised = css`
   }
 `;
 
-const CTA = css``;
+const CTA = css`
+  background-image: linear-gradient(287deg, #a11846, #4d1226);
+  color: #fff;
+  &:hover {
+    box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.56);
+  }
+`;
 
-export default props => {
-  const Component = props.href ? "a" : "button";
+export default ({ href, children, ...props }) => {
+  const Component = href ? "a" : "button";
 
   let style = primary;
   if (props.secondary) style = secondary;
@@ -63,5 +69,11 @@ export default props => {
   if (props.raised) style = raised;
   if (props.CTA) style = CTA;
 
-  return <Component css={[base, style]}>{props.children}</Component>;
+  console.log("button", ...props);
+
+  return (
+    <Component css={[base, style]} {...props}>
+      {children}
+    </Component>
+  );
 };

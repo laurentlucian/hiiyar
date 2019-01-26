@@ -1,9 +1,12 @@
 import React from "react";
 import AboutGirlSvg from "../vectors/about-girl";
+import AboutBoySvg from "../vectors/about-boy";
 import { css } from "@emotion/core";
 import Content from "../components/content";
 import { Paragraph, SubHeading } from "../components/typography";
 import Button from "../components/button";
+
+import { SecondCurve as SecondCurveSvg } from "../vectors/curve";
 
 export default () => (
   <section
@@ -36,9 +39,46 @@ export default () => (
           been the industry's standard dummy text ever since the 1500s, when an unknown
           printer took a galley
         </Paragraph>
-        <Button>Let's Talk</Button>
+        <Button CTA>Let's Talk</Button>
       </div>
       <AboutGirlSvg />
     </Content>
+    <Content
+      css={css`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+      `}
+    >
+      <AboutBoySvg
+        css={css`
+          margin-top: 98px;
+        `}
+      />
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          width: 450px;
+          align-items: flex-start;
+          margin-left: 60px;
+        `}
+      >
+        <SubHeading>For Clients</SubHeading>
+        <Paragraph style={{ marginBottom: "17px" }}>
+          is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+          been the industry's standard dummy text ever since the 1500s, when an unknown
+          printer took a galley
+        </Paragraph>
+        <Button
+          CTA
+          style={{ backgroundImage: "linear-gradient(287deg, #4d1226, #4d1226" }}
+        >
+          Let's Talk
+        </Button>
+      </div>
+    </Content>
+    <SecondCurveSvg />
   </section>
 );

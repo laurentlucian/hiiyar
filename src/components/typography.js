@@ -27,6 +27,7 @@ export const SubHeading = ({ children }) => (
       color: #4d1226;
       text-transform: uppercase;
       margin: 0;
+      user-select: none;
     `}
   >
     {children}

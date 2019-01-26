@@ -22,6 +22,24 @@ export const FirstCurve = ({ ...props }) => (
   </svg>
 );
 
+export const SecondCurve = ({ ...props }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1600.886"
+    height="259.763"
+    viewBox="0 0 1600.886 259.763"
+  >
+    <defs />
+    <path
+      id="Path_1872"
+      d="M0 0s-56.152 68.151 725.667-56.091S1600 0 1600 0v143L0 160z"
+      style={{ fill: "#fff" }}
+      data-name="Path 1872"
+      transform="rotate(180 800 80)"
+    />
+  </svg>
+);
+
 export const FooterCurve = props => (
   <svg
     width="100%"
