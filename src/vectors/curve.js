@@ -27,7 +27,7 @@ export const SecondCurve = ({ ...props }) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+    <g id="Page-1" stroke="none" strokeWidth="1" fillRule="evenodd">
       <path
         d="M0.885851952,99.7624063 C0.885851952,99.7624063 -55.266148,167.913406 726.552852,43.6714063 C1508.37185,-80.5705937 1600.88585,99.7624063 1600.88585,99.7624063 L1600.88585,129.762406 L0.885851952,129.762406 L0.885851952,99.7624063 Z"
         id="Path_1872"

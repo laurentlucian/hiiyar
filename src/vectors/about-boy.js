@@ -15,11 +15,11 @@ export default props => (
       .cls-3{fill:#ec5d81}
       .cls-4,.cls-7{fill:#4d1226}
       .cls-5{fill:#ffb500}
-      .cls-6{fill:none;stroke:#ec5d81;stroke-linecap:round;stroke-linejoin:round;stroke-width:.333px}
+      .cls-6{fill:none;stroke:#ec5d81;stroke-linecap:round;stroke-linejoin:round;strokeWidth:.333px}
       .cls-7{opacity:.4}
       .cls-8{opacity:.15}
       .cls-9{clip-path:url(#clip-path)}
-      .cls-10{fill-rule:evenodd}
+      .cls-10{fillRule:evenodd}
       .cls-11{clip-path:url(#clip-path-2)} */}
         {/* {style={{clipPath:url("#clip-path-2")}} /* 11 */} */}
       </style>
