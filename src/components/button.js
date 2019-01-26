@@ -59,19 +59,19 @@ const CTA = css`
   }
 `;
 
-export default ({ href, children, style: css, ...props }) => {
+export default ({ href, children, style, ...props }) => {
   const Component = href ? "a" : "button";
 
-  let style = primary;
-  if (props.secondary) style = secondary; // n tirei do props. pq o nome ta repetindo
-  if (props.ghosted) style = ghosted;
-  if (props.raised) style = raised;
-  if (props.CTA) style = CTA;
+  let modifier = primary;
+  if (props.secondary) modifier = secondary; // n tirei do props. pq o nome ta repetindo
+  if (props.ghosted) modifier = ghosted;
+  if (props.raised) modifier = raised;
+  if (props.CTA) modifier = CTA;
 
   console.log("button", ...props);
 
   return (
-    <Component css={[base, style]} style={css}>
+    <Component css={[base, modifier]} style={style}>
       {children}
     </Component>
   );
