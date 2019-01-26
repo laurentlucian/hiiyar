@@ -25,9 +25,10 @@ export const FirstCurve = ({ ...props }) => (
 export const SecondCurve = ({ ...props }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="1600.886"
-    height="259.763"
+    width="100%"
+    height="auto"
     viewBox="0 0 1600.886 259.763"
+    {...props}
   >
     <defs />
     <path

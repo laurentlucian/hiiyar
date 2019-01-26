@@ -1,11 +1,11 @@
 import React from "react";
-import AboutGirlSvg from "../vectors/about-girl";
-import AboutBoySvg from "../vectors/about-boy";
 import { css } from "@emotion/core";
 import Content from "../components/content";
-import { Paragraph, SubHeading } from "../components/typography";
-import Button from "../components/button";
 
+import Button from "../components/button";
+import { Paragraph, SubHeading } from "../components/typography";
+import AboutGirlSvg from "../vectors/about-girl";
+import AboutBoySvg from "../vectors/about-boy";
 import { SecondCurve as SecondCurveSvg } from "../vectors/curve";
 
 export default () => (
@@ -79,6 +79,13 @@ export default () => (
         </Button>
       </div>
     </Content>
-    <SecondCurveSvg />
+    <SecondCurveSvg
+      css={css`
+        position: absolute;
+        pointer-events: none;
+        bottom: -500px;
+        z-index: -1;
+      `} //pls fix this
+    />
   </section>
 );

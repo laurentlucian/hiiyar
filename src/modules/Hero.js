@@ -60,8 +60,8 @@ const Hero = () => {
         css={css`
           fill: white;
           position: absolute;
-          bottom: -375px;
           pointer-events: none;
+          bottom: -375px;
         `}
       />
       <JumpingGuySvg
