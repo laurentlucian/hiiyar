@@ -60,11 +60,11 @@ const CTA = css`
   }
 `;
 
-export default ({ href, children, ...props }) => {
+export default ({ href, children, style: css, ...props }) => {
   const Component = href ? "a" : "button";
 
   let style = primary;
-  if (props.secondary) style = secondary;
+  if (props.secondary) style = secondary; // n tirei do props. pq o nome ta repetindo
   if (props.ghosted) style = ghosted;
   if (props.raised) style = raised;
   if (props.CTA) style = CTA;
@@ -72,7 +72,7 @@ export default ({ href, children, ...props }) => {
   console.log("button", ...props);
 
   return (
-    <Component css={[base, style]} {...props}>
+    <Component css={[base, style]} style={css}>
       {children}
     </Component>
   );
