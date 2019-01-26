@@ -4,22 +4,24 @@ import Content from "../components/content";
 
 import Button from "../components/button";
 import ClientBoySvg from "../vectors/client-boy";
-import { Heading2, Paragraph2 } from "../components/typography";
+import { Heading2, Paragraph2, SubHeading2 } from "../components/typography";
 import ClientChatSvg from "../vectors/client-chat";
 import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
+import { ThirdCurve as ThirdCurveSvg } from "../vectors/curve";
 
 export default () => (
   <section
     css={css`
+      position: relative;
       background-image: linear-gradient(59deg, #a11846, #4d1226);
       width: 100%;
-      height: 1030.3px;
+      height: 1300px;
       object-fit: contain;
-      padding-top: 220px;
-      & * {
+      padding-top: 170px;
+      /* & * {
         border: 1px solid white;
-      }
+      } */
     `}
   >
     <Content
@@ -53,11 +55,16 @@ export default () => (
           <ClientChatSvg
             css={css`
               width: 100px;
-              height: 69px;
+              height: 109px;
               margin-right: 23.9px;
             `}
           />
-          <div>
+          <div
+            css={css`
+              width: 400px;
+            `}
+          >
+            <SubHeading2>Influencer Marketing</SubHeading2>
             <Paragraph2 white>
               Partner with Hiiyar’s team to create and distribute compelling sponsored
               content that speaks your brand story.
@@ -72,12 +79,13 @@ export default () => (
         >
           <ClientIdeaSvg
             css={css`
-              width: 74px;
-              height: 78px;
+              width: 160px;
+              height: 160px;
               margin-right: 35.4px;
             `}
           />
           <div>
+            <SubHeading2>Custom Content</SubHeading2>
             <Paragraph2 white>
               Access our design and production team to produce anything that you may need
               to better elevate your messaging. We create assets, videos, infographics,
@@ -93,14 +101,20 @@ export default () => (
         >
           <ClientPizzaSvg
             css={css`
-              width: 62px;
-              height: 62px;
+              width: 94px;
+              height: 152px;
               margin-right: 29.2px;
             `}
           />
           <div>
+            <SubHeading2>Performance</SubHeading2>
             <Paragraph2 white>
-              <ul>
+              <ul
+                css={css`
+                  margin: 0;
+                  padding: 0 0 0 18px;
+                `}
+              >
                 <li>Audience Insights</li>
                 <li>Growth Measurement</li>
                 <li>Content Analysis </li>
@@ -115,5 +129,23 @@ export default () => (
         `}
       />
     </Content>
+    <Content
+      css={css`
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+      `}
+    >
+      <Button raised style={{ color: "#4d1226", width: "160px" }}>
+        Let's Talk
+      </Button>
+    </Content>
+    <ThirdCurveSvg
+      css={css`
+        position: absolute;
+        bottom: -150px;
+        pointer-events: none;
+      `}
+    />
   </section>
 );

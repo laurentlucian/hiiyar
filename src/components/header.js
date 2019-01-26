@@ -41,7 +41,7 @@ const Header = () => {
           margin-top: 52px;
           padding: 15px;
           background: transparent;
-          transition: background-color 300ms;
+          transition: background-color 50ms;
         `,
         isFixed && stickHeader,
       ]}

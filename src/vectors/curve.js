@@ -19,7 +19,7 @@ export const FirstCurve = ({ ...props }) => (
   </svg>
 );
 
-export const SecondCurve = ({ ...props }) => (
+export const SecondCurve = props => (
   <svg
     viewBox="0 0 1601 130"
     version="1.1"
@@ -34,6 +34,24 @@ export const SecondCurve = ({ ...props }) => (
         transform="translate(800.442926, 64.881203) rotate(180.000000) translate(-800.442926, -64.881203) "
       />
     </g>
+  </svg>
+);
+
+export const ThirdCurve = props => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    viewBox="0 0 1600.886 259.763"
+    {...props}
+  >
+    <defs />
+    <path
+      id="Path_1873"
+      d="M1599.114 0s56.152 68.151-725.667-56.091S-.886 0-.886 0v143l1600 17z"
+      style={{ fill: "#fff" }}
+      data-name="Path 1873"
+      transform="translate(.886 99.763)"
+    />
   </svg>
 );
 

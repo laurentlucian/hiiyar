@@ -55,6 +55,7 @@ export const SubHeading2 = ({ children }) => (
       line-height: 1.33;
       color: #ffffff;
       margin: 0;
+      letter-spacing: normal;
     `}
   >
     {children}
