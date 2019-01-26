@@ -10,8 +10,8 @@ const Footer = () => (
   <footer
     css={css`
       width: 100%;
-      height: 300px;
-      padding-top: 70px;
+      height: 350px;
+      padding-top: 150px;
       margin-top: 100px;
       background-image: linear-gradient(82deg, #a11846, #4d1226);
       display: flex;
@@ -23,7 +23,7 @@ const Footer = () => (
       css={css`
         position: absolute;
         width: 100%;
-        top: -130px;
+        top: 0;
         fill: white;
       `}
     />
