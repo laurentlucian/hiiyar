@@ -18,7 +18,6 @@ const base = css`
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
-  user-select: none;
 `;
 
 const primary = css`

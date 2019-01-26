@@ -11,7 +11,6 @@ export const Heading1 = ({ children }) => (
       line-height: 1.38;
       letter-spacing: 0.1px;
       color: white;
-      user-select: none;
     `}
   >
     {children}
@@ -27,7 +26,6 @@ export const SubHeading = ({ children }) => (
       color: #4d1226;
       text-transform: uppercase;
       margin: 0;
-      user-select: none;
     `}
   >
     {children}
@@ -47,7 +45,6 @@ export const Paragraph = ({ children, ...props }) => {
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};
         color: ${props.white ? "white" : "#4d4d4d"};
-        user-select: none;
       `}
     >
       {children}
