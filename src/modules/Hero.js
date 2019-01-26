@@ -9,7 +9,7 @@ import { FirstCurve as FirstCurveSvg } from "../vectors/curve";
 import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
-import { Trail } from "react-spring";
+// import { Trail } from "react-spring";
 
 const Hero = () => {
   return (
