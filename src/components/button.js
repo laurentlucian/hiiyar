@@ -68,7 +68,6 @@ export default ({ href, children, style, ...props }) => {
   if (props.raised) modifier = raised;
   if (props.CTA) modifier = CTA;
 
-
   return (
     <Component css={[base, modifier]} style={style}>
       {children}

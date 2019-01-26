@@ -9,6 +9,7 @@ import { FirstCurve as FirstCurveSvg } from "../vectors/curve";
 import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
+import { Trail } from "react-spring";
 
 const Hero = () => {
   return (
@@ -61,7 +62,8 @@ const Hero = () => {
           fill: white;
           position: absolute;
           pointer-events: none;
-          bottom: -375px;
+          bottom: 0;
+          transform: translateY(50%);
         `}
       />
       <JumpingGuySvg

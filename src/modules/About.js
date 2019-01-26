@@ -12,8 +12,7 @@ export default () => (
   <section
     css={css`
       position: relative;
-      z-index: 2;
-      margin: 250px 0 0 0;
+      padding: 200px 0;
     `}
   >
     <Content
@@ -83,9 +82,11 @@ export default () => (
       css={css`
         position: absolute;
         pointer-events: none;
-        bottom: -500px;
-        z-index: -1;
-      `} //pls fix this
+        bottom: 0;
+        transform: translateY(100%);
+        fill: white;
+        width: 100%;
+      `}
     />
   </section>
 );
