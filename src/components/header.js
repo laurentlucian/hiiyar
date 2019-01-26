@@ -1,52 +1,86 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import Content from "./content";
-import Logo from "../vectors/logo";
-import Hiiyar from "../vectors/hiiyar";
+import LogoSvg from "../vectors/logo";
+import HiiyarSvg from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import Button from "./../components/button";
 import { NavLink } from "./typography";
+import useWindowScrollPosition from "@rehooks/window-scroll-position";
 
-const Header = ({ siteTitle }) => (
-  <header
-    css={css`
-      position: fixed;
-      z-index: 1;
-      width: 100%;
-      margin-top: 52px;
-    `}
-  >
-    <Content
-      css={css`
-        display: flex;
-        width: 100%;
-      `}
+const stickHeader = css`
+  position: fixed;
+  margin-top: 0;
+  background: white;
+  padding: 0;
+
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
+  & a {
+    font-size: 13px;
+    color: #4d4d4d;
+  }
+`;
+
+const Header = () => {
+  const [isFixed, setFixed] = useState(false);
+  const position = useWindowScrollPosition({ throttle: 50 });
+
+  useMemo(
+    () => {
+      setFixed(position.y > 52 + 15);
+    },
+    [position.y]
+  );
+
+  return (
+    <header
+      css={[
+        css`
+          position: absolute;
+          z-index: 1;
+          width: 100%;
+          margin-top: 52px;
+          padding: 15px;
+          background: transparent;
+          transition: background-color 300ms;
+        `,
+        isFixed && stickHeader,
+      ]}
     >
-      <Logo
+      <Content
         css={css`
-          width: 100.8px;
-        `}
-      />
-      <Hiiyar
-        css={css`
-          width: 133.6px;
-        `}
-      />
-      <div
-        css={css`
-          margin: 0 0 0 auto;
+          display: flex;
+          width: 100%;
+          align-items: center;
         `}
       >
-        <NavLink>WHAT WE DO</NavLink>
-        <NavLink>TALENTS</NavLink>
-        <NavLink>CLIENTS</NavLink>
-        <NavLink>WORK</NavLink>
-        <Button raised style={{ marginLeft: 64 }}>
-          Let's Talk
-        </Button>
-      </div>
-    </Content>
-  </header>
-);
+        <LogoSvg
+          css={css`
+            width: 100.8px;
+          `}
+        />
+        <HiiyarSvg
+          css={css`
+            width: 134px;
+            fill: white;
+          `}
+        />
+        <div
+          css={css`
+            margin-left: auto;
+          `}
+        >
+          <NavLink>WHAT WE DO</NavLink>
+          <NavLink>TALENTS</NavLink>
+          <NavLink>CLIENTS</NavLink>
+          <NavLink>WORK</NavLink>
+          <Button raised={!isFixed} primary={isFixed} style={{ marginLeft: 64 }}>
+            Let's Talk
+          </Button>
+        </div>
+      </Content>
+    </header>
+  );
+};
 
 Header.defaultProps = {
   siteTitle: `Hiiyar`,
