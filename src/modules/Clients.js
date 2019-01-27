@@ -8,7 +8,7 @@ import { Heading2, Paragraph2, SubHeading2 } from "../components/typography";
 import ClientChatSvg from "../vectors/client-chat";
 import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
-import { ThirdCurve as ThirdCurveSvg } from "../vectors/curve";
+import { ThirdCurve as ThirdCurveSvg } from "../vectors/curves";
 
 export default () => (
   <section
@@ -19,6 +19,7 @@ export default () => (
       height: 1300px;
       object-fit: contain;
       padding-top: 170px;
+      z-index: -1; /* just to show the curve from About */
       /* & * {
         border: 1px solid white;
       } */

@@ -6,13 +6,13 @@ import Button from "../components/button";
 import { Paragraph, SubHeading } from "../components/typography";
 import AboutGirlSvg from "../vectors/about-girl";
 import AboutBoySvg from "../vectors/about-boy";
-import { SecondCurve as SecondCurveSvg } from "../vectors/curve";
+import { SecondCurve as SecondCurveSvg } from "../vectors/curves";
 
 export default () => (
   <section
     css={css`
       position: relative;
-      padding: 200px 0;
+      padding: 240px 0 10px;
     `}
   >
     <Content

@@ -4,7 +4,7 @@ import Logo from "../vectors/logo";
 import Hiiyar from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import { NavLink } from "./typography";
-import { FooterCurve as CurveSvg } from "../vectors/curve";
+import { FooterCurve as CurveSvg } from "../vectors/curves";
 
 const Footer = () => (
   <footer
