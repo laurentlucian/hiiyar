@@ -26,8 +26,9 @@ export default () => (
     <ForthCurveSvg
       css={css`
         position: absolute;
-        top: -179px;
+        top: -90px;
         pointer-events: none;
+        /* background-color: blue; */
       `}
     />
     <Content
@@ -71,16 +72,15 @@ export default () => (
               fontWeight: "bold",
               lineHeight: 1.38,
               color: "#ffffff",
-              width: "251px",
+              width: "283px",
             }}
-          >
-            {({ countUpRef, start }) => (
+          />
+          {/*({ countUpRef, start }) => (
               <div>
                 <span ref={countUpRef} />
-                <Button onClick={start}>Start</Button> {/*testing*/}
+                <Button onClick={start}>Start</Button> {testing}
               </div>
-            )}
-          </CountUp>
+            )*/}
         </div>
         <div
           css={css`

@@ -15,7 +15,7 @@ export default () => (
     css={css`
       position: relative;
       width: 100%;
-      height: 1080px;
+      height: 980px;
       object-fit: contain;
       /* & * {
         border: 1px solid #4d1226;

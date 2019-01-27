@@ -79,7 +79,7 @@ const Header = () => {
             style={{ marginLeft: 64 }}
             shadow={ isFixed && css`
               &:hover {
-                box-shadow: 0 5px 15px 0 rgba(77, 18, 38, 0.56);
+                box-shadow: 0 2px 15px 0 rgba(77, 18, 38, 0.56);
               }
             `}
           >

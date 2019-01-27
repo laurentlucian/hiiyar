@@ -37,7 +37,7 @@ export default () => (
           been the industry's standard dummy text ever since the 1500s, when an unknown
           printer took a galley
         </Paragraph>
-        <Button CTA>Let's Talk</Button>
+        <Button CTA>Learn More</Button>
       </div>
       <AboutGirlSvg />
     </Content>
@@ -73,7 +73,7 @@ export default () => (
           CTA
           style={{ backgroundImage: "linear-gradient(287deg, #4d1226, #4d1226" }}
         >
-          Let's Talk
+          Learn More
         </Button>
       </div>
     </Content>
