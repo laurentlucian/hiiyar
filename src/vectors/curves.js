@@ -38,12 +38,7 @@ export const SecondCurve = props => (
 );
 
 export const ThirdCurve = props => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    viewBox="0 0 1591.886 161.763"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1591.886 161.763" {...props}>
     <defs />
     <path
       id="Path_1873"
@@ -57,20 +52,15 @@ export const ThirdCurve = props => (
 
 export const ForthCurve = props => (
   <svg
+    viewBox="0 0 1650 114"
+    version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    viewBox="0 124 1627.193 184.075"
+    style={{ pointerEvents: "none" }}
     {...props}
   >
-    <defs>
-    </defs>
-    <path
-      id="Path_1874"
-      d="M13.513 10.34s-35.86 71.9 601.715 0 1040.429 0 1040.429 0l-5.245 222.624s-111.25-36.876-559.107-50.315S168.532 313.6 8.269 277.762C-27.7 269.718 13.513 10.34 13.513 10.34z"
-      style={{fill: "#fff"}}
-      data-name="Path 1874"
-      transform="translate(2.41 21.726)"
-    />
+    <g>
+      <path d="M0,0 L612,4.31053197e-63 L1650,0 L1650,68.69 C1650,68.69 1539.572,31.814 1091.715,18.375 C793.143667,9.41566667 429.238667,41.12 0,113.488 L0,0 Z" />
+    </g>
   </svg>
 );
 

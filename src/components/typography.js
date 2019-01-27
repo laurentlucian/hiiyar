@@ -84,9 +84,11 @@ export const Paragraph = ({ children, ...props }) => {
     </p>
   );
 };
-export const Paragraph2 = ({ children, ...props }) => {
+export const Paragraph2 = ({ children, as, ...props }) => {
+  const Component = as ? as : "p";
+
   return (
-    <p
+    <Component
       css={css`
         font-size: 16px;
         font-weight: bold;
@@ -100,7 +102,7 @@ export const Paragraph2 = ({ children, ...props }) => {
       `}
     >
       {children}
-    </p>
+    </Component>
   );
 };
 
