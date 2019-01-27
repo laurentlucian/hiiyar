@@ -49,7 +49,7 @@ export default () => (
           display: flex;
           flex-wrap: nowrap;
           justify-content: space-around;
-          max-width: 1300px; 
+          max-width: 1300px;
           width: 100%;
         `}
       >
@@ -68,7 +68,7 @@ export default () => (
           <SubHeading2 style={{ fontSize: "25px", lineHeight: 1.35 }}>
             Views on Twitch
           </SubHeading2>
-          <Numbers />
+          <Numbers value={4301201} duration={2.75} />
         </div>
         <div
           css={css`
@@ -87,21 +87,7 @@ export default () => (
           <SubHeading2 style={{ fontSize: "26px", lineHeight: 1.36 }}>
             Views on Youtube
           </SubHeading2>
-          <VisibilitySensor>
-            <CountUp
-              start={0}
-              end={22290634}
-              duration={3.74}
-              separator=","
-              style={{
-                fontSize: "53px",
-                fontWeight: "bold",
-                lineHeight: 1.38,
-                color: "#ffffff",
-                width: "283px",
-              }}
-            />
-          </VisibilitySensor>
+          <Numbers value={22290634} duration={3.85} />
         </div>
         <div
           css={css`
@@ -118,18 +104,7 @@ export default () => (
           <SubHeading2 style={{ fontSize: "27px", lineHeight: 1.37 }}>
             Total Reach
           </SubHeading2>
-          <CountUp
-            end={31303565}
-            duration={4.5}
-            separator=","
-            style={{
-              fontSize: "53px",
-              fontWeight: "bold",
-              lineHeight: 1.38,
-              color: "#ffffff",
-              width: "283px",
-            }}
-          />
+          <Numbers value={31303565} duration={4.75} />
         </div>
       </div>
     </Content>
