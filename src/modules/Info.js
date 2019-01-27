@@ -36,6 +36,9 @@ export default () => (
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
+        /* & * {
+          border: 1px solid black;
+        } */
       `}
     >
       <Heading2 white style={{ fontWeight: "bold" }}>
@@ -46,6 +49,8 @@ export default () => (
           display: flex;
           flex-wrap: nowrap;
           justify-content: space-around;
+          max-width: 1300px; 
+          width: 100%;
         `}
       >
         <div
