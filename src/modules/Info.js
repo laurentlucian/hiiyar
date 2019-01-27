@@ -104,7 +104,7 @@ export default () => (
           <SubHeading2 style={{ fontSize: "27px", lineHeight: 1.37 }}>
             Total Reach
           </SubHeading2>
-          <Numbers value={31303565} duration={4.75} />
+          <Numbers value={31303565} duration={5} />
         </div>
       </div>
     </Content>
