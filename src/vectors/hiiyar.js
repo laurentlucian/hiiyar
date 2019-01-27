@@ -3,7 +3,7 @@ import React from "react";
 export default props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="100%"
+    width="134"
     height="49.219"
     viewBox="0 0 133.611 49.219"
     style={{ pointerEvents: "none" }}

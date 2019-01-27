@@ -51,8 +51,7 @@ const Footer = () => (
         />
         <Hiiyar
           css={css`
-            width: 133.6px;
-            height: 49.2px;
+            fill: white;
           `}
         />
       </div>
