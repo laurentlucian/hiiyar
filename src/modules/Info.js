@@ -15,20 +15,16 @@ export default () => (
       position: relative;
       background-image: linear-gradient(68deg, #a11846, #4d1226);
       width: 100%;
-      height: 720px;
       object-fit: contain;
-      padding-top: 200px;
-      /* & * {
-        border: 1px solid white;
-      } */
+      padding: 100px 0;
     `}
   >
     <ForthCurveSvg
       css={css`
         position: absolute;
-        top: -90px;
-        pointer-events: none;
-        /* background-color: blue; */
+        top: 0;
+        transform: translateY(0%);
+        fill: white;
       `}
     />
     <Content
@@ -41,7 +37,7 @@ export default () => (
       <Heading2 white style={{ fontWeight: "bold" }}>
         {`Our ${22} Influencers have Accumulated`}
       </Heading2>
-      <Content
+      <div
         css={css`
           display: flex;
           flex-wrap: nowrap;
@@ -75,12 +71,6 @@ export default () => (
               width: "283px",
             }}
           />
-          {/*({ countUpRef, start }) => (
-              <div>
-                <span ref={countUpRef} />
-                <Button onClick={start}>Start</Button> {testing}
-              </div>
-            )*/}
         </div>
         <div
           css={css`
@@ -141,7 +131,7 @@ export default () => (
             }}
           />
         </div>
-      </Content>
+      </div>
     </Content>
   </section>
 );
