@@ -26,7 +26,8 @@ const primary = css`
   box-shadow: 0;
   transition: all 200ms;
   &:hover {
-    box-shadow: 0 10px 15px 0 rgba(74, 219, 194, 0.3);
+    /* box-shadow: 0 10px 15px 0 rgba(74, 219, 194, 0.3); */
+    box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.56);
   }
 `;
 
@@ -39,7 +40,13 @@ const ghosted = css`
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.6);
   color: white;
-  font-weight: 600;
+  font-weight: 900;
+  transition: all 100ms;
+  &:hover {
+    background-color: white;
+    color: #a11846;
+    box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.56);
+  }
 `;
 
 const raised = css`
@@ -47,7 +54,7 @@ const raised = css`
   line-height: 1.38;
   color: #a11846;
   &:hover {
-    box-shadow: 0 10px 20px 0 rgba(77, 18, 38, 0.3);
+    box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.56);
   }
 `;
 
@@ -55,11 +62,11 @@ const CTA = css`
   background-image: linear-gradient(287deg, #a11846, #4d1226);
   color: #fff;
   &:hover {
-    box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.56);
+    box-shadow: 0 6px 15px 0 rgba(77, 18, 38, 0.56);
   }
 `;
 
-export default ({ href, children, style, ...props }) => {
+export default ({ href, children, style, shadow, ...props }) => {
   const Component = href ? "a" : "button";
 
   let modifier = primary;
@@ -68,8 +75,10 @@ export default ({ href, children, style, ...props }) => {
   if (props.raised) modifier = raised;
   if (props.CTA) modifier = CTA;
 
+  console.log("button", css);
+
   return (
-    <Component css={[base, modifier]} style={style}>
+    <Component css={[base, modifier, shadow]} style={style}>
       {children}
     </Component>
   );
