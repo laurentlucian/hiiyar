@@ -5,13 +5,13 @@ import Content from "./../components/content";
 import { Heading1, Paragraph } from "./../components/typography";
 import Button from "./../components/button";
 
-import { FirstCurve as FirstCurveSvg } from "../vectors/curve";
+import { FirstCurve as FirstCurveSvg } from "../vectors/curves";
 import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
-import { Trail } from "react-spring";
+// import { Trail } from "react-spring";
 
-const Hero = () => {
+export default () => {
   return (
     <section
       css={css`
@@ -37,7 +37,7 @@ const Hero = () => {
             width: 128px;
           `}
         />
-        <Heading1>Go hiiyar Go higher</Heading1>
+        <Heading1>Taking You Higher</Heading1>
         <Paragraph white center>
           Create real and memorable content to compel the senses through a seamless
           encounter. There is no secret formula behind our successful metrics. <br />
@@ -78,12 +78,10 @@ const Hero = () => {
         css={css`
           position: absolute;
           right: 10%;
-          top: 170px;
+          top: 130px;
           width: 380px;
         `}
       />
     </section>
   );
 };
-
-export default Hero;

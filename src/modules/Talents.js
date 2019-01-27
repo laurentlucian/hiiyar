@@ -2,36 +2,31 @@ import React from "react";
 import { css } from "@emotion/core";
 import Content from "../components/content";
 
-import { SecondCurve as SecondCurveSvg } from "../vectors/curves";
 import Button from "../components/button";
-import ClientBoySvg from "../vectors/client-boy";
+import TalentBoySvg from "../vectors/talent-boy";
 import { Heading2, Paragraph2, SubHeading2 } from "../components/typography";
-import ClientChatSvg from "../vectors/client-chat";
-import ClientIdeaSvg from "../vectors/client-idea";
-import ClientPizzaSvg from "../vectors/client-pizza";
+import TalentRocketSvg from "../vectors/talent-rocket";
+import TalentSpeakerSvg from "../vectors/talent-speaker";
+import TalentGraphSvg from "../vectors/talent-graph";
+import { ThirdCurve as ThirdCurveSvg } from "../vectors/curves";
 
 export default () => (
   <section
     css={css`
       position: relative;
-      background-image: linear-gradient(59deg, #a11846, #4d1226);
       width: 100%;
-      height: 1300px;
+      height: 980px;
       object-fit: contain;
-      padding-top: 140px;
       /* & * {
-        border: 1px solid white;
+        border: 1px solid #4d1226;
       } */
     `}
   >
-    <SecondCurveSvg
+    <ThirdCurveSvg
       css={css`
         position: absolute;
+        top: -190px;
         pointer-events: none;
-        top: -160px;
-        transform: translateY(100%);
-        fill: white;
-        width: 100%;
       `}
     />
     <Content
@@ -41,7 +36,9 @@ export default () => (
         font-size: 48px;
       `}
     >
-      <Heading2>Clients</Heading2>
+      <Heading2 red style={{ marginTop: 0 }}>
+        Talents
+      </Heading2>
     </Content>
     <Content
       css={css`
@@ -62,7 +59,7 @@ export default () => (
             align-items: center;
           `}
         >
-          <ClientChatSvg
+          <TalentRocketSvg
             css={css`
               width: 100px;
               height: 109px;
@@ -74,8 +71,8 @@ export default () => (
               width: 400px;
             `}
           >
-            <SubHeading2>Influencer Marketing</SubHeading2>
-            <Paragraph2 white>
+            <SubHeading2 red>Influencer Marketing</SubHeading2>
+            <Paragraph2 red>
               Partner with Hiiyar’s team to create and distribute compelling sponsored
               content that speaks your brand story.
             </Paragraph2>
@@ -87,7 +84,7 @@ export default () => (
             align-items: center;
           `}
         >
-          <ClientIdeaSvg
+          <TalentSpeakerSvg
             css={css`
               width: 160px;
               height: 160px;
@@ -95,8 +92,8 @@ export default () => (
             `}
           />
           <div>
-            <SubHeading2>Custom Content</SubHeading2>
-            <Paragraph2 white>
+            <SubHeading2 red>Custom Content</SubHeading2>
+            <Paragraph2 red>
               Access our design and production team to produce anything that you may need
               to better elevate your messaging. We create assets, videos, infographics,
               landers and other marketing initiatives to better suit your needs.
@@ -109,7 +106,7 @@ export default () => (
             align-items: center;
           `}
         >
-          <ClientPizzaSvg
+          <TalentGraphSvg
             css={css`
               width: 94px;
               height: 152px;
@@ -117,8 +114,8 @@ export default () => (
             `}
           />
           <div>
-            <SubHeading2>Performance</SubHeading2>
-            <Paragraph2 white>
+            <SubHeading2 red>Performance</SubHeading2>
+            <Paragraph2 red>
               <ul
                 css={css`
                   margin: 0;
@@ -133,7 +130,7 @@ export default () => (
           </div>
         </div>
       </div>
-      <ClientBoySvg
+      <TalentBoySvg
         css={css`
           height: 624.7px;
         `}
@@ -146,7 +143,7 @@ export default () => (
         padding-top: 50px;
       `}
     >
-      <Button raised style={{ color: "#4d1226", width: "160px" }}>
+      <Button CTA style={{ width: "160px" }}>
         Let's Talk
       </Button>
     </Content>

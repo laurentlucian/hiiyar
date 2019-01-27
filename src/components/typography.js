@@ -16,6 +16,22 @@ export const Heading1 = ({ children }) => (
     {children}
   </h1>
 );
+export const Heading2 = ({ children, style, ...props }) => (
+  <h3
+    css={css`
+      font-size: 48px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.38;
+      letter-spacing: normal;
+      color: ${props.red ? "#a11846" : "white"};
+    `}
+    style={style}
+  >
+    {children}
+  </h3>
+);
 
 export const SubHeading = ({ children }) => (
   <h3
@@ -32,6 +48,23 @@ export const SubHeading = ({ children }) => (
   </h3>
 );
 
+export const SubHeading2 = ({ children, style, ...props }) => (
+  <h4
+    css={css`
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.33;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: normal;
+      color: ${props.red ? "#a11846" : "white"};
+    `}
+    style={style}
+  >
+    {children}
+  </h4>
+);
+
 export const Paragraph = ({ children, ...props }) => {
   return (
     <p
@@ -45,6 +78,25 @@ export const Paragraph = ({ children, ...props }) => {
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};
         color: ${props.white ? "white" : "#4d4d4d"};
+      `}
+    >
+      {children}
+    </p>
+  );
+};
+export const Paragraph2 = ({ children, ...props }) => {
+  return (
+    <p
+      css={css`
+        font-size: 16px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        max-width: 800px;
+        text-align: left;
+        color: ${props.white ? "white" : "#a11846"};
       `}
     >
       {children}

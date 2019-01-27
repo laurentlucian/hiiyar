@@ -19,9 +19,9 @@ export const FirstCurve = ({ ...props }) => (
   </svg>
 );
 
-export const SecondCurve = ({ ...props }) => (
+export const SecondCurve = props => (
   <svg
-    viewBox="0 0 1601 130"
+    viewBox="0 0 1600 130"
     version="1.1"
     preserveAspectRatio="xMinYMax meet"
     xmlns="http://www.w3.org/2000/svg"
@@ -34,6 +34,43 @@ export const SecondCurve = ({ ...props }) => (
         transform="translate(800.442926, 64.881203) rotate(180.000000) translate(-800.442926, -64.881203) "
       />
     </g>
+  </svg>
+);
+
+export const ThirdCurve = props => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    viewBox="0 0 1591.886 161.763"
+    {...props}
+  >
+    <defs />
+    <path
+      id="Path_1873"
+      d="M1599.114 0s56.152 68.151-725.667-56.091S-.886 0-.886 0v143l1600 17z"
+      style={{ fill: "white" }}
+      data-name="Path 1873"
+      transform="translate(.886 99.763)"
+    />
+  </svg>
+);
+
+export const ForthCurve = props => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    viewBox="0 124 1627.193 184.075"
+    {...props}
+  >
+    <defs>
+    </defs>
+    <path
+      id="Path_1874"
+      d="M13.513 10.34s-35.86 71.9 601.715 0 1040.429 0 1040.429 0l-5.245 222.624s-111.25-36.876-559.107-50.315S168.532 313.6 8.269 277.762C-27.7 269.718 13.513 10.34 13.513 10.34z"
+      style={{fill: "#fff"}}
+      data-name="Path 1874"
+      transform="translate(2.41 21.726)"
+    />
   </svg>
 );
 

@@ -41,7 +41,7 @@ const Header = () => {
           margin-top: 52px;
           padding: 15px;
           background: transparent;
-          transition: background-color 300ms;
+          transition: background-color 50ms;
         `,
         isFixed && stickHeader,
       ]}
@@ -70,10 +70,19 @@ const Header = () => {
           `}
         >
           <NavLink>WHAT WE DO</NavLink>
-          <NavLink>TALENTS</NavLink>
           <NavLink>CLIENTS</NavLink>
+          <NavLink>TALENTS</NavLink>
           <NavLink>WORK</NavLink>
-          <Button raised={!isFixed} primary={isFixed} style={{ marginLeft: 64 }}>
+          <Button
+            raised={!isFixed}
+            primary={isFixed}
+            style={{ marginLeft: 64 }}
+            shadow={ isFixed && css`
+              &:hover {
+                box-shadow: 0 2px 15px 0 rgba(77, 18, 38, 0.56);
+              }
+            `}
+          >
             Let's Talk
           </Button>
         </div>
