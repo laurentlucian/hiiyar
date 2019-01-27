@@ -115,7 +115,7 @@ export default () => (
             />
             <div>
               <SubHeading2>Performance</SubHeading2>
-              <Paragraph2 white>
+              <Paragraph2 white as="div">
                 <ul
                   css={css`
                     margin: 0;

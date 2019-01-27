@@ -75,8 +75,6 @@ export default ({ href, children, style, shadow, ...props }) => {
   if (props.raised) modifier = raised;
   if (props.CTA) modifier = CTA;
 
-  console.log("button", css);
-
   return (
     <Component css={[base, modifier, shadow]} style={style}>
       {children}

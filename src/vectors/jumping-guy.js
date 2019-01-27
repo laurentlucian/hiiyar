@@ -4,7 +4,6 @@ export default props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
-    height="auto"
     viewBox="0 0 283.619 514.515"
     style={{ pointerEvents: "none" }}
     {...props}

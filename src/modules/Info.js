@@ -1,12 +1,11 @@
 import React from "react";
+import CountUp from "react-countup";
 import { css } from "@emotion/core";
 import Content from "../components/content";
 import { Heading2, SubHeading2 } from "../components/typography";
 import InfoYoutubeSvg from "../vectors/info-youtube";
 import InfoTwitchSvg from "../vectors/info-twitch";
 import InfoStarSvg from "../vectors/info-star";
-import CountUp from "react-countup";
-import Button from "../components/button";
 import { ForthCurve as ForthCurveSvg } from "../vectors/curves";
 
 export default () => (
