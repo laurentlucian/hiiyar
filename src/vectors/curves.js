@@ -21,7 +21,7 @@ export const FirstCurve = ({ ...props }) => (
 
 export const SecondCurve = props => (
   <svg
-    viewBox="0 0 1601 130"
+    viewBox="0 0 1600 130"
     version="1.1"
     preserveAspectRatio="xMinYMax meet"
     xmlns="http://www.w3.org/2000/svg"
@@ -41,14 +41,14 @@ export const ThirdCurve = props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="100%"
-    viewBox="0 0 1600.886 259.763"
+    viewBox="0 0 1591.886 161.763"
     {...props}
   >
     <defs />
     <path
       id="Path_1873"
       d="M1599.114 0s56.152 68.151-725.667-56.091S-.886 0-.886 0v143l1600 17z"
-      style={{ fill: "#fff" }}
+      style={{ fill: "white" }}
       data-name="Path 1873"
       transform="translate(.886 99.763)"
     />

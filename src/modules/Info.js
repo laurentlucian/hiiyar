@@ -5,7 +5,9 @@ import { Heading2, SubHeading2 } from "../components/typography";
 import InfoYoutubeSvg from "../vectors/info-youtube";
 import InfoTwitchSvg from "../vectors/info-twitch";
 import InfoStarSvg from "../vectors/info-star";
-import Odometer from "react-odometerjs";
+import CountUp from "react-countup";
+import Button from "../components/button";
+import { ForthCurve as ForthCurveSvg } from "../vectors/curves";
 
 export default () => (
   <section
@@ -15,13 +17,19 @@ export default () => (
       width: 100%;
       height: 720px;
       object-fit: contain;
-      z-index: -1;
       padding-top: 200px;
       /* & * {
         border: 1px solid white;
       } */
     `}
   >
+    <ForthCurveSvg
+      css={css`
+        position: absolute;
+        top: -179px;
+        pointer-events: none;
+      `}
+    />
     <Content
       css={css`
         display: flex;
@@ -54,7 +62,25 @@ export default () => (
           <SubHeading2 style={{ fontSize: "25px", lineHeight: 1.35 }}>
             Views on Twitch
           </SubHeading2>
-          {/* <Odometer value={4301201} format="(.ddd),dd" /> */}
+          <CountUp
+            end={4301201}
+            duration={2.75}
+            separator=","
+            style={{
+              fontSize: "53px",
+              fontWeight: "bold",
+              lineHeight: 1.38,
+              color: "#ffffff",
+              width: "251px",
+            }}
+          >
+            {({ countUpRef, start }) => (
+              <div>
+                <span ref={countUpRef} />
+                <Button onClick={start}>Start</Button> {/*testing*/}
+              </div>
+            )}
+          </CountUp>
         </div>
         <div
           css={css`
@@ -73,6 +99,19 @@ export default () => (
           <SubHeading2 style={{ fontSize: "26px", lineHeight: 1.36 }}>
             Views on Youtube
           </SubHeading2>
+          <CountUp
+            start={0}
+            end={22290634}
+            duration={3.74}
+            separator=","
+            style={{
+              fontSize: "53px",
+              fontWeight: "bold",
+              lineHeight: 1.38,
+              color: "#ffffff",
+              width: "283px",
+            }}
+          />
         </div>
         <div
           css={css`
@@ -89,6 +128,18 @@ export default () => (
           <SubHeading2 style={{ fontSize: "27px", lineHeight: 1.37 }}>
             Total Reach
           </SubHeading2>
+          <CountUp
+            end={31303565}
+            duration={4.5}
+            separator=","
+            style={{
+              fontSize: "53px",
+              fontWeight: "bold",
+              lineHeight: 1.38,
+              color: "#ffffff",
+              width: "283px",
+            }}
+          />
         </div>
       </Content>
     </Content>

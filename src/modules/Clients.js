@@ -2,13 +2,13 @@ import React from "react";
 import { css } from "@emotion/core";
 import Content from "../components/content";
 
+import { SecondCurve as SecondCurveSvg } from "../vectors/curves";
 import Button from "../components/button";
 import ClientBoySvg from "../vectors/client-boy";
 import { Heading2, Paragraph2, SubHeading2 } from "../components/typography";
 import ClientChatSvg from "../vectors/client-chat";
 import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
-import { ThirdCurve as ThirdCurveSvg } from "../vectors/curves";
 
 export default () => (
   <section
@@ -18,13 +18,22 @@ export default () => (
       width: 100%;
       height: 1300px;
       object-fit: contain;
-      padding-top: 170px;
-      z-index: -1; /* just to show the curve from About */
+      padding-top: 140px;
       /* & * {
         border: 1px solid white;
       } */
     `}
   >
+    <SecondCurveSvg
+      css={css`
+        position: absolute;
+        pointer-events: none;
+        top: -160px;
+        transform: translateY(100%);
+        fill: white;
+        width: 100%;
+      `}
+    />
     <Content
       css={css`
         display: flex;
@@ -141,12 +150,5 @@ export default () => (
         Let's Talk
       </Button>
     </Content>
-    <ThirdCurveSvg
-      css={css`
-        position: absolute;
-        bottom: -150px;
-        pointer-events: none;
-      `}
-    />
   </section>
 );

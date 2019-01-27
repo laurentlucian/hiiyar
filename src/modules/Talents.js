@@ -8,7 +8,7 @@ import { Heading2, Paragraph2, SubHeading2 } from "../components/typography";
 import TalentRocketSvg from "../vectors/talent-rocket";
 import TalentSpeakerSvg from "../vectors/talent-speaker";
 import TalentGraphSvg from "../vectors/talent-graph";
-import { ForthCurve as ForthCurveSvg } from "../vectors/curves";
+import { ThirdCurve as ThirdCurveSvg } from "../vectors/curves";
 
 export default () => (
   <section
@@ -17,12 +17,18 @@ export default () => (
       width: 100%;
       height: 1080px;
       object-fit: contain;
-      padding-top: 10px;
       /* & * {
         border: 1px solid #4d1226;
       } */
     `}
   >
+    <ThirdCurveSvg
+      css={css`
+        position: absolute;
+        top: -190px;
+        pointer-events: none;
+      `}
+    />
     <Content
       css={css`
         display: flex;
@@ -30,7 +36,9 @@ export default () => (
         font-size: 48px;
       `}
     >
-      <Heading2 red>Talents</Heading2>
+      <Heading2 red style={{ marginTop: 0 }}>
+        Talents
+      </Heading2>
     </Content>
     <Content
       css={css`
@@ -139,13 +147,5 @@ export default () => (
         Let's Talk
       </Button>
     </Content>
-    <ForthCurveSvg
-      css={css`
-        position: absolute;
-        bottom: -180px;
-        pointer-events: none;
-        /* background-color: blue; */
-      `}
-    />
   </section>
 );

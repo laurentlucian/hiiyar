@@ -6,7 +6,6 @@ import Button from "../components/button";
 import { Paragraph, SubHeading } from "../components/typography";
 import AboutGirlSvg from "../vectors/about-girl";
 import AboutBoySvg from "../vectors/about-boy";
-import { SecondCurve as SecondCurveSvg } from "../vectors/curves";
 
 export default () => (
   <section
@@ -52,7 +51,7 @@ export default () => (
     >
       <AboutBoySvg
         css={css`
-          margin-top: 98px;
+          margin-top: 8px;
         `}
       />
       <div
@@ -78,15 +77,5 @@ export default () => (
         </Button>
       </div>
     </Content>
-    <SecondCurveSvg
-      css={css`
-        position: absolute;
-        pointer-events: none;
-        bottom: 0;
-        transform: translateY(100%);
-        fill: white;
-        width: 100%;
-      `}
-    />
   </section>
 );
