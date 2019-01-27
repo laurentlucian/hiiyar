@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { css } from "@emotion/core";
 import Content from "../components/content";
 import { Heading2, SubHeading2 } from "../components/typography";
 import InfoYoutubeSvg from "../vectors/info-youtube";
 import InfoTwitchSvg from "../vectors/info-twitch";
 import InfoStarSvg from "../vectors/info-star";
-import CountUp from "react-countup";
-import Button from "../components/button";
 import { ForthCurve as ForthCurveSvg } from "../vectors/curves";
+
+import Button from "../components/button";
+
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
+import Numbers from "../components/numbers";
 
 export default () => (
   <section
@@ -63,24 +67,7 @@ export default () => (
           <SubHeading2 style={{ fontSize: "25px", lineHeight: 1.35 }}>
             Views on Twitch
           </SubHeading2>
-          <CountUp
-            end={4301201}
-            duration={2.75}
-            separator=","
-            style={{
-              fontSize: "53px",
-              fontWeight: "bold",
-              lineHeight: 1.38,
-              color: "#ffffff",
-              width: "283px",
-            }}
-          />
-          {/*({ countUpRef, start }) => (
-              <div>
-                <span ref={countUpRef} />
-                <Button onClick={start}>Start</Button> {testing}
-              </div>
-            )*/}
+          <Numbers />
         </div>
         <div
           css={css`
@@ -99,19 +86,21 @@ export default () => (
           <SubHeading2 style={{ fontSize: "26px", lineHeight: 1.36 }}>
             Views on Youtube
           </SubHeading2>
-          <CountUp
-            start={0}
-            end={22290634}
-            duration={3.74}
-            separator=","
-            style={{
-              fontSize: "53px",
-              fontWeight: "bold",
-              lineHeight: 1.38,
-              color: "#ffffff",
-              width: "283px",
-            }}
-          />
+          <VisibilitySensor>
+            <CountUp
+              start={0}
+              end={22290634}
+              duration={3.74}
+              separator=","
+              style={{
+                fontSize: "53px",
+                fontWeight: "bold",
+                lineHeight: 1.38,
+                color: "#ffffff",
+                width: "283px",
+              }}
+            />
+          </VisibilitySensor>
         </div>
         <div
           css={css`

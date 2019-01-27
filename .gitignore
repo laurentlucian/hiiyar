@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+#PierreTeachings
+src/components/Untitled-1.js
+
 # Mac files
 .DS_Store
 
