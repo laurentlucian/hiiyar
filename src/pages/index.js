@@ -5,6 +5,8 @@ import SEO from "../components/seo";
 import Hero from "../modules/Hero";
 import About from "../modules/About";
 import Clients from "../modules/Clients";
+import Talents from "../modules/Talents";
+import Info from "../modules/Info";
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +14,8 @@ const IndexPage = () => (
     <Hero />
     <About />
     <Clients />
+    <Talents />
+    <Info />
   </Layout>
 );
 

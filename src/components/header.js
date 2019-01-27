@@ -70,8 +70,8 @@ const Header = () => {
           `}
         >
           <NavLink>WHAT WE DO</NavLink>
-          <NavLink>TALENTS</NavLink>
           <NavLink>CLIENTS</NavLink>
+          <NavLink>TALENTS</NavLink>
           <NavLink>WORK</NavLink>
           <Button
             raised={!isFixed}

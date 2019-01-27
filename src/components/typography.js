@@ -16,7 +16,7 @@ export const Heading1 = ({ children }) => (
     {children}
   </h1>
 );
-export const Heading2 = ({ children }) => (
+export const Heading2 = ({ children, style, ...props }) => (
   <h3
     css={css`
       font-size: 48px;
@@ -25,8 +25,9 @@ export const Heading2 = ({ children }) => (
       font-stretch: normal;
       line-height: 1.38;
       letter-spacing: normal;
-      color: white;
+      color: ${props.red ? "#a11846" : "white"};
     `}
+    style={style}
   >
     {children}
   </h3>
@@ -47,7 +48,7 @@ export const SubHeading = ({ children }) => (
   </h3>
 );
 
-export const SubHeading2 = ({ children }) => (
+export const SubHeading2 = ({ children, style, ...props }) => (
   <h4
     css={css`
       font-size: 24px;
@@ -56,7 +57,9 @@ export const SubHeading2 = ({ children }) => (
       color: #ffffff;
       margin: 0;
       letter-spacing: normal;
+      color: ${props.red ? "#a11846" : "white"};
     `}
+    style={style}
   >
     {children}
   </h4>

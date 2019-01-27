@@ -11,7 +11,7 @@ import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
 // import { Trail } from "react-spring";
 
-const Hero = () => {
+export default () => {
   return (
     <section
       css={css`
@@ -85,5 +85,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;

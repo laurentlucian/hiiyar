@@ -55,6 +55,25 @@ export const ThirdCurve = props => (
   </svg>
 );
 
+export const ForthCurve = props => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    viewBox="0 0 1627.193 314.075"
+    {...props}
+  >
+    <defs>
+    </defs>
+    <path
+      id="Path_1874"
+      d="M13.513 10.34s-35.86 71.9 601.715 0 1040.429 0 1040.429 0l-5.245 222.624s-111.25-36.876-559.107-50.315S168.532 313.6 8.269 277.762C-27.7 269.718 13.513 10.34 13.513 10.34z"
+      style={{fill: "#fff"}}
+      data-name="Path 1874"
+      transform="translate(2.41 21.726)"
+    />
+  </svg>
+);
+
 export const FooterCurve = props => (
   <svg
     viewBox="0 0 1598 117"
