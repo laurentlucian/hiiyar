@@ -9,6 +9,8 @@ import { FirstCurve as FirstCurveSvg } from "../vectors/curves";
 import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
+
+import WordSlider from "./../components/wordslider";
 // import { Trail } from "react-spring";
 
 export default () => {
@@ -35,10 +37,27 @@ export default () => {
         <WhiteLogoSvg
           css={css`
             width: 128px;
+            animation: fadeInUp both 1s;
+            animation-delay: 300ms;
           `}
         />
-        <Heading1>Taking You Higher</Heading1>
-        <Paragraph white center>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            position: "relative",
+            width: "100%",
+          }}
+        >
+          <WordSlider>
+            <Heading1>Get Higher</Heading1>
+            <Heading1>Get Wider</Heading1>
+            <Heading1>Get Hiiyar</Heading1>
+            <Heading1>We are amazing</Heading1>
+            <Heading1>No. You are.</Heading1>
+          </WordSlider>
+        </div>
+        <Paragraph white center fadeIn={"800ms"}>
           Create real and memorable content to compel the senses through a seamless
           encounter. There is no secret formula behind our successful metrics. <br />
           Let Hiiyar show you higher experiences!
@@ -50,6 +69,8 @@ export default () => {
             margin: 20px 0;
             display: flex;
             justify-content: space-between;
+            animation: fadeInUp both 1s;
+            animation-delay: 1000ms;
           `}
         >
           <Button>For Talents</Button>

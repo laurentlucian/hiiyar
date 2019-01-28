@@ -28,7 +28,7 @@ const Header = () => {
     () => {
       setFixed(position.y > 52 + 15);
     },
-    [position.y]
+    [position.y > 52 + 15]
   );
 
   return (
@@ -42,6 +42,7 @@ const Header = () => {
           padding: 15px;
           background: transparent;
           transition: background-color 50ms;
+          animation: fadeInDown both 1s;
         `,
         isFixed && stickHeader,
       ]}
@@ -77,11 +78,14 @@ const Header = () => {
             raised={!isFixed}
             primary={isFixed}
             style={{ marginLeft: 64 }}
-            shadow={ isFixed && css`
-              &:hover {
-                box-shadow: 0 2px 15px 0 rgba(77, 18, 38, 0.56);
-              }
-            `}
+            shadow={
+              isFixed &&
+              css`
+                &:hover {
+                  box-shadow: 0 2px 15px 0 rgba(77, 18, 38, 0.56);
+                }
+              `
+            }
           >
             Let's Talk
           </Button>

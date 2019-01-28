@@ -11,6 +11,7 @@ export const Heading1 = ({ children }) => (
       line-height: 1.38;
       letter-spacing: 0.1px;
       color: white;
+      margin: 10px;
     `}
   >
     {children}
@@ -80,21 +81,23 @@ export const SubHeading2 = ({ children, style, ...props }) => (
   </h4>
 );
 
-export const Paragraph = ({ children, as, bold, heading, ...props }) => {
+export const Paragraph = ({ children, as, ...props }) => {
   const Component = as ? as : "p";
   return (
     <Component
       css={css`
         margin: 5px 0;
-        font-size: ${heading ? "21px" : "16px"};
-        font-weight: ${bold ? "bold" : "normal"};
+        font-size: ${props.heading ? "21px" : "16px"};
+        font-weight: ${props.bold ? "bold" : "normal"};
         font-style: normal;
         font-stretch: normal;
-        line-height: ${heading ? 1.3 : 1.5};
+        line-height: ${props.heading ? 1.3 : 1.5};
         letter-spacing: normal;
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};
         color: ${props.white ? "rgba(255, 255, 255, .8)" : "#4d4d4d"};
+        animation: ${props.fadeIn ? "fadeInUp 1s both" : "none"};
+        animation-delay: ${typeof props.fadeIn === "string" ? props.fadeIn : 0};
       `}
     >
       {children}

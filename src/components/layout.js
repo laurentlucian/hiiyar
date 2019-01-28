@@ -27,6 +27,30 @@ const Layout = ({ children }) => (
                 Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
                 Segoe UI Symbol;
             }
+
+            @keyframes fadeInUp {
+              from {
+                opacity: 0;
+                transform: translate3d(0, 20%, 0);
+              }
+
+              to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+              }
+            }
+
+            @keyframes fadeInDown {
+              from {
+                opacity: 0;
+                transform: translate3d(0, -20%, 0);
+              }
+
+              to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+              }
+            }
           `}
         />
         <Header siteTitle={data.site.siteMetadata.title} />
