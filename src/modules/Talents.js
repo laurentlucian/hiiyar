@@ -4,7 +4,7 @@ import Content from "../components/content";
 
 import Button from "../components/button";
 import TalentBoySvg from "../vectors/talent-boy";
-import { Heading2, Paragraph2, SubHeading2 } from "../components/typography";
+import { Heading2, Paragraph, SubHeading2 } from "../components/typography";
 import TalentRocketSvg from "../vectors/talent-rocket";
 import TalentSpeakerSvg from "../vectors/talent-speaker";
 import TalentGraphSvg from "../vectors/talent-graph";
@@ -16,7 +16,7 @@ export default () => (
       position: relative;
       width: 100%;
       object-fit: contain;
-      padding-bottom: 250px;
+      padding-bottom: 100px;
     `}
   >
     <ThirdCurveSvg
@@ -24,7 +24,6 @@ export default () => (
         position: absolute;
         top: 1px;
         transform: translateY(-100%);
-        pointer-events: none;
       `}
     />
     <Content
@@ -60,20 +59,16 @@ export default () => (
             <TalentRocketSvg
               css={css`
                 width: 100px;
-                height: 109px;
-                margin-right: 23.9px;
+                margin-right: 25px;
+                flex-shrink: 0;
               `}
             />
-            <div
-              css={css`
-                width: 400px;
-              `}
-            >
+            <div>
               <SubHeading2 red>Influencer Marketing</SubHeading2>
-              <Paragraph2 red>
+              <Paragraph>
                 Partner with Hiiyar’s team to create and distribute compelling sponsored
                 content that speaks your brand story.
-              </Paragraph2>
+              </Paragraph>
             </div>
           </div>
           <div
@@ -84,19 +79,19 @@ export default () => (
           >
             <TalentSpeakerSvg
               css={css`
-                width: 160px;
-                height: 160px;
-                margin-right: 35.4px;
+                width: 100px;
+                margin-right: 25px;
+                flex-shrink: 0;
               `}
             />
             <div>
               <SubHeading2 red>Custom Content</SubHeading2>
-              <Paragraph2 red>
+              <Paragraph red>
                 Access our design and production team to produce anything that you may
                 need to better elevate your messaging. We create assets, videos,
                 infographics, landers and other marketing initiatives to better suit your
                 needs.
-              </Paragraph2>
+              </Paragraph>
             </div>
           </div>
           <div
@@ -107,25 +102,36 @@ export default () => (
           >
             <TalentGraphSvg
               css={css`
-                width: 94px;
-                height: 152px;
-                margin-right: 29.2px;
+                width: 100px;
+                margin-right: 25px;
+                flex-shrink: 0;
               `}
             />
             <div>
               <SubHeading2 red>Performance</SubHeading2>
-              <Paragraph2 red as="div">
+              <Paragraph as="div">
                 <ul
                   css={css`
                     margin: 0;
-                    padding: 0 0 0 18px;
+                    padding: 0;
+                    list-style: none;
+                    position: relative;
+                    & li:before {
+                      content: "✓";
+                      font-size: 14px;
+                      position: absolute;
+                      left: -15px;
+                      margin-top: 2px;
+
+                      color: rgba(0, 0, 0, 0.6);
+                    }
                   `}
                 >
                   <li>Audience Insights</li>
                   <li>Growth Measurement</li>
                   <li>Content Analysis </li>
                 </ul>
-              </Paragraph2>
+              </Paragraph>
             </div>
           </div>
         </div>

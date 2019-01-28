@@ -1,8 +1,7 @@
 import React from "react";
 
 export default props => (
-  <svg width="100%" {...props}>
-    <defs />
+  <svg {...props}>
     <g
       id="prefix__Group_1511"
       data-name="Group 1511"

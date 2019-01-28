@@ -1,8 +1,7 @@
 import React from "react";
 
 export default props => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 72 70.799" {...props}>
-    <defs />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 70.799" {...props}>
     <g id="Group_1567" data-name="Group 1567" transform="translate(-265 -4111.809)">
       <g id="Group_1518" data-name="Group 1518" transform="translate(-295.854 3816.072)">
         <rect

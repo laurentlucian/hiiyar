@@ -17,7 +17,6 @@ class Number extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <VisibilitySensor
         offset={{ top: -20 }}
@@ -34,7 +33,7 @@ class Number extends React.Component {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                fontSize: "53px",
+                fontSize: "31px",
                 fontWeight: "bold",
                 lineHeight: 1.38,
                 color: "#ffffff",
@@ -46,7 +45,7 @@ class Number extends React.Component {
               style={{
                 display: "flex",
                 justifyContent: "center",
-                fontSize: "53px",
+                fontSize: "31px",
                 fontWeight: "bold",
                 lineHeight: 1.38,
                 color: "#ffffff",

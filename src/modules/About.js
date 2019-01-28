@@ -11,7 +11,7 @@ export default () => (
   <section
     css={css`
       position: relative;
-      padding: 240px 0 10px;
+      padding: 150px 0 10px;
     `}
   >
     <Content
@@ -31,7 +31,7 @@ export default () => (
           margin-right: 60px;
         `}
       >
-        <SubHeading>For Talents</SubHeading>
+        <SubHeading red>For Talents</SubHeading>
         <Paragraph style={{ marginBottom: "17px" }}>
           is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
           been the industry's standard dummy text ever since the 1500s, when an unknown
@@ -63,7 +63,7 @@ export default () => (
           margin-left: 60px;
         `}
       >
-        <SubHeading>For Clients</SubHeading>
+        <SubHeading red>For Clients</SubHeading>
         <Paragraph style={{ marginBottom: "17px" }}>
           is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
           been the industry's standard dummy text ever since the 1500s, when an unknown
