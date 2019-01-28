@@ -10,14 +10,14 @@ export default () => (
       position: relative;
     `}
   >
-    <FifthCurveSvg
+    {/* <FifthCurveSvg
       css={css`
         position: absolute;
-        top: -50px;
-        transform: translateY(0%);
-        fill: blue;
+        top: 0;
+        transform: translateY(-100%);
+        fill: white;
       `}
-    />
+    /> */}
     <Content
       css={css`
         display: flex;
@@ -25,7 +25,7 @@ export default () => (
         height: 300px;
       `}
     >
-      <Heading2>Work</Heading2>
+      <Heading2 red>Work</Heading2>
     </Content>
   </section>
 );

@@ -1,20 +1,7 @@
 import React from "react";
 
 export default props => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="100%"
-    viewBox="0 0 84.057 87.213"
-    {...props}
-  >
-    <defs>
-      <style>
-        {/* .cls-1{fill:#ffbe2e}
-            .cls-2{fill:#4d1226}
-            .cls-3{fill:#a11846}
-            .cls-4{fill:#16110d} */}
-      </style>
-    </defs>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84.057 87.213" {...props}>
     <g id="Group_1512" data-name="Group 1512" transform="translate(-15.397)">
       <g id="Group_1371" data-name="Group 1371" transform="translate(29.667)">
         <path

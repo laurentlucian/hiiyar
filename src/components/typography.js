@@ -33,13 +33,13 @@ export const Heading2 = ({ children, style, ...props }) => (
   </h3>
 );
 
-export const SubHeading = ({ children }) => (
+export const SubHeading = ({ children, ...props }) => (
   <h3
     css={css`
       font-size: 24px;
       font-weight: 900;
       line-height: 1.33;
-      color: #4d1226;
+      color: ${props.red ? "#4d1226;" : "white"};
       text-transform: uppercase;
       margin: 0;
     `}
@@ -65,40 +65,21 @@ export const SubHeading2 = ({ children, style, ...props }) => (
   </h4>
 );
 
-export const Paragraph = ({ children, ...props }) => {
+export const Paragraph = ({ children, as, bold, ...props }) => {
+  const Component = as ? as : "p";
   return (
-    <p
+    <Component
       css={css`
+        margin: 5px 0;
         font-size: 16px;
-        font-weight: normal;
+        font-weight: ${bold ? "bold" : "normal"};
         font-style: normal;
         font-stretch: normal;
         line-height: 1.38;
         letter-spacing: normal;
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};
-        color: ${props.white ? "white" : "#4d4d4d"};
-      `}
-    >
-      {children}
-    </p>
-  );
-};
-export const Paragraph2 = ({ children, as, ...props }) => {
-  const Component = as ? as : "p";
-
-  return (
-    <Component
-      css={css`
-        font-size: 16px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        letter-spacing: normal;
-        max-width: 800px;
-        text-align: left;
-        color: ${props.white ? "white" : "#a11846"};
+        color: ${props.white ? "rgba(255, 255, 255, .8)" : "#4d4d4d"};
       `}
     >
       {children}

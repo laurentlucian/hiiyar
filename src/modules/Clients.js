@@ -5,7 +5,7 @@ import Content from "../components/content";
 import { SecondCurve as SecondCurveSvg } from "../vectors/curves";
 import Button from "../components/button";
 import ClientBoySvg from "../vectors/client-boy";
-import { Heading2, Paragraph2, SubHeading2 } from "../components/typography";
+import { Heading2, Paragraph, SubHeading2 } from "../components/typography";
 import ClientChatSvg from "../vectors/client-chat";
 import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
@@ -63,18 +63,15 @@ export default () => (
                 width: 100px;
                 height: 109px;
                 margin-right: 23.9px;
+                flex-shrink: 0;
               `}
             />
-            <div
-              css={css`
-                width: 400px;
-              `}
-            >
+            <div>
               <SubHeading2>Influencer Marketing</SubHeading2>
-              <Paragraph2 white>
+              <Paragraph white>
                 Partner with Hiiyar’s team to create and distribute compelling sponsored
                 content that speaks your brand story.
-              </Paragraph2>
+              </Paragraph>
             </div>
           </div>
           <div
@@ -92,12 +89,12 @@ export default () => (
             />
             <div>
               <SubHeading2>Custom Content</SubHeading2>
-              <Paragraph2 white>
+              <Paragraph white>
                 Access our design and production team to produce anything that you may
                 need to better elevate your messaging. We create assets, videos,
                 infographics, landers and other marketing initiatives to better suit your
                 needs.
-              </Paragraph2>
+              </Paragraph>
             </div>
           </div>
           <div
@@ -115,18 +112,28 @@ export default () => (
             />
             <div>
               <SubHeading2>Performance</SubHeading2>
-              <Paragraph2 white as="div">
+              <Paragraph white as="div">
                 <ul
                   css={css`
                     margin: 0;
-                    padding: 0 0 0 18px;
+                    padding: 0;
+                    list-style: none;
+                    position: relative;
+                    & li:before {
+                      content: "✓";
+                      font-size: 14px;
+                      position: absolute;
+                      left: -15px;
+                      margin-top: 2px;
+                      color: rgba(0, 0, 0, 0.3);
+                    }
                   `}
                 >
                   <li>Audience Insights</li>
                   <li>Growth Measurement</li>
                   <li>Content Analysis </li>
                 </ul>
-              </Paragraph2>
+              </Paragraph>
             </div>
           </div>
         </div>
