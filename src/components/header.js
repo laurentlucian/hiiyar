@@ -1,11 +1,27 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Content from "./content";
 import LogoSvg from "../vectors/logo";
 import HiiyarSvg from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import Button from "./../components/button";
 import { NavLink } from "./typography";
-import useWindowScrollPosition from "@rehooks/window-scroll-position";
+import _throttle from "lodash.throttle";
+
+let supportsPassive = false;
+try {
+  const opts = Object.defineProperty({}, "passive", {
+    get: function() {
+      supportsPassive = true;
+    },
+  });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
+
+const getPosition = () => ({
+  x: typeof window === "undefined" ? 0 : window.pageXOffset,
+  y: typeof window === "undefined" ? 0 : window.pageYOffset,
+});
 
 const stickHeader = css`
   position: fixed;
@@ -22,7 +38,28 @@ const stickHeader = css`
 
 const Header = () => {
   const [isFixed, setFixed] = useState(false);
-  const position = useWindowScrollPosition({ throttle: 50 });
+
+  // @todo: move this to a new hook
+
+  const [position, setPosition] = useState(getPosition());
+  let handleScroll = _throttle(() => {
+    setPosition(getPosition());
+  }, 50);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      supportsPassive ? { passive: true } : false
+    );
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  // /@todo
 
   useMemo(
     () => {
