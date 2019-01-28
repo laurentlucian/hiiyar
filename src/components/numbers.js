@@ -1,19 +1,33 @@
 import React from "react";
-import { css } from "@emotion/core";
-import Button from "./button";
 
-import CountUp, { start } from "react-countup";
-import VisibilitySensor, { onVisibilityChange } from "react-visibility-sensor";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 
 class Number extends React.Component {
-  onVisibilityChange(isVisible) {}
+  state = {
+    done: false,
+  };
+
+  onVisibilityChange = isVisible => {
+    if (isVisible) this.timeout = setTimeout(this.setState({ done: true }), 6000);
+  };
+
+  componentWillUnmount() {
+    if (this.timeout) clearTimeout(this.timeout);
+  }
 
   render() {
+    console.log(this.state);
     return (
-      <VisibilitySensor>
+      <VisibilitySensor
+        offset={{ top: -20 }}
+        partialVisibility={true}
+        onChange={this.onVisibilityChange}
+      >
         {({ isVisible }) =>
           isVisible ? (
             <CountUp
+              start={this.state.done ? this.props.value : 0}
               end={this.props.value}
               duration={this.props.duration}
               separator=","
@@ -28,7 +42,19 @@ class Number extends React.Component {
               }}
             />
           ) : (
-            <div>not</div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                fontSize: "53px",
+                fontWeight: "bold",
+                lineHeight: 1.38,
+                color: "#ffffff",
+                width: "283px",
+              }}
+            >
+              0
+            </div>
           )
         }
       </VisibilitySensor>

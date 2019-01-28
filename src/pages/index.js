@@ -7,6 +7,8 @@ import About from "../modules/About";
 import Clients from "../modules/Clients";
 import Talents from "../modules/Talents";
 import Info from "../modules/Info";
+import Work from "../modules/Work";
+import Brands from "../modules/Brands";
 
 const IndexPage = () => (
   <Layout>
@@ -16,6 +18,8 @@ const IndexPage = () => (
     <Clients />
     <Talents />
     <Info />
+    <Work />
+    <Brands />
   </Layout>
 );
 
