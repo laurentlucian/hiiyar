@@ -4,6 +4,7 @@ module.exports = {
     description: `Let Hiiyar show you higher experiences.`,
     author: `Pierre Andreis, Laurent Lucian`,
   },
+  pathPrefix: "/h-web",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -41,6 +42,7 @@ module.exports = {
         },
       },
     },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

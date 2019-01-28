@@ -135,7 +135,7 @@ export default () => (
         </div>
       </div>
 
-      <SubHeading2 style={{ marginTop: 50, marginBottom: 15 }}>Trusted by...</SubHeading2>
+      <SubHeading2 style={{ marginTop: 50, marginBottom: 15 }}>Trusted by</SubHeading2>
       <div
         css={css`
           display: flex;
