@@ -134,15 +134,15 @@ export default () => (
           justify-content: space-around;
           img {
             opacity: 0.4;
-            margin: 0 15px;
+            margin: 0 30px;
           }
         `}
       >
-        <img src={eaLogo} />
-        <img src={espLogo} />
-        <img src={netEaseLogo} />
-        <img src={sunlockLogo} />
-        <img src={tencentLogo} />
+        <img src={tencentLogo} width="160" />
+        <img src={eaLogo} width="70" />
+        <img src={netEaseLogo} width="163" />
+        <img src={espLogo} width="70" />
+        <img src={sunlockLogo} width="140" />
       </div>
     </Content>
   </section>
