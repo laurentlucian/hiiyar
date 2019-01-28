@@ -1,7 +1,7 @@
 import React from "react";
 
 export default props => (
-  <svg {...props}>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 79.79 93.055" {...props}>
     <g
       id="prefix__Group_1511"
       data-name="Group 1511"

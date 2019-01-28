@@ -17,7 +17,7 @@ export const Heading1 = ({ children }) => (
   </h1>
 );
 export const Heading2 = ({ children, style, ...props }) => (
-  <h3
+  <h2
     css={css`
       font-size: 48px;
       font-weight: 900;
@@ -30,6 +30,21 @@ export const Heading2 = ({ children, style, ...props }) => (
     style={style}
   >
     {children}
+  </h2>
+);
+
+export const Heading3 = ({ children, style, ...props }) => (
+  <h3
+    css={css`
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 1.38;
+      color: ${props.red ? "#841738" : "rgba(255, 255, 255, 1)"};
+      margin-bottom: 10px;
+    `}
+    style={style}
+  >
+    {children}
   </h3>
 );
 
@@ -37,7 +52,7 @@ export const SubHeading = ({ children, ...props }) => (
   <h3
     css={css`
       font-size: 24px;
-      font-weight: 900;
+      font-weight: 800;
       line-height: 1.33;
       color: ${props.red ? "#4d1226;" : "white"};
       text-transform: uppercase;
@@ -51,7 +66,7 @@ export const SubHeading = ({ children, ...props }) => (
 export const SubHeading2 = ({ children, style, ...props }) => (
   <h4
     css={css`
-      font-size: 24px;
+      font-size: 18px;
       font-weight: bold;
       line-height: 1.33;
       color: #ffffff;
@@ -65,17 +80,17 @@ export const SubHeading2 = ({ children, style, ...props }) => (
   </h4>
 );
 
-export const Paragraph = ({ children, as, bold, ...props }) => {
+export const Paragraph = ({ children, as, bold, heading, ...props }) => {
   const Component = as ? as : "p";
   return (
     <Component
       css={css`
         margin: 5px 0;
-        font-size: 16px;
+        font-size: ${heading ? "21px" : "16px"};
         font-weight: ${bold ? "bold" : "normal"};
         font-style: normal;
         font-stretch: normal;
-        line-height: 1.38;
+        line-height: ${heading ? 1.3 : 1.5};
         letter-spacing: normal;
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};

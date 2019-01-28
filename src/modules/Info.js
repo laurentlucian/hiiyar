@@ -43,6 +43,7 @@ export default () => (
       width: 100%;
       object-fit: contain;
       padding: 50px;
+
       /* padding: 100px 0 200px; */
     `}
   >

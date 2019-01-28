@@ -4,7 +4,7 @@ import Content from "../components/content";
 
 import Button from "../components/button";
 import TalentBoySvg from "../vectors/talent-boy";
-import { Heading2, Paragraph, SubHeading2 } from "../components/typography";
+import { Heading3, Paragraph, SubHeading2 } from "../components/typography";
 import TalentRocketSvg from "../vectors/talent-rocket";
 import TalentSpeakerSvg from "../vectors/talent-speaker";
 import TalentGraphSvg from "../vectors/talent-graph";
@@ -34,9 +34,15 @@ export default () => (
         justify-content: center;
       `}
     >
-      <Heading2 red style={{ marginTop: 0 }}>
-        Talents
-      </Heading2>
+      <div>
+        <Heading3 red style={{ margin: 0, textAlign: "center" }}>
+          Solutions for Talents
+        </Heading3>
+        <Paragraph heading center>
+          As a tecnology focused company, Hiiyar gives talents the tools and technology to
+          build better and reach higher.
+        </Paragraph>
+      </div>
       <div
         css={css`
           display: flex;
@@ -48,17 +54,18 @@ export default () => (
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-around;
+            margin-right: 50px;
           `}
         >
           <div
             css={css`
               display: flex;
-              align-items: center;
+              align-items: flex-start;
             `}
           >
             <TalentRocketSvg
               css={css`
-                width: 100px;
+                width: 50px;
                 margin-right: 25px;
                 flex-shrink: 0;
               `}
@@ -74,12 +81,12 @@ export default () => (
           <div
             css={css`
               display: flex;
-              align-items: center;
+              align-items: flex-start;
             `}
           >
             <TalentSpeakerSvg
               css={css`
-                width: 100px;
+                width: 50px;
                 margin-right: 25px;
                 flex-shrink: 0;
               `}
@@ -97,12 +104,12 @@ export default () => (
           <div
             css={css`
               display: flex;
-              align-items: center;
+              align-items: flex-start;
             `}
           >
             <TalentGraphSvg
               css={css`
-                width: 100px;
+                width: 50px;
                 margin-right: 25px;
                 flex-shrink: 0;
               `}
@@ -137,7 +144,7 @@ export default () => (
         </div>
         <TalentBoySvg
           css={css`
-            height: 624.7px;
+            height: 500px;
           `}
         />
       </div>

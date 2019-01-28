@@ -5,7 +5,7 @@ import Content from "../components/content";
 import { SecondCurve as SecondCurveSvg } from "../vectors/curves";
 import Button from "../components/button";
 import ClientBoySvg from "../vectors/client-boy";
-import { Heading2, Paragraph, SubHeading2 } from "../components/typography";
+import { Heading3, Paragraph, SubHeading2 } from "../components/typography";
 import ClientChatSvg from "../vectors/client-chat";
 import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
@@ -38,7 +38,15 @@ export default () => (
         flex-direction: column;
       `}
     >
-      <Heading2>Clients</Heading2>
+      <div>
+        <Heading3 white style={{ textAlign: "center" }}>
+          Solutions for Clients
+        </Heading3>
+        <Paragraph white heading center>
+          As a tecnology focused company, Hiiyar gives talents the tools and technology to
+          build better and reach higher.
+        </Paragraph>
+      </div>
       <div
         css={css`
           display: flex;
@@ -50,19 +58,19 @@ export default () => (
             display: flex;
             flex-flow: column nowrap;
             justify-content: space-around;
+            margin-right: 50px;
           `}
         >
           <div
             css={css`
               display: flex;
-              align-items: center;
+              align-items: flex-start;
             `}
           >
             <ClientChatSvg
               css={css`
-                width: 100px;
-                height: 109px;
-                margin-right: 23.9px;
+                width: 50px;
+                margin-right: 25px;
                 flex-shrink: 0;
               `}
             />
@@ -77,14 +85,14 @@ export default () => (
           <div
             css={css`
               display: flex;
-              align-items: center;
+              align-items: flex-start;
             `}
           >
             <ClientIdeaSvg
               css={css`
-                width: 160px;
-                height: 160px;
-                margin-right: 35.4px;
+                width: 50px;
+                margin-right: 25px;
+                flex-shrink: 0;
               `}
             />
             <div>
@@ -100,14 +108,14 @@ export default () => (
           <div
             css={css`
               display: flex;
-              align-items: center;
+              align-items: flex-start;
             `}
           >
             <ClientPizzaSvg
               css={css`
-                width: 94px;
-                height: 152px;
-                margin-right: 29.2px;
+                width: 50px;
+                margin-right: 25px;
+                flex-shrink: 0;
               `}
             />
             <div>
@@ -139,7 +147,7 @@ export default () => (
         </div>
         <ClientBoySvg
           css={css`
-            height: 624.7px;
+            height: 500px;
           `}
         />
       </div>
