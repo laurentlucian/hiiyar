@@ -1,19 +1,11 @@
 import React from "react";
-import CountUp from "react-countup";
 import { css } from "@emotion/core";
 import Content from "../components/content";
-import { Heading2, SubHeading, SubHeading2 } from "../components/typography";
+import { SubHeading2 } from "../components/typography";
 import InfoYoutubeSvg from "../vectors/info-youtube";
 import InfoTwitchSvg from "../vectors/info-twitch";
 import InfoStarSvg from "../vectors/info-star";
 import { FifthCurve as ForthCurveSvg } from "../vectors/curves";
-
-import WorldMapSvg from "../vectors/worldMap";
-
-import Button from "../components/button";
-
-import VisibilitySensor from "react-visibility-sensor";
-import Numbers from "../components/numbers";
 
 import worldMap from "../images/worldMap.svg";
 import eaLogo from "../images/clients/ea.svg";
@@ -146,27 +138,12 @@ export default () => (
           }
         `}
       >
-        <img src={tencentLogo} width="160" />
-        <img src={eaLogo} width="70" />
-        <img src={netEaseLogo} width="163" />
-        <img src={espLogo} width="70" />
-        <img src={sunlockLogo} width="140" />
+        <img src={tencentLogo} width="160" alt="CompanyLogo" />
+        <img src={eaLogo} width="70" alt="CompanyLogo" />
+        <img src={netEaseLogo} width="163" alt="CompanyLogo" />
+        <img src={espLogo} width="70" alt="CompanyLogo" />
+        <img src={sunlockLogo} width="140" alt="CompanyLogo" />
       </div>
-
-      {/* <WorldMapSvg
-        css={css`
-          position: absolute;
-          pointer-events: none;
-          top: 50%;
-          transform: translateY(-50%);
-
-          fill: hsl(340, 74%, 36%);
-          fill: hsl(340, 65%, 77%);
-          fill: hsl(335, 36%, 47%);
-          width: 450px;
-          z-index: 1;
-        `}
-      /> */}
     </Content>
   </section>
 );

@@ -1,5 +1,4 @@
 import React from "react";
-import { css } from "@emotion/core";
 import Content from "../components/content";
 import { Heading2 } from "../components/typography";
 
