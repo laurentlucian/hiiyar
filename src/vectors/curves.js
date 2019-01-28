@@ -66,20 +66,20 @@ export const ForthCurve = props => (
 
 export const FifthCurve = props => (
   <svg
-    viewBox="0 0 1667.193 334.075"
+    style={{ pointerEvents: "none" }}
+    viewBox="0 0 1650 106"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ pointerEvents: "none" }}
     {...props}
   >
+        
     <g>
+                  
       <path
-        id="Path_1874"
-        d="M13.513 10.34s-35.86 71.9 601.715 0 1040.429 0 1040.429 0l-5.245 222.624s-111.25-36.876-559.107-50.315S168.532 313.6 8.269 277.762C-27.7 269.718 13.513 10.34 13.513 10.34z"
-        class="cls-1"
-        data-name="Path 1874"
-        transform="translate(11.41 21.726)"
+        d="M0,0 L1650,0 L1650,54.581 C1650,54.581 1540.951,17.705 1093.094,4.266 C645.237,-9.173 170.325,135.217 10.057,99.378 C6.48913136,98.580236 3.13679803,95.454236 0,90 L0,0 Z"
+        id="Path_1875"
       />
+          
     </g>
   </svg>
 );
