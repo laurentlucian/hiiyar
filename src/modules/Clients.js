@@ -34,7 +34,7 @@ export default () => (
         justify-content: center;
         align-items: center;
         font-size: 48px;
-        padding: 140px 0 250px;
+        padding: 100px 0 250px;
         flex-direction: column;
       `}
     >

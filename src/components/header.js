@@ -38,6 +38,13 @@ const stickHeader = css`
   }
 `;
 
+const goTo = name => e => {
+  e.preventDefault();
+
+  const section = document.getElementById(name);
+  if (section) section.scrollIntoView({ behavior: "smooth" });
+};
+
 const Header = () => {
   const [isFixed, setFixed] = useState(false);
 
@@ -112,13 +119,25 @@ const Header = () => {
             margin-left: auto;
           `}
         >
-          <NavLink href="#about" active={activeRouter === "about"}>
+          <NavLink
+            onClick={goTo("about")}
+            href="#about"
+            active={activeRouter === "about"}
+          >
             WHAT WE DO
           </NavLink>
-          <NavLink href="#clients" active={activeRouter === "clients"}>
+          <NavLink
+            onClick={goTo("clients")}
+            href="#clients"
+            active={activeRouter === "clients"}
+          >
             CLIENTS
           </NavLink>
-          <NavLink href="#talents" active={activeRouter === "talents"}>
+          <NavLink
+            onClick={goTo("talents")}
+            href="#talents"
+            active={activeRouter === "talents"}
+          >
             TALENTS
           </NavLink>
           <Button
