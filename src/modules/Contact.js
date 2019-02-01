@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { Heading2 } from "../components/typography";
+import { Heading3 } from "../components/typography";
 import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 
@@ -25,7 +25,7 @@ export default () => (
         height: 300px;
       `}
     >
-      <Heading2 red>Work</Heading2>
+      <Heading3 red>Ready to talk?</Heading3>
     </Content>
   </section>
 );

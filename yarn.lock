@@ -838,12 +838,6 @@
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
 
-"@rehooks/window-scroll-position@https://github.com/rehooks/window-scroll-position":
-  version "1.0.0"
-  resolved "https://github.com/rehooks/window-scroll-position#0d935b8cbc8c215c6d832d31bc3150896e4e50d9"
-  dependencies:
-    lodash.throttle "^4.1.1"
-
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -10127,6 +10121,11 @@ slice-ansi@2.0.0:
     ansi-styles "^3.2.0"
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
+
+smoothscroll-polyfill@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.3.tgz#94e5f2d604efcceb53f23ff0380d7ea7280d4bff"
+  integrity sha512-aUg0sY8XlWw9reC3VGlVdmC9W4K565alN4t8Cm50kULz53NB4GvsZbrinWPLqYqLolY60NBdqHDyh89MqDUc/Q==
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

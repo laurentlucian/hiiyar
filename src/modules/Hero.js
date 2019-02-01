@@ -50,17 +50,18 @@ export default () => {
           }}
         >
           <WordSlider>
-            <Heading1>Get Higher</Heading1>
-            <Heading1>Get Wider</Heading1>
+            <Heading1>We're Hiiyar</Heading1>
+            <Heading1>We're Hiiyar</Heading1>
             <Heading1>Get Hiiyar</Heading1>
             <Heading1>We are amazing</Heading1>
             <Heading1>No. You are.</Heading1>
           </WordSlider>
         </div>
         <Paragraph white center fadeIn={"800ms"}>
-          Create real and memorable content to compel the senses through a seamless
-          encounter. There is no secret formula behind our successful metrics. <br />
-          Let Hiiyar show you higher experiences!
+          Great storytelling runs in our DNA. We come from a background of game
+          developers, game marketers and industry influencers. Our expertise combines
+          powerful creative with metric-driven leads to create compelling content with
+          measurable results.
         </Paragraph>
 
         <div

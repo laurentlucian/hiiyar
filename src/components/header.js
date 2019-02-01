@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useContext } from "react";
 import Content from "./content";
 import LogoSvg from "../vectors/logo";
 import HiiyarSvg from "../vectors/hiiyar";
@@ -6,6 +6,7 @@ import { css } from "@emotion/core";
 import Button from "./../components/button";
 import { NavLink } from "./typography";
 import _throttle from "lodash.throttle";
+import { RouterContext } from "../pages/index";
 
 let supportsPassive = false;
 try {
@@ -40,6 +41,7 @@ const stickHeader = css`
 const Header = () => {
   const [isFixed, setFixed] = useState(false);
 
+  const [activeRouter] = useContext(RouterContext);
   // @todo: move this to a new hook
 
   const [position, setPosition] = useState(getPosition());
@@ -68,6 +70,8 @@ const Header = () => {
     },
     [position.y > 52 + 15]
   );
+
+  console.log("active=", activeRouter);
 
   return (
     <header
@@ -108,10 +112,15 @@ const Header = () => {
             margin-left: auto;
           `}
         >
-          <NavLink>WHAT WE DO</NavLink>
-          <NavLink>CLIENTS</NavLink>
-          <NavLink>TALENTS</NavLink>
-          <NavLink>WORK</NavLink>
+          <NavLink href="#about" active={activeRouter === "about"}>
+            WHAT WE DO
+          </NavLink>
+          <NavLink href="#clients" active={activeRouter === "clients"}>
+            CLIENTS
+          </NavLink>
+          <NavLink href="#talents" active={activeRouter === "talents"}>
+            TALENTS
+          </NavLink>
           <Button
             raised={!isFixed}
             primary={isFixed}

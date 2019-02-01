@@ -11,7 +11,7 @@ export const Heading1 = ({ children }) => (
       line-height: 1.38;
       letter-spacing: 0.1px;
       color: white;
-      margin: 10px;
+      margin: 20px 0;
     `}
   >
     {children}
@@ -105,16 +105,30 @@ export const Paragraph = ({ children, as, ...props }) => {
   );
 };
 
-export const NavLink = ({ children, ...props }) => {
+export const NavLink = ({ children, active, ...props }) => {
   return (
     <a
       css={css`
+        position: relative;
         font-weight: 900;
         margin: 0 15px;
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02px;
+        text-decoration: none;
         color: ${props.red ? "#8f1840" : "#ffffff"};
+        padding-bottom: 10px;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-radius: 35px;
+          width: 60%;
+          height: 5px;
+          background: ${active ? "#961741" : "transparent"};
+        }
       `}
       {...props}
     >

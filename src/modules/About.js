@@ -14,67 +14,78 @@ export default () => (
       padding: 150px 0 10px;
     `}
   >
-    <Content
-      css={css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-      `}
-    >
+    <Content>
       <div
         css={css`
           display: flex;
-          flex-direction: column;
-          width: 450px;
-          align-items: flex-start;
-          margin-right: 60px;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          margin-top: 50px;
         `}
       >
-        <SubHeading red>For Talents</SubHeading>
-        <Paragraph style={{ marginBottom: "17px" }}>
-          is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry's standard dummy text ever since the 1500s, when an unknown
-          printer took a galley
-        </Paragraph>
-        <Button CTA>Learn More</Button>
-      </div>
-      <AboutGirlSvg />
-    </Content>
-    <Content
-      css={css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-      `}
-    >
-      <AboutBoySvg
-        css={css`
-          margin-top: 8px;
-        `}
-      />
-      <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-          width: 450px;
-          align-items: flex-start;
-          margin-left: 60px;
-        `}
-      >
-        <SubHeading red>For Clients</SubHeading>
-        <Paragraph style={{ marginBottom: "17px" }}>
-          is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          been the industry's standard dummy text ever since the 1500s, when an unknown
-          printer took a galley
-        </Paragraph>
-        <Button
-          CTA
-          style={{ backgroundImage: "linear-gradient(287deg, #4d1226, #4d1226" }}
+        <div
+          css={css`
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            align-items: flex-start;
+            margin-right: 60px;
+          `}
         >
-          Learn More
-        </Button>
+          <SubHeading red>For Talents</SubHeading>
+          <Paragraph style={{ marginBottom: "17px" }}>
+            We understand the unique needs of content creators across all gaming
+            verticals. Our team supports you by combining hands-on strategic experience
+            using industry leading tools to maximize your content monetization potential
+            and building lasting brand relationships. <br /> <br />
+            Speak to us today to formulate a growth strategy, we’re dedicated to serving
+            our talent with best practices in an ever evolving space.
+          </Paragraph>
+          <Button CTA style={{ margin: "10px 0" }}>
+            Learn More
+          </Button>
+        </div>
+        <AboutGirlSvg />
+      </div>
+      <div
+        css={css`
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          margin-top: 150px;
+        `}
+      >
+        <AboutBoySvg
+          css={css`
+            margin-top: 8px;
+          `}
+        />
+        <div
+          css={css`
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            align-items: flex-start;
+            margin-left: 60px;
+          `}
+        >
+          <SubHeading red>For Clients</SubHeading>
+          <Paragraph style={{ marginBottom: "17px" }}>
+            Influencer marketing doesn’t have to be so complicated. Hiiyar makes it easy
+            by providing end-to-end influencer services for your brand. From planning and
+            casting to executing and reporting, our end-to-end service delivers your
+            brand’s unique campaign objectives across all channels. <br /> <br />
+            Faster and more efficient than producing in-house creatives we take in
+            learnings from across the industry to tailor campaigns designed for your
+            brand, our mission to tap into first-to-market territories have cemented us as
+            the go-to for clients.
+          </Paragraph>
+          <Button CTA style={{ margin: "10px 0" }}>
+            Learn More
+          </Button>
+        </div>
       </div>
     </Content>
   </section>

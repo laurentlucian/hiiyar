@@ -38,7 +38,7 @@ export default () => (
         flex-direction: column;
       `}
     >
-      <div>
+      <div style={{ margin: "50px 0" }}>
         <Heading3 white style={{ textAlign: "center" }}>
           Solutions for Clients
         </Heading3>

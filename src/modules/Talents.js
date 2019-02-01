@@ -34,7 +34,7 @@ export default () => (
         justify-content: center;
       `}
     >
-      <div>
+      <div style={{ margin: "50px 0" }}>
         <Heading3 red style={{ margin: 0, textAlign: "center" }}>
           Solutions for Talents
         </Heading3>

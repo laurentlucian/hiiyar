@@ -24,7 +24,8 @@
     "react-dom": "^16.8.0-alpha.1",
     "react-helmet": "^5.2.0",
     "react-spring": "7.2.8",
-    "react-visibility-sensor": "^5.0.2"
+    "react-visibility-sensor": "^5.0.2",
+    "smoothscroll-polyfill": "^0.4.3"
   },
   "keywords": [
     "gatsby"

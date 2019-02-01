@@ -23,7 +23,7 @@ export default props => {
       keys={item => item}
       native
       delay={500}
-      config={{ duration: 700 }}
+      config={{ duration: 300 }}
       from={{ transform: "translate3d(0,20px,0)", opacity: 0 }}
       enter={{ transform: "translate3d(0,0px,0)", opacity: 1 }}
       leave={{
