@@ -1,29 +1,11 @@
-import React, { useState, useEffect, useMemo, useContext } from "react";
+import React, { useState, useMemo } from "react";
 import Content from "./content";
 import LogoSvg from "../vectors/logo";
 import HiiyarSvg from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import Button from "./../components/button";
 import { NavLink } from "./typography";
-import _throttle from "lodash.throttle";
-import { RouterContext } from "../pages/index";
-
-let supportsPassive = false;
-try {
-  const opts = Object.defineProperty({}, "passive", {
-    get: function() {
-      supportsPassive = true;
-      return "";
-    },
-  });
-  window.addEventListener("testPassive", null, opts);
-  window.removeEventListener("testPassive", null, opts);
-} catch (e) {}
-
-const getPosition = () => ({
-  x: typeof window === "undefined" ? 0 : window.pageXOffset,
-  y: typeof window === "undefined" ? 0 : window.pageYOffset,
-});
+import useWindowPosition from "./hooks/useWindowPosition";
 
 const stickHeader = css`
   position: fixed;
@@ -32,7 +14,7 @@ const stickHeader = css`
   padding: 0;
 
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
-  & a {
+  & a:not([data-button="yes"]) {
     font-size: 13px;
     color: #4d4d4d;
   }
@@ -48,28 +30,9 @@ const goTo = name => e => {
 const Header = () => {
   const [isFixed, setFixed] = useState(false);
 
-  const [activeRouter] = useContext(RouterContext);
-  // @todo: move this to a new hook
-
-  const [position, setPosition] = useState(getPosition());
-  let handleScroll = _throttle(() => {
-    setPosition(getPosition());
-  }, 50);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    window.addEventListener(
-      "scroll",
-      handleScroll,
-      supportsPassive ? { passive: true } : false
-    );
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
-
+  const activeRouter = "";
   // /@todo
+  const position = useWindowPosition({ throttle: 50 });
 
   useMemo(
     () => {
@@ -77,8 +40,6 @@ const Header = () => {
     },
     [position.y > 52 + 15]
   );
-
-  console.log("active=", activeRouter);
 
   return (
     <header
@@ -114,7 +75,7 @@ const Header = () => {
             fill: white;
           `}
         />
-        <div
+        <nav
           css={css`
             margin-left: auto;
           `}
@@ -141,6 +102,8 @@ const Header = () => {
             TALENTS
           </NavLink>
           <Button
+            onClick={goTo("contact")}
+            href="#contact"
             raised={!isFixed}
             primary={isFixed}
             style={{ marginLeft: 64 }}
@@ -155,7 +118,7 @@ const Header = () => {
           >
             Let's Talk
           </Button>
-        </div>
+        </nav>
       </Content>
     </header>
   );

@@ -27,6 +27,7 @@ export default () => (
       `}
     />
     <Content
+      name="talents"
       css={css`
         display: flex;
         flex-direction: column;

@@ -19,6 +19,7 @@ export default () => (
       `}
     />
     <Content
+      name="contact"
       css={css`
         display: flex;
         justify-content: center;

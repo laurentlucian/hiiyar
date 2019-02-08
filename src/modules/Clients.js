@@ -29,6 +29,7 @@ export default () => (
       `}
     />
     <Content
+      name="clients"
       css={css`
         display: flex;
         justify-content: center;

@@ -18,6 +18,7 @@ const base = css`
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
+  text-decoration: none;
 `;
 
 const primary = css`
@@ -66,7 +67,7 @@ const CTA = css`
   }
 `;
 
-export default ({ href, children, style, shadow, ...props }) => {
+export default ({ href, children, style, shadow, onClick, ...props }) => {
   const Component = href ? "a" : "button";
 
   let modifier = primary;
@@ -76,7 +77,13 @@ export default ({ href, children, style, shadow, ...props }) => {
   if (props.CTA) modifier = CTA;
 
   return (
-    <Component css={[base, modifier, shadow]} style={style}>
+    <Component
+      href={href}
+      onClick={onClick}
+      css={[base, modifier, shadow]}
+      style={style}
+      data-button="yes"
+    >
       {children}
     </Component>
   );

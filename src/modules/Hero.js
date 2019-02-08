@@ -10,8 +10,7 @@ import WhiteLogoSvg from "../vectors/white-logo";
 import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
 
-import WordSlider from "./../components/wordslider";
-// import { Trail } from "react-spring";
+import WordSlider from "../components/wordslider";
 
 export default () => {
   return (

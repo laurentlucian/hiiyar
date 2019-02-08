@@ -6,22 +6,22 @@ import Button from "../components/button";
 import { Paragraph, SubHeading } from "../components/typography";
 import AboutGirlSvg from "../vectors/about-girl";
 import AboutBoySvg from "../vectors/about-boy";
+import RouterAnchor from "../components/routerAnchor";
 
 export default () => (
   <section
     css={css`
       position: relative;
-      padding: 150px 0 10px;
+      padding: 100px 0 10px;
     `}
   >
-    <Content>
+    <Content name="about">
       <div
         css={css`
           display: flex;
           justify-content: center;
           align-items: center;
-          width: auto;
-          margin-top: 50px;
+          padding-top: 150px;
         `}
       >
         <div
