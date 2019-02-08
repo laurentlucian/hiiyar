@@ -35,12 +35,10 @@ export default () => (
         >
           <SubHeading red>For Talents</SubHeading>
           <Paragraph style={{ marginBottom: "17px" }}>
-            We understand the unique needs of content creators across all gaming
-            verticals. Our team supports you by combining hands-on strategic experience
-            using industry leading tools to maximize your content monetization potential
-            and building lasting brand relationships. <br /> <br />
-            Speak to us today to formulate a growth strategy, we’re dedicated to serving
-            our talent with best practices in an ever evolving space.
+            We understand content. Our team supports you by combining hands-on strategic
+            experience using industry leading tools to maximize your content monetization
+            potential and building lasting brand relationships.
+            <br /> <br />
           </Paragraph>
           <Button CTA style={{ margin: "10px 0" }}>
             Learn More
@@ -73,14 +71,12 @@ export default () => (
         >
           <SubHeading red>For Clients</SubHeading>
           <Paragraph style={{ marginBottom: "17px" }}>
-            Influencer marketing doesn’t have to be so complicated. Hiiyar makes it easy
-            by providing end-to-end influencer services for your brand. From planning and
-            casting to executing and reporting, our end-to-end service delivers your
-            brand’s unique campaign objectives across all channels. <br /> <br />
-            Faster and more efficient than producing in-house creatives we take in
-            learnings from across the industry to tailor campaigns designed for your
-            brand, our mission to tap into first-to-market territories have cemented us as
-            the go-to for clients.
+            Hiiyar makes it easy by providing end-to-end influencer services for your
+            brand. From planning and casting to executing and reporting, our end-to-end
+            service delivers your brand’s unique campaign objectives across all channels.{" "}
+            <br /> <br />
+            Our mission to tap into first-to-market territories have cemented us as the
+            go-to for clients
           </Paragraph>
           <Button CTA style={{ margin: "10px 0" }}>
             Learn More
