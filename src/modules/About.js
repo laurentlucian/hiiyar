@@ -38,10 +38,9 @@ export default () => (
             We understand content. Our team supports you by combining hands-on strategic
             experience using industry leading tools to maximize your content monetization
             potential and building lasting brand relationships.
-            <br /> <br />
           </Paragraph>
           <Button CTA style={{ margin: "10px 0" }}>
-            Learn More
+            Speak to us today
           </Button>
         </div>
         <AboutGirlSvg />
@@ -73,7 +72,7 @@ export default () => (
           <Paragraph style={{ marginBottom: "17px" }}>
             Hiiyar makes it easy by providing end-to-end influencer services for your
             brand. From planning and casting to executing and reporting, our end-to-end
-            service delivers your brand’s unique campaign objectives across all channels.{" "}
+            service delivers your brand’s unique campaign objectives across all channels.
             <br /> <br />
             Our mission to tap into first-to-market territories have cemented us as the
             go-to for clients

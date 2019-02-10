@@ -72,10 +72,13 @@ export default () => (
               `}
             />
             <div>
-              <SubHeading2 red>Influencer Marketing</SubHeading2>
+              <SubHeading2 red>Management</SubHeading2>
               <Paragraph>
-                Partner with Hiiyar’s team to create and distribute compelling sponsored
-                content that speaks your brand story.
+                Land sponsorships without the headache, create content under your own
+                terms and build relationships and experiences with the companies you love.
+                Our goal is to support creators leaving them to do what they do best,
+                Hiiyar’s internal staff is on-hand when needed to further explore where
+                content can go.
               </Paragraph>
             </div>
           </div>
@@ -93,7 +96,7 @@ export default () => (
               `}
             />
             <div>
-              <SubHeading2 red>Custom Content</SubHeading2>
+              <SubHeading2 red>Content</SubHeading2>
               <Paragraph red>
                 Access our design and production team to produce anything that you may
                 need to better elevate your messaging. We create assets, videos,
@@ -118,7 +121,7 @@ export default () => (
             <div>
               <SubHeading2 red>Performance</SubHeading2>
               <Paragraph as="div">
-                <ul
+                {/* <ul
                   css={css`
                     margin: 0;
                     padding: 0;
@@ -138,7 +141,11 @@ export default () => (
                   <li>Audience Insights</li>
                   <li>Growth Measurement</li>
                   <li>Content Analysis </li>
-                </ul>
+                </ul> */}
+                Work with our team to drive maximum potential to your brand growth. Within
+                any aspect of your business we’re able to support strategies for growth,
+                monetization, and audience insights. Check out our featured Influencers
+                below to see how our work has helped our talent grow!
               </Paragraph>
             </div>
           </div>

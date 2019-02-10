@@ -76,10 +76,12 @@ export default () => (
               `}
             />
             <div>
-              <SubHeading2>Influencer Marketing</SubHeading2>
+              <SubHeading2>Influencers</SubHeading2>
               <Paragraph white>
-                Partner with Hiiyar’s team to create and distribute compelling sponsored
-                content that speaks your brand story.
+                We have found that turn key solutions deliver minimal impact with the
+                noise in today’s influencer market. Work with talent that’s actually fit
+                for your brand, not only do we craft unique campaigns but we tailor it
+                down for each Influencer to best craft your message within their words.
               </Paragraph>
             </div>
           </div>
@@ -97,12 +99,12 @@ export default () => (
               `}
             />
             <div>
-              <SubHeading2>Custom Content</SubHeading2>
+              <SubHeading2>Content</SubHeading2>
               <Paragraph white>
-                Access our design and production team to produce anything that you may
-                need to better elevate your messaging. We create assets, videos,
-                infographics, landers and other marketing initiatives to better suit your
-                needs.
+                Our internal team consists of creative, design and production staff to
+                produce anything you may need. Ranging from a handful of different
+                deliverables, our speciality is tackling first-to-market strategies and
+                ultimately creating memorable lasting content.
               </Paragraph>
             </div>
           </div>
@@ -122,26 +124,10 @@ export default () => (
             <div>
               <SubHeading2>Performance</SubHeading2>
               <Paragraph white as="div">
-                <ul
-                  css={css`
-                    margin: 0;
-                    padding: 0;
-                    list-style: none;
-                    position: relative;
-                    & li:before {
-                      content: "✓";
-                      font-size: 14px;
-                      position: absolute;
-                      left: -15px;
-                      margin-top: 2px;
-                      color: rgba(0, 0, 0, 0.3);
-                    }
-                  `}
-                >
-                  <li>Audience Insights</li>
-                  <li>Growth Measurement</li>
-                  <li>Content Analysis </li>
-                </ul>
+                Our experience working as both brand and developer have shown us that
+                metrics are a two way street. While many in the industry tap into
+                touch-point impressions we design campaigns that result in actual
+                conversions, speak to us today and ask away.
               </Paragraph>
             </div>
           </div>
