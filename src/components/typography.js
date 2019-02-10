@@ -96,7 +96,7 @@ export const Paragraph = ({ children, as, ...props }) => {
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};
         color: ${props.white ? "rgba(255, 255, 255, .8)" : "#4d4d4d"};
-        animation: ${props.fadeIn ? "fadeInUp 1s both" : "none"};
+        animation: ${props.fadeIn ? "fadeInUp 0.5s both" : "none"};
         animation-delay: ${typeof props.fadeIn === "string" ? props.fadeIn : 0};
       `}
     >

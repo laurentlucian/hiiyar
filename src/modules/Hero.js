@@ -49,11 +49,11 @@ export default () => {
           }}
         >
           <WordSlider>
-            <Heading1>We're Hiiyar</Heading1>
-            <Heading1>We're Hiiyar</Heading1>
-            <Heading1>Get Hiiyar</Heading1>
-            <Heading1>We are amazing</Heading1>
-            <Heading1>No. You are.</Heading1>
+            <Heading1>We're Hiiyar!</Heading1>
+            <Heading1>We're Test!</Heading1>
+            <Heading1>We're Hiiyar!</Heading1>
+            <Heading1>We're Hiiyar!</Heading1>
+            <Heading1>We're Hiiyar!</Heading1>
           </WordSlider>
         </div>
         <Paragraph white center fadeIn={"800ms"}>
