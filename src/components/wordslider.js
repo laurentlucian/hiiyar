@@ -4,7 +4,7 @@ import { animated, Transition } from "react-spring";
 import { useInterval } from "./hooks/useInterval";
 
 export default props => {
-  if (typeof window === "undefined" || React.Children.count(props.children) === 1) {
+  if (React.Children.count(props.children) === 1) {
     return <span>{React.Children.toArray(props.children)[0]}</span>;
   }
 
@@ -18,7 +18,7 @@ export default props => {
       items={index}
       keys={item => item}
       native
-      delay={500}
+      initial={null}
       from={{ transform: "translate3d(0,20%,0)", opacity: 0 }}
       enter={{ transform: "translate3d(0,0px,0)", opacity: 1 }}
       leave={{

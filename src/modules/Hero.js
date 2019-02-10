@@ -41,11 +41,13 @@ export default () => {
           `}
         />
         <div
-          style={{
+          css={{
             display: "flex",
             justifyContent: "center",
             position: "relative",
             width: "100%",
+            animation: "fadeInUp 0.5s both",
+            animationDelay: "600ms",
           }}
         >
           <WordSlider>
@@ -56,7 +58,7 @@ export default () => {
             <Heading1>We're Hiiyar!</Heading1>
           </WordSlider>
         </div>
-        <Paragraph white center fadeIn={"800ms"}>
+        <Paragraph white center fadeIn={"1000ms"}>
           Great storytelling runs in our DNA. We come from a background of game
           developers, game marketers and industry influencers. Our expertise combines
           powerful creative with metric-driven leads to create compelling content with
@@ -70,7 +72,7 @@ export default () => {
             display: flex;
             justify-content: space-between;
             animation: fadeInUp both 1s;
-            animation-delay: 1000ms;
+            animation-delay: 1200ms;
           `}
         >
           <Button>For Talents</Button>
