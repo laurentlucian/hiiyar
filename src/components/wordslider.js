@@ -1,21 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import { animated, Transition } from "react-spring";
+import { useInterval } from "./hooks/useInterval";
 
 export default props => {
   const [index, setIndex] = useState(0);
   const count = React.Children.count(props.children);
 
-  useEffect(
-    () => {
-      const timeout = setTimeout(() => {
-        setIndex((index + 1) % count);
-      }, 4000);
-
-      return () => clearTimeout(timeout);
-    },
-    [index]
-  );
+  useInterval(() => setIndex((index + 1) % count), 4000);
 
   return (
     <Transition
@@ -23,12 +15,12 @@ export default props => {
       keys={item => item}
       native
       delay={500}
-      config={{ duration: 300 }}
-      from={{ transform: "translate3d(0,20px,0)", opacity: 0 }}
+      config={{ duration: 500 }}
+      from={{ transform: "translate3d(0,15px,0)", opacity: 0 }}
       enter={{ transform: "translate3d(0,0px,0)", opacity: 1 }}
       leave={{
         position: "absolute",
-        transform: "translate3d(0, 20px,0)",
+        transform: "translate3d(0, 15px,0)",
         opacity: 0,
       }}
     >
