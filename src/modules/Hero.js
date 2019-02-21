@@ -25,6 +25,7 @@ export default () => {
       `}
     >
       <Content
+        name={"hero"}
         css={css`
           display: flex;
           flex-direction: column;
