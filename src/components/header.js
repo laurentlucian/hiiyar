@@ -65,8 +65,10 @@ const Header = () => {
         `}
       >
         <LogoSvg
+          onClick={goTo("hero")}
           css={css`
             width: 100.8px;
+            cursor: pointer;
           `}
         />
         <HiiyarSvg

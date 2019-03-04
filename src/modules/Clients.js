@@ -18,6 +18,8 @@ export default () => (
       background-image: linear-gradient(59deg, #a11846, #4d1226);
       width: 100%;
       object-fit: contain;
+      padding: 100px 0 250px;
+
     `}
   >
     <SecondCurveSvg
@@ -35,7 +37,6 @@ export default () => (
         justify-content: center;
         align-items: center;
         font-size: 48px;
-        padding: 100px 0 250px;
         flex-direction: column;
       `}
     >

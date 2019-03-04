@@ -12,6 +12,13 @@ import JumpingGirlSvg from "../vectors/jumping-girl";
 
 import WordSlider from "../components/wordslider";
 
+const goTo = name => e => {
+  e.preventDefault();
+
+  const section = document.getElementById(name);
+  if (section) section.scrollIntoView({ behavior: "smooth" });
+};
+
 export default () => {
   return (
     <section
@@ -25,6 +32,7 @@ export default () => {
       `}
     >
       <Content
+        name={"hero"}
         css={css`
           display: flex;
           flex-direction: column;
@@ -75,8 +83,10 @@ export default () => {
             animation-delay: 1200ms;
           `}
         >
-          <Button>For Talents</Button>
-          <Button ghosted>For Clients</Button>
+          <Button onClick={goTo("talents")}>For Talents</Button>
+          <Button onClick={goTo("clients")} ghosted>
+            For Clients
+          </Button>
         </div>
       </Content>
 
