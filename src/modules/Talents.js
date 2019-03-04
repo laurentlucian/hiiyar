@@ -27,16 +27,17 @@ export default () => (
         transform: translateY(-100%);
       `}
     />
-    <Content
-      css={css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      `}
-    >
-      <RouterAnchor name="talents">
-        <div style={{ margin: "50px 0" }}>
+
+    <RouterAnchor name="talents">
+      <Content
+        css={css`
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        `}
+      >
+        <div style={{ margin: "50px auto" }}>
           <Heading3 red style={{ margin: 0, textAlign: "center" }}>
             Solutions for Talents
           </Heading3>
@@ -168,7 +169,7 @@ export default () => (
             Let's Talk
           </Button>
         </div>
-      </RouterAnchor>
-    </Content>
+      </Content>
+    </RouterAnchor>
   </section>
 );

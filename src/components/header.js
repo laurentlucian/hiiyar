@@ -3,9 +3,10 @@ import Content from "./content";
 import LogoSvg from "../vectors/logo";
 import HiiyarSvg from "../vectors/hiiyar";
 import { css } from "@emotion/core";
-import Button from "./../components/button";
-import { NavLink } from "./typography";
 import useWindowPosition from "./hooks/useWindowPosition";
+
+import Nav from "./nav";
+import { goTo } from "../routerUtils";
 
 const stickHeader = css`
   position: fixed;
@@ -20,25 +21,16 @@ const stickHeader = css`
   }
 `;
 
-const goTo = name => e => {
-  e.preventDefault();
-
-  const section = document.getElementById(name);
-  if (section) section.scrollIntoView({ behavior: "smooth" });
-};
-
 const Header = () => {
   const [isFixed, setFixed] = useState(false);
-
-  const activeRouter = "";
   // /@todo
   const position = useWindowPosition({ throttle: 50 });
 
   useMemo(
     () => {
-      setFixed(position.y > 52 + 15);
+      setFixed(position.y > 53 + 15);
     },
-    [position.y > 52 + 15]
+    [position.y > 53 + 15]
   );
 
   return (
@@ -51,7 +43,6 @@ const Header = () => {
           margin-top: 52px;
           padding: 15px;
           background: transparent;
-          transition: background-color 50ms;
           animation: fadeInDown both 1s;
         `,
         isFixed && stickHeader,
@@ -77,50 +68,7 @@ const Header = () => {
             fill: white;
           `}
         />
-        <nav
-          css={css`
-            margin-left: auto;
-          `}
-        >
-          <NavLink
-            onClick={goTo("about")}
-            href="#about"
-            active={activeRouter === "about"}
-          >
-            WHAT WE DO
-          </NavLink>
-          <NavLink
-            onClick={goTo("clients")}
-            href="#clients"
-            active={activeRouter === "clients"}
-          >
-            CLIENTS
-          </NavLink>
-          <NavLink
-            onClick={goTo("talents")}
-            href="#talents"
-            active={activeRouter === "talents"}
-          >
-            TALENTS
-          </NavLink>
-          <Button
-            onClick={goTo("contact")}
-            href="#contact"
-            raised={!isFixed}
-            primary={isFixed}
-            style={{ marginLeft: 64 }}
-            shadow={
-              isFixed &&
-              css`
-                &:hover {
-                  box-shadow: 0 2px 15px 0 rgba(77, 18, 38, 0.56);
-                }
-              `
-            }
-          >
-            Let's Talk
-          </Button>
-        </nav>
+        <Nav isFixed={isFixed} />
       </Content>
     </header>
   );

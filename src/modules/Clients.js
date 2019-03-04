@@ -19,7 +19,6 @@ export default () => (
       width: 100%;
       object-fit: contain;
       padding: 100px 0 250px;
-
     `}
   >
     <SecondCurveSvg
@@ -31,17 +30,17 @@ export default () => (
         width: 100%;
       `}
     />
-    <Content
-      css={css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 48px;
-        flex-direction: column;
-      `}
-    >
-      <RouterAnchor name="clients">
-        <div style={{ margin: "50px 0" }}>
+    <RouterAnchor name="clients">
+      <Content
+        css={css`
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 48px;
+          flex-direction: column;
+        `}
+      >
+        <div style={{ margin: "50px auto" }}>
           <Heading3 white style={{ textAlign: "center" }}>
             Solutions for Clients
           </Heading3>
@@ -151,7 +150,7 @@ export default () => (
             Let's Talk
           </Button>
         </div>
-      </RouterAnchor>
-    </Content>
+      </Content>
+    </RouterAnchor>
   </section>
 );
