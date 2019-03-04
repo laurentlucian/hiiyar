@@ -11,7 +11,7 @@ export default ({ name, children }) => {
         console.log(name, isVisible ? "is now visible" : "is not visible")
       }
     >
-      {children}
+      <div id={name}>{children}</div>
     </VisibilitySensor>
   );
 };

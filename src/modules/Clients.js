@@ -9,6 +9,7 @@ import { Heading3, Paragraph, SubHeading2 } from "../components/typography";
 import ClientChatSvg from "../vectors/client-chat";
 import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
+import RouterAnchor from "../components/routerAnchor";
 
 export default () => (
   <section
@@ -29,7 +30,6 @@ export default () => (
       `}
     />
     <Content
-      name="clients"
       css={css`
         display: flex;
         justify-content: center;
@@ -39,116 +39,118 @@ export default () => (
         flex-direction: column;
       `}
     >
-      <div style={{ margin: "50px 0" }}>
-        <Heading3 white style={{ textAlign: "center" }}>
-          Solutions for Clients
-        </Heading3>
-        <Paragraph white heading center>
-          As a tecnology focused company, Hiiyar gives talents the tools and technology to
-          build better and reach higher.
-        </Paragraph>
-      </div>
-      <div
-        css={css`
-          display: flex;
-          justify-content: space-between;
-        `}
-      >
+      <RouterAnchor name="clients">
+        <div style={{ margin: "50px 0" }}>
+          <Heading3 white style={{ textAlign: "center" }}>
+            Solutions for Clients
+          </Heading3>
+          <Paragraph white heading center>
+            As a tecnology focused company, Hiiyar gives talents the tools and technology
+            to build better and reach higher.
+          </Paragraph>
+        </div>
         <div
           css={css`
             display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-around;
-            margin-right: 50px;
+            justify-content: space-between;
           `}
         >
           <div
             css={css`
               display: flex;
-              align-items: flex-start;
+              flex-flow: column nowrap;
+              justify-content: space-around;
+              margin-right: 50px;
             `}
           >
-            <ClientChatSvg
+            <div
               css={css`
-                width: 50px;
-                margin-right: 25px;
-                flex-shrink: 0;
+                display: flex;
+                align-items: flex-start;
               `}
-            />
-            <div>
-              <SubHeading2>Influencers</SubHeading2>
-              <Paragraph white>
-                We have found that turn key solutions deliver minimal impact with the
-                noise in today’s influencer market. Work with talent that’s actually fit
-                for your brand, not only do we craft unique campaigns but we tailor it
-                down for each Influencer to best craft your message within their words.
-              </Paragraph>
+            >
+              <ClientChatSvg
+                css={css`
+                  width: 50px;
+                  margin-right: 25px;
+                  flex-shrink: 0;
+                `}
+              />
+              <div>
+                <SubHeading2>Influencers</SubHeading2>
+                <Paragraph white>
+                  We have found that turn key solutions deliver minimal impact with the
+                  noise in today’s influencer market. Work with talent that’s actually fit
+                  for your brand, not only do we craft unique campaigns but we tailor it
+                  down for each Influencer to best craft your message within their words.
+                </Paragraph>
+              </div>
+            </div>
+            <div
+              css={css`
+                display: flex;
+                align-items: flex-start;
+              `}
+            >
+              <ClientIdeaSvg
+                css={css`
+                  width: 50px;
+                  margin-right: 25px;
+                  flex-shrink: 0;
+                `}
+              />
+              <div>
+                <SubHeading2>Content</SubHeading2>
+                <Paragraph white>
+                  Our internal team consists of creative, design and production staff to
+                  produce anything you may need. Ranging from a handful of different
+                  deliverables, our speciality is tackling first-to-market strategies and
+                  ultimately creating memorable lasting content.
+                </Paragraph>
+              </div>
+            </div>
+            <div
+              css={css`
+                display: flex;
+                align-items: flex-start;
+              `}
+            >
+              <ClientPizzaSvg
+                css={css`
+                  width: 50px;
+                  margin-right: 25px;
+                  flex-shrink: 0;
+                `}
+              />
+              <div>
+                <SubHeading2>Performance</SubHeading2>
+                <Paragraph white as="div">
+                  Our experience working as both brand and developer have shown us that
+                  metrics are a two way street. While many in the industry tap into
+                  touch-point impressions we design campaigns that result in actual
+                  conversions, speak to us today and ask away.
+                </Paragraph>
+              </div>
             </div>
           </div>
-          <div
+          <ClientBoySvg
             css={css`
-              display: flex;
-              align-items: flex-start;
+              height: 500px;
             `}
-          >
-            <ClientIdeaSvg
-              css={css`
-                width: 50px;
-                margin-right: 25px;
-                flex-shrink: 0;
-              `}
-            />
-            <div>
-              <SubHeading2>Content</SubHeading2>
-              <Paragraph white>
-                Our internal team consists of creative, design and production staff to
-                produce anything you may need. Ranging from a handful of different
-                deliverables, our speciality is tackling first-to-market strategies and
-                ultimately creating memorable lasting content.
-              </Paragraph>
-            </div>
-          </div>
-          <div
-            css={css`
-              display: flex;
-              align-items: flex-start;
-            `}
-          >
-            <ClientPizzaSvg
-              css={css`
-                width: 50px;
-                margin-right: 25px;
-                flex-shrink: 0;
-              `}
-            />
-            <div>
-              <SubHeading2>Performance</SubHeading2>
-              <Paragraph white as="div">
-                Our experience working as both brand and developer have shown us that
-                metrics are a two way street. While many in the industry tap into
-                touch-point impressions we design campaigns that result in actual
-                conversions, speak to us today and ask away.
-              </Paragraph>
-            </div>
-          </div>
+          />
         </div>
-        <ClientBoySvg
+        <div
           css={css`
-            height: 500px;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
           `}
-        />
-      </div>
-      <div
-        css={css`
-          display: flex;
-          justify-content: center;
-          padding-top: 50px;
-        `}
-      >
-        <Button raised style={{ color: "#4d1226", width: "160px" }}>
-          Let's Talk
-        </Button>
-      </div>
+        >
+          <Button raised style={{ color: "#4d1226", width: "160px" }}>
+            Let's Talk
+          </Button>
+        </div>
+      </RouterAnchor>
     </Content>
   </section>
 );

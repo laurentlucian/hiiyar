@@ -9,6 +9,7 @@ import TalentRocketSvg from "../vectors/talent-rocket";
 import TalentSpeakerSvg from "../vectors/talent-speaker";
 import TalentGraphSvg from "../vectors/talent-graph";
 import { ThirdCurve as ThirdCurveSvg } from "../vectors/curves";
+import RouterAnchor from "../components/routerAnchor";
 
 export default () => (
   <section
@@ -27,7 +28,6 @@ export default () => (
       `}
     />
     <Content
-      name="talents"
       css={css`
         display: flex;
         flex-direction: column;
@@ -35,93 +35,94 @@ export default () => (
         justify-content: center;
       `}
     >
-      <div style={{ margin: "50px 0" }}>
-        <Heading3 red style={{ margin: 0, textAlign: "center" }}>
-          Solutions for Talents
-        </Heading3>
-        <Paragraph heading center>
-          As a tecnology focused company, Hiiyar gives talents the tools and technology to
-          build better and reach higher.
-        </Paragraph>
-      </div>
-      <div
-        css={css`
-          display: flex;
-          justify-content: space-between;
-        `}
-      >
+      <RouterAnchor name="talents">
+        <div style={{ margin: "50px 0" }}>
+          <Heading3 red style={{ margin: 0, textAlign: "center" }}>
+            Solutions for Talents
+          </Heading3>
+          <Paragraph heading center>
+            As a tecnology focused company, Hiiyar gives talents the tools and technology
+            to build better and reach higher.
+          </Paragraph>
+        </div>
         <div
           css={css`
             display: flex;
-            flex-flow: column nowrap;
-            justify-content: space-around;
-            margin-right: 50px;
+            justify-content: space-between;
           `}
         >
           <div
             css={css`
               display: flex;
-              align-items: flex-start;
+              flex-flow: column nowrap;
+              justify-content: space-around;
+              margin-right: 50px;
             `}
           >
-            <TalentRocketSvg
+            <div
               css={css`
-                width: 50px;
-                margin-right: 25px;
-                flex-shrink: 0;
+                display: flex;
+                align-items: flex-start;
               `}
-            />
-            <div>
-              <SubHeading2 red>Management</SubHeading2>
-              <Paragraph>
-                Land sponsorships without the headache, create content under your own
-                terms and build relationships and experiences with the companies you love.
-                Our goal is to support creators leaving them to do what they do best,
-                Hiiyar’s internal staff is on-hand when needed to further explore where
-                content can go.
-              </Paragraph>
+            >
+              <TalentRocketSvg
+                css={css`
+                  width: 50px;
+                  margin-right: 25px;
+                  flex-shrink: 0;
+                `}
+              />
+              <div>
+                <SubHeading2 red>Management</SubHeading2>
+                <Paragraph>
+                  Land sponsorships without the headache, create content under your own
+                  terms and build relationships and experiences with the companies you
+                  love. Our goal is to support creators leaving them to do what they do
+                  best, Hiiyar’s internal staff is on-hand when needed to further explore
+                  where content can go.
+                </Paragraph>
+              </div>
             </div>
-          </div>
-          <div
-            css={css`
-              display: flex;
-              align-items: flex-start;
-            `}
-          >
-            <TalentSpeakerSvg
+            <div
               css={css`
-                width: 50px;
-                margin-right: 25px;
-                flex-shrink: 0;
+                display: flex;
+                align-items: flex-start;
               `}
-            />
-            <div>
-              <SubHeading2 red>Content</SubHeading2>
-              <Paragraph red>
-                Access our design and production team to produce anything that you may
-                need to better elevate your messaging. We create assets, videos,
-                infographics, landers and other marketing initiatives to better suit your
-                needs.
-              </Paragraph>
+            >
+              <TalentSpeakerSvg
+                css={css`
+                  width: 50px;
+                  margin-right: 25px;
+                  flex-shrink: 0;
+                `}
+              />
+              <div>
+                <SubHeading2 red>Content</SubHeading2>
+                <Paragraph red>
+                  Access our design and production team to produce anything that you may
+                  need to better elevate your messaging. We create assets, videos,
+                  infographics, landers and other marketing initiatives to better suit
+                  your needs.
+                </Paragraph>
+              </div>
             </div>
-          </div>
-          <div
-            css={css`
-              display: flex;
-              align-items: flex-start;
-            `}
-          >
-            <TalentGraphSvg
+            <div
               css={css`
-                width: 50px;
-                margin-right: 25px;
-                flex-shrink: 0;
+                display: flex;
+                align-items: flex-start;
               `}
-            />
-            <div>
-              <SubHeading2 red>Performance</SubHeading2>
-              <Paragraph as="div">
-                {/* <ul
+            >
+              <TalentGraphSvg
+                css={css`
+                  width: 50px;
+                  margin-right: 25px;
+                  flex-shrink: 0;
+                `}
+              />
+              <div>
+                <SubHeading2 red>Performance</SubHeading2>
+                <Paragraph as="div">
+                  {/* <ul
                   css={css`
                     margin: 0;
                     padding: 0;
@@ -142,31 +143,32 @@ export default () => (
                   <li>Growth Measurement</li>
                   <li>Content Analysis </li>
                 </ul> */}
-                Work with our team to drive maximum potential to your brand growth. Within
-                any aspect of your business we’re able to support strategies for growth,
-                monetization, and audience insights. Check out our featured Influencers
-                below to see how our work has helped our talent grow!
-              </Paragraph>
+                  Work with our team to drive maximum potential to your brand growth.
+                  Within any aspect of your business we’re able to support strategies for
+                  growth, monetization, and audience insights. Check out our featured
+                  Influencers below to see how our work has helped our talent grow!
+                </Paragraph>
+              </div>
             </div>
           </div>
+          <TalentBoySvg
+            css={css`
+              height: 500px;
+            `}
+          />
         </div>
-        <TalentBoySvg
+        <div
           css={css`
-            height: 500px;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
           `}
-        />
-      </div>
-      <div
-        css={css`
-          display: flex;
-          justify-content: center;
-          padding-top: 50px;
-        `}
-      >
-        <Button CTA style={{ width: "160px" }}>
-          Let's Talk
-        </Button>
-      </div>
+        >
+          <Button CTA style={{ width: "160px" }}>
+            Let's Talk
+          </Button>
+        </div>
+      </RouterAnchor>
     </Content>
   </section>
 );
