@@ -6,7 +6,6 @@ export default props => (
     width="134"
     height="49.219"
     viewBox="0 0 133.611 49.219"
-    style={{ pointerEvents: "none" }}
     {...props}
   >
     <g id="Group_1251" data-name="Group 1251" transform="translate(-234.225 -105.211)">

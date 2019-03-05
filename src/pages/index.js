@@ -11,7 +11,7 @@ import Contact from "../modules/Contact";
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`hiiyar`, `content`, `creator`]} />
+    <SEO title="Home" lang={`en`} keywords={[`hiiyar`, `content`, `creator`]} />
     <Hero routerName="hero" />
     <About routerName="about" />
     <Clients routerName="clients" />

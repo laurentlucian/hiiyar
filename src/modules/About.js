@@ -15,8 +15,8 @@ export default () => (
       padding: 100px 0 10px;
     `}
   >
-    <Content>
-      <RouterAnchor name="about">
+    <RouterAnchor name="about">
+      <Content>
         <div
           css={css`
             display: flex;
@@ -40,9 +40,9 @@ export default () => (
               experience using industry leading tools to maximize your content
               monetization potential and building lasting brand relationships.
             </Paragraph>
-            <Button CTA style={{ margin: "10px 0" }}>
+            {/* <Button CTA style={{ margin: "10px 0" }}>
               Speak to us today
-            </Button>
+            </Button> */}
           </div>
           <AboutGirlSvg />
         </div>
@@ -79,12 +79,12 @@ export default () => (
               Our mission to tap into first-to-market territories have cemented us as the
               go-to for clients
             </Paragraph>
-            <Button CTA style={{ margin: "10px 0" }}>
+            {/* <Button CTA style={{ margin: "10px 0" }}>
               Learn More
-            </Button>
+            </Button> */}
           </div>
         </div>
-      </RouterAnchor>
-    </Content>
+      </Content>
+    </RouterAnchor>
   </section>
 );

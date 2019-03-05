@@ -79,8 +79,9 @@ export default () => (
               <div>
                 <SubHeading2>Influencers</SubHeading2>
                 <Paragraph white>
-                  We have found that turn key solutions deliver minimal impact with the
-                  noise in today’s influencer market. Work with talent that’s actually fit
+                  {/* We have found that turn key solutions deliver minimal impact with the
+                  noise in today’s influencer market. */}
+                   Work with talent that’s actually fit
                   for your brand, not only do we craft unique campaigns but we tailor it
                   down for each Influencer to best craft your message within their words.
                 </Paragraph>
@@ -102,8 +103,9 @@ export default () => (
               <div>
                 <SubHeading2>Content</SubHeading2>
                 <Paragraph white>
-                  Our internal team consists of creative, design and production staff to
-                  produce anything you may need. Ranging from a handful of different
+                  {/* Our internal team consists of creative, design and production staff to
+                  produce anything you may need.  */}
+                  Ranging from a handful of different
                   deliverables, our speciality is tackling first-to-market strategies and
                   ultimately creating memorable lasting content.
                 </Paragraph>
@@ -127,8 +129,8 @@ export default () => (
                 <Paragraph white as="div">
                   Our experience working as both brand and developer have shown us that
                   metrics are a two way street. While many in the industry tap into
-                  touch-point impressions we design campaigns that result in actual
-                  conversions, speak to us today and ask away.
+                  touch-point impressions, we design campaigns that result in actual
+                  conversions.
                 </Paragraph>
               </div>
             </div>
@@ -146,9 +148,9 @@ export default () => (
             padding-top: 50px;
           `}
         >
-          <Button raised style={{ color: "#4d1226", width: "160px" }}>
+          {/* <Button raised style={{ color: "#4d1226", width: "160px" }}>
             Let's Talk
-          </Button>
+          </Button> */}
         </div>
       </Content>
     </RouterAnchor>

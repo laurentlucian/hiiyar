@@ -78,9 +78,10 @@ export default () => (
                 <Paragraph>
                   Land sponsorships without the headache, create content under your own
                   terms and build relationships and experiences with the companies you
-                  love. Our goal is to support creators leaving them to do what they do
+                  support.
+                  {/* Our goal is to support creators leaving them to do what they do
                   best, Hiiyar’s internal staff is on-hand when needed to further explore
-                  where content can go.
+                  where content can go. */}
                 </Paragraph>
               </div>
             </div>
@@ -146,8 +147,9 @@ export default () => (
                 </ul> */}
                   Work with our team to drive maximum potential to your brand growth.
                   Within any aspect of your business we’re able to support strategies for
-                  growth, monetization, and audience insights. Check out our featured
-                  Influencers below to see how our work has helped our talent grow!
+                  growth, monetization, and audience insights.
+                  {/* Check out our featured
+                  Influencers below to see how our work has helped our talent grow! */}
                 </Paragraph>
               </div>
             </div>
@@ -165,9 +167,9 @@ export default () => (
             padding-top: 50px;
           `}
         >
-          <Button CTA style={{ width: "160px" }}>
+          {/* <Button CTA style={{ width: "160px" }}>
             Let's Talk
-          </Button>
+          </Button> */}
         </div>
       </Content>
     </RouterAnchor>
