@@ -55,7 +55,7 @@ export const SubHeading = ({ children, ...props }) => (
       font-size: 24px;
       font-weight: 800;
       line-height: 1.33;
-      color: ${props.red ? "#4d1226;" : "white"};
+      color: ${props.red ? "#4d1226" : "white"};
       text-transform: uppercase;
       margin: 0;
     `}

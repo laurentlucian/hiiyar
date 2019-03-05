@@ -124,27 +124,6 @@ export default () => (
               <div>
                 <SubHeading2 red>Performance</SubHeading2>
                 <Paragraph as="div">
-                  {/* <ul
-                  css={css`
-                    margin: 0;
-                    padding: 0;
-                    list-style: none;
-                    position: relative;
-                    & li:before {
-                      content: "✓";
-                      font-size: 14px;
-                      position: absolute;
-                      left: -15px;
-                      margin-top: 2px;
-
-                      color: rgba(0, 0, 0, 0.6);
-                    }
-                  `}
-                >
-                  <li>Audience Insights</li>
-                  <li>Growth Measurement</li>
-                  <li>Content Analysis </li>
-                </ul> */}
                   Work with our team to drive maximum potential to your brand growth.
                   Within any aspect of your business we’re able to support strategies for
                   growth, monetization, and audience insights.

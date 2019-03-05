@@ -4,7 +4,7 @@ export const goTo = name => e => {
   e.preventDefault();
 
   const section = document.getElementById(name);
-  if (section) section.scrollIntoView({ behavior: "smooth" });
+  if (section) return section.scrollIntoView({ behavior: "smooth" });
 };
 
 const RouterContext = React.createContext();
@@ -20,6 +20,7 @@ export const useRouter = () => {
       set: (name, value) => {
         setRouterActive(active => {
           if (name === active && value === false) return "";
+          // document.title = name;
           if (value) return name;
         });
       },

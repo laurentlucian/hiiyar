@@ -13,6 +13,7 @@ import espLogo from "../images/clients/esp.svg";
 import netEaseLogo from "../images/clients/netEase.svg";
 import sunlockLogo from "../images/clients/sunlock.svg";
 import tencentLogo from "../images/clients/tencent.svg";
+import amazonlogo from "../images/clients/amazon.svg";
 
 const numberCss = {
   display: "flex",
@@ -41,8 +42,6 @@ export default () => (
       width: 100%;
       object-fit: contain;
       padding: 150px 0;
-
-      /* padding: 100px 0 200px; */
     `}
   >
     <ForthCurveSvg
@@ -143,6 +142,7 @@ export default () => (
         <img src={netEaseLogo} width="163" alt="CompanyLogo" />
         <img src={espLogo} width="70" alt="CompanyLogo" />
         <img src={sunlockLogo} width="140" alt="CompanyLogo" />
+        {/* <img src={amazonlogo} width="140" alt="CompanyLogo" /> */}
       </div>
     </Content>
   </section>

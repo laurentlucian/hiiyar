@@ -67,9 +67,10 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 };
 
 SEO.defaultProps = {
+  title: "Hiiyar",
   lang: `en`,
-  meta: [],
-  keywords: ["hiiyar", "content creator"],
+  meta: ["content"],
+  keywords: ["hiiyar", "content creator", "youtube ads", "twitch ads"],
 };
 
 SEO.propTypes = {

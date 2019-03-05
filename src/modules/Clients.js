@@ -81,9 +81,9 @@ export default () => (
                 <Paragraph white>
                   {/* We have found that turn key solutions deliver minimal impact with the
                   noise in today’s influencer market. */}
-                   Work with talent that’s actually fit
-                  for your brand, not only do we craft unique campaigns but we tailor it
-                  down for each Influencer to best craft your message within their words.
+                  Work with talent that’s actually fit for your brand, not only do we
+                  craft unique campaigns but we tailor it down for each Influencer to best
+                  craft your message within their words.
                 </Paragraph>
               </div>
             </div>
@@ -105,9 +105,9 @@ export default () => (
                 <Paragraph white>
                   {/* Our internal team consists of creative, design and production staff to
                   produce anything you may need.  */}
-                  Ranging from a handful of different
-                  deliverables, our speciality is tackling first-to-market strategies and
-                  ultimately creating memorable lasting content.
+                  Ranging from a handful of different deliverables, our speciality is
+                  tackling first-to-market strategies and ultimately creating memorable
+                  lasting content.
                 </Paragraph>
               </div>
             </div>
@@ -147,11 +147,7 @@ export default () => (
             justify-content: center;
             padding-top: 50px;
           `}
-        >
-          {/* <Button raised style={{ color: "#4d1226", width: "160px" }}>
-            Let's Talk
-          </Button> */}
-        </div>
+        />
       </Content>
     </RouterAnchor>
   </section>
