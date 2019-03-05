@@ -10,13 +10,12 @@ import { goTo } from "../routerUtils";
 
 const stickHeader = css`
   position: fixed;
-  margin-top: 0;
   background: white;
+  margin: 0;
   padding: 0;
 
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.22);
   & a:not([data-button="yes"]) {
-    font-size: 13px;
     color: #4d4d4d;
   }
 `;
@@ -28,9 +27,9 @@ const Header = () => {
 
   useMemo(
     () => {
-      setFixed(position.y > 53 + 15);
+      setFixed(position.y > 32 + 15);
     },
-    [position.y > 53 + 15]
+    [position.y > 32 + 15]
   );
 
   return (
@@ -40,10 +39,9 @@ const Header = () => {
           position: absolute;
           z-index: 1;
           width: 100%;
-          margin-top: 52px;
-          padding: 15px;
+          margin-top: 49px;
           background: transparent;
-          animation: fadeInDown both 1s;
+          /* animation: fadeInDown both 1s; */
         `,
         isFixed && stickHeader,
       ]}
@@ -52,20 +50,24 @@ const Header = () => {
         css={css`
           display: flex;
           width: 100%;
+          height: 70px;
           align-items: center;
+          /* background-color: red; */
         `}
       >
-        <LogoSvg
+        {/* <LogoSvg
           onClick={goTo("hero")}
           css={css`
             width: 100.8px;
             cursor: pointer;
           `}
-        />
+        /> */}
         <HiiyarSvg
+          onClick={goTo("hero")}
           css={css`
             width: 134px;
-            fill: white;
+            fill: ${isFixed ? "#83163B" : "white"};
+            cursor: pointer;
           `}
         />
         <Nav isFixed={isFixed} />

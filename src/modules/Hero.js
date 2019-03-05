@@ -4,6 +4,7 @@ import Content from "./../components/content";
 
 import { Heading1, Paragraph } from "./../components/typography";
 import Button from "./../components/button";
+import { goTo } from "../routerUtils";
 
 import { FirstCurve as FirstCurveSvg } from "../vectors/curves";
 import WhiteLogoSvg from "../vectors/white-logo";
@@ -11,13 +12,7 @@ import JumpingGuySvg from "../vectors/jumping-guy";
 import JumpingGirlSvg from "../vectors/jumping-girl";
 
 import WordSlider from "../components/wordslider";
-
-const goTo = name => e => {
-  e.preventDefault();
-
-  const section = document.getElementById(name);
-  if (section) section.scrollIntoView({ behavior: "smooth" });
-};
+import RouterAnchor from "../components/routerAnchor";
 
 export default () => {
   return (
@@ -31,64 +26,65 @@ export default () => {
         position: relative;
       `}
     >
-      <Content
-        name={"hero"}
-        css={css`
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding-top: 150px;
-        `}
-      >
-        <WhiteLogoSvg
+      <RouterAnchor name="hero">
+        <Content
           css={css`
-            width: 128px;
-            animation: fadeInUp both 1s;
-            animation-delay: 300ms;
-          `}
-        />
-        <div
-          css={{
-            display: "flex",
-            justifyContent: "center",
-            position: "relative",
-            width: "100%",
-            animation: "fadeInUp 0.5s both",
-            animationDelay: "600ms",
-          }}
-        >
-          <WordSlider>
-            <Heading1>We're Hiiyar!</Heading1>
-            <Heading1>We're Test!</Heading1>
-            <Heading1>We're Hiiyar!</Heading1>
-            <Heading1>We're Hiiyar!</Heading1>
-            <Heading1>We're Hiiyar!</Heading1>
-          </WordSlider>
-        </div>
-        <Paragraph white center fadeIn={"1000ms"}>
-          Great storytelling runs in our DNA. We come from a background of game
-          developers, game marketers and industry influencers. Our expertise combines
-          powerful creative with metric-driven leads to create compelling content with
-          measurable results.
-        </Paragraph>
-
-        <div
-          css={css`
-            width: 350px;
-            margin: 20px 0;
             display: flex;
-            justify-content: space-between;
-            animation: fadeInUp both 1s;
-            animation-delay: 1200ms;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 150px;
           `}
         >
-          <Button onClick={goTo("talents")}>For Talents</Button>
-          <Button onClick={goTo("clients")} ghosted>
-            For Clients
-          </Button>
-        </div>
-      </Content>
+          <WhiteLogoSvg
+            css={css`
+              width: 128px;
+              animation: fadeInUp both 1s;
+              animation-delay: 300ms;
+            `}
+          />
+          <div
+            css={{
+              display: "flex",
+              justifyContent: "center",
+              position: "relative",
+              width: "100%",
+              animation: "fadeInUp 0.5s both",
+              animationDelay: "600ms",
+            }}
+          >
+            <WordSlider>
+              <Heading1>Hi, have we met?</Heading1>
+              <Heading1>We're Hiiyar!</Heading1>
+              <Heading1>Let's do something amazing</Heading1>
+              <Heading1>Based in LA with global network</Heading1>
+              <Heading1>Work with us!</Heading1>
+            </WordSlider>
+          </div>
+          <Paragraph white center fadeIn={"1000ms"}>
+            Great storytelling runs in our DNA. We come from a background of game
+            developers, game marketers and industry influencers. Our expertise combines
+            powerful creative with metric-driven leads to create compelling content with
+            measurable results.
+          </Paragraph>
+
+          <div
+            css={css`
+              width: 350px;
+              margin: 20px 0;
+              display: flex;
+              justify-content: space-between;
+              animation: fadeInUp both 1s;
+              animation-delay: 1200ms;
+            `}
+          >
+            <Button onClick={goTo("talents")}>For Talents</Button>
+            <Button onClick={goTo("clients")} ghosted>
+              For Clients
+            </Button>
+          </div>
+        </Content>
+      </RouterAnchor>
 
       <FirstCurveSvg
         css={css`
