@@ -20,7 +20,6 @@ export const useRouter = () => {
       set: (name, value) => {
         setRouterActive(active => {
           if (name === active && value === false) return "";
-          // document.title = name;
           if (value) return name;
         });
       },

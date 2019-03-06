@@ -25,6 +25,7 @@ const primary = css`
   background-color: #a11846;
   color: white;
   box-shadow: 0;
+  line-height: 1.38;
   transition: all 50ms;
   &:hover {
     /* box-shadow: 0 10px 15px 0 rgba(74, 219, 194, 0.3); */

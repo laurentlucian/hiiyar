@@ -27,6 +27,7 @@ export const Heading2 = ({ children, style, ...props }) => (
       line-height: 1.38;
       letter-spacing: normal;
       color: ${props.red ? "#a11846" : "white"};
+      margin: 0;
     `}
     style={style}
   >

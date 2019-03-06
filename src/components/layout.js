@@ -30,6 +30,11 @@ const Layout = ({ children }) => {
                   Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
                   Segoe UI Symbol;
               }
+              ::selection {
+                background: #fff300;
+                color: #000;
+                text-shadow: none;
+              }
 
               @keyframes fadeInUp {
                 from {
