@@ -35,30 +35,57 @@ export default () => (
           We're based in LA with a global network of influencers spanning in NA, SA and
           SEA
         </Paragraph>
-        <div
-          css={css`
-            margin: 100px 0;
-            display: flex;
-            width: 100%;
-            justify-content: space-around;
-            & a {
-              text-decoration: none;
-              font-size: 45px;
-              color: #3f3f3f;
-              font-weight: bold;
-              line-height: 1.33;
-            }
-          `}
-        >
-          {/* fixing it soon */}
-          <a href="mailto:contact@hiiyar.com" data-rel="external">
-            contact@hiiyar.com
-          </a>
-          <a href="tel:8188572905" data-rel="external">
-            forwardphonenumber
-          </a>
+        <div>
+          <div
+            css={css`
+              display: flex;
+              justify-content: space-between;
+            `}
+          >
+            <div
+              css={css`
+                display: flex;
+                flex-direction: column;
+              `}
+            >
+              <p>your name</p>
+              <input type="text" />
+            </div>
+            <div>
+              <p>your email</p>
+              <input type="email" />
+            </div>
+          </div>
+          <div>
+            <p>help you</p>
+            <p>character count</p>
+          </div>
+          <textarea name="describe" id="" cols="30" rows="10" />
         </div>
       </Content>
     </RouterAnchor>
   </section>
 );
+
+// <div
+//   css={css`
+//     margin: 100px 0;
+//     display: flex;
+//     width: 100%;
+//     justify-content: space-around;
+//     & a {
+//       text-decoration: none;
+//       font-size: 45px;
+//       color: #3f3f3f;
+//       font-weight: bold;
+//       line-height: 1.33;
+//     }
+//   `}
+// >
+//   <a href="mailto:contact@hiiyar.com" >
+//     contact@hiiyar.com
+//   </a>
+//   <a href="tel:8188572905" >
+//     forwardphonenumber
+//   </a>
+//   </div>

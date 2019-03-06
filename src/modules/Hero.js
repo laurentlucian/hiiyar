@@ -57,7 +57,6 @@ export default () => {
               <Heading1>Hi, have we met?</Heading1>
               <Heading1>We're Hiiyar!</Heading1>
               <Heading1>Let's do something amazing</Heading1>
-              <Heading1>Based in LA with global network</Heading1>
               <Heading1>Work with us!</Heading1>
             </WordSlider>
           </div>
