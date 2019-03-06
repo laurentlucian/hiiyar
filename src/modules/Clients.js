@@ -3,7 +3,6 @@ import { css } from "@emotion/core";
 import Content from "../components/content";
 
 import { SecondCurve as SecondCurveSvg } from "../vectors/curves";
-import Button from "../components/button";
 import ClientBoySvg from "../vectors/client-boy";
 import { Heading3, Paragraph, SubHeading2 } from "../components/typography";
 import ClientChatSvg from "../vectors/client-chat";

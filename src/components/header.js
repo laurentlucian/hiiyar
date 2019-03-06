@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from "react";
 import Content from "./content";
-import LogoSvg from "../vectors/logo";
 import HiiyarSvg from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import useWindowPosition from "./hooks/useWindowPosition";

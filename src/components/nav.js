@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React from "react";
 import { css } from "@emotion/core";
 import Button from "./../components/button";
 import { NavLink } from "./typography";

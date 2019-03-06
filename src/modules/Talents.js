@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "@emotion/core";
 import Content from "../components/content";
 
-import Button from "../components/button";
 import TalentBoySvg from "../vectors/talent-boy";
 import { Heading3, Paragraph, SubHeading2 } from "../components/typography";
 import TalentRocketSvg from "../vectors/talent-rocket";

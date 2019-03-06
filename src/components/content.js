@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "@emotion/core";
-import RouterAnchor from "./routerAnchor";
 
 export default ({ children, className, ...props }) => {
   return (
@@ -15,4 +14,3 @@ export default ({ children, className, ...props }) => {
     </article>
   );
 };
-

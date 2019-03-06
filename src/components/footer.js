@@ -5,12 +5,9 @@ import Hiiyar from "../vectors/hiiyar";
 import { css } from "@emotion/core";
 import { NavLink } from "./typography";
 import { FooterCurve as CurveSvg } from "../vectors/curves";
-import { goTo, useRouter } from "../routerUtils";
+import { goTo } from "../routerUtils";
 
 const Footer = () => {
-  const [routerActions] = useRouter();
-  const activeRouter = routerActions.value;
-
   return (
     <footer
       css={css`
@@ -79,24 +76,15 @@ const Footer = () => {
           `}
         >
           <div>
-            <NavLink
-              onClick={goTo("about")}
-              href="#about"
-            >
+            <NavLink onClick={goTo("about")} href="#about">
               WHAT WE DO
             </NavLink>
           </div>
           <div>
-            <NavLink
-              onClick={goTo("clients")}
-              href="#clients"
-            >
+            <NavLink onClick={goTo("clients")} href="#clients">
               CLIENTS
             </NavLink>
-            <NavLink
-              onClick={goTo("talents")}
-              href="#talents"
-            >
+            <NavLink onClick={goTo("talents")} href="#talents">
               TALENTS
             </NavLink>
           </div>

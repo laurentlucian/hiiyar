@@ -1,6 +1,6 @@
 import React from "react";
 import { css } from "@emotion/core";
-import { Heading2, Heading3, SubHeading2 } from "../components/typography";
+import { Heading3, Paragraph } from "../components/typography";
 import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
@@ -28,12 +28,13 @@ export default () => (
           align-items: center;
         `}
       >
-        <Heading2 red style={{}}>
+        <Heading3 red style={{ margin: 0 }}>
           Ready when you are.
-        </Heading2>
-        <SubHeading2 red style={{ fontSize: "30px", color: "#4d4d4d" }}>
-          We're based in LA with a global network of influencers spanning in NA, SA and SEA
-        </SubHeading2>
+        </Heading3>
+        <Paragraph heading center style={{ fontSize: "30px", color: "#4d4d4d" }}>
+          We're based in LA with a global network of influencers spanning in NA, SA and
+          SEA
+        </Paragraph>
         <div
           css={css`
             margin: 100px 0;

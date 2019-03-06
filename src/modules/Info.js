@@ -13,7 +13,6 @@ import espLogo from "../images/clients/esp.svg";
 import netEaseLogo from "../images/clients/netEase.svg";
 import sunlockLogo from "../images/clients/sunlock.svg";
 import tencentLogo from "../images/clients/tencent.svg";
-import amazonlogo from "../images/clients/amazon.svg";
 
 const numberCss = {
   display: "flex",
