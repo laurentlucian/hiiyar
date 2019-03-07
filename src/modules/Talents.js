@@ -9,6 +9,7 @@ import TalentSpeakerSvg from "../vectors/talent-speaker";
 import TalentGraphSvg from "../vectors/talent-graph";
 import { ThirdCurve as ThirdCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
+import Grid from "../components/grid";
 
 export default () => (
   <section
@@ -45,23 +46,9 @@ export default () => (
             to build better and reach higher.
           </Paragraph>
         </div>
-        <div
-          css={css`
-            display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            width: 100%;
-          `}
-        >
-          <div
+        <Grid.Area>
+          <Grid.Text
             css={css`
-              display: flex;
-              flex-flow: column nowrap;
-              justify-content: space-around;
-              flex-shrink: 0;
-              width: 100%;
-              max-width: 450px;
-              margin-right: 60px;
               & > div {
                 margin: 15px 0;
               }
@@ -139,9 +126,9 @@ export default () => (
                 </Paragraph>
               </div>
             </div>
-          </div>
+          </Grid.Text>
           <TalentBoySvg />
-        </div>
+        </Grid.Area>
         {/* <div
           css={css`
             display: flex;

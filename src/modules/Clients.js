@@ -9,6 +9,7 @@ import ClientChatSvg from "../vectors/client-chat";
 import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
 import RouterAnchor from "../components/routerAnchor";
+import Grid from "../components/grid";
 
 export default () => (
   <section
@@ -47,23 +48,9 @@ export default () => (
             to build better and reach higher.
           </Paragraph>
         </div>
-        <div
-          css={css`
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1000px;
-          `}
-        >
-          <div
+        <Grid.Area>
+          <Grid.Text
             css={css`
-              display: flex;
-              flex-flow: column nowrap;
-              justify-content: space-around;
-              flex-shrink: 0;
-              width: 100%;
-              max-width: 450px;
-              margin-right: 60px;
               & > div {
                 margin: 15px 0;
               }
@@ -140,9 +127,9 @@ export default () => (
                 </Paragraph>
               </div>
             </div>
-          </div>
+          </Grid.Text>
           <ClientBoySvg />
-        </div>
+        </Grid.Area>
         <div
           css={css`
             display: flex;

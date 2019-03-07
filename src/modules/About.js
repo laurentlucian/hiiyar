@@ -8,6 +8,7 @@ import AboutBoySvg from "../vectors/about-boy";
 import RouterAnchor from "../components/routerAnchor";
 import Button from "../components/button";
 import { goTo } from "../routerUtils";
+import Grid from "../components/grid";
 
 export default () => (
   <section
@@ -18,27 +19,14 @@ export default () => (
   >
     <RouterAnchor name="about">
       <Content>
-        <div
+        <Grid.Area
           css={css`
-            display: flex;
             justify-content: center;
             align-items: center;
-            padding-top: 150px;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
+            margin: 100px auto;
           `}
         >
-          <div
-            css={css`
-              display: flex;
-              flex-direction: column;
-              width: 100%;
-              max-width: 450px;
-              align-items: flex-start;
-              margin-right: 60px;
-            `}
-          >
+          <Grid.Text>
             <SubHeading red>For Talents</SubHeading>
             <Paragraph>
               We understand content.{" "}
@@ -49,28 +37,20 @@ export default () => (
               maximize your content monetization potential and building lasting brand
               relationships.
             </Paragraph>
-          </div>
+          </Grid.Text>
           <AboutGirlSvg />
-        </div>
-        <div
+        </Grid.Area>
+        <Grid.Area
           css={css`
-            display: flex;
+            margin: 0 auto;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            margin-top: 150px;
           `}
         >
           <AboutBoySvg />
-          <div
+          <Grid.Text
             css={css`
-              display: flex;
-              flex-direction: column;
-              width: 100%;
-              max-width: 450px;
-              align-items: flex-start;
+              margin-right: 0;
               margin-left: 60px;
             `}
           >
@@ -86,8 +66,8 @@ export default () => (
               Our mission to tap into first-to-market territories have cemented us as the
               go-to for clients.
             </Paragraph>
-          </div>
-        </div>
+          </Grid.Text>
+        </Grid.Area>
       </Content>
     </RouterAnchor>
   </section>
