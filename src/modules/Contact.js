@@ -4,6 +4,7 @@ import { Heading3, Paragraph } from "../components/typography";
 import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
+import Button from "../components/button";
 
 const useInputValue = initialValue => {
   const [text, setText] = useState(initialValue);
@@ -45,8 +46,8 @@ export default () => {
             Ready when you are.
           </Heading3>
           <Paragraph heading center style={{ fontSize: "30px", color: "#4d4d4d" }}>
-            We're based in Los Angeles with a global network of influencers spanning in
-            North America, South America and South East Asia.
+            We're based in LA with a global network of influencers spanning in NA, SA and
+            SEA
           </Paragraph>
           <form
             name="contact"
@@ -54,10 +55,18 @@ export default () => {
             action="/thanks/"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            css={css`
+              display: flex;
+              width: 600px;
+              flex-direction: column;
+              align-content: center;
+            `}
           >
             <fieldset
               css={css`
-                background-color: lightcoral;
+                display: flex;
+                flex-direction: column;
+                background-color: lightgreen;
                 text-decoration: none;
                 border: 0;
 
@@ -67,13 +76,20 @@ export default () => {
                   border-width: 0;
                   outline: none;
                   width: 100%;
+                  font-size: 17px;
+                }
+                & input {
+                  height: 44px;
+                }
+                & p {
+                  margin: 5px;
+                  font-weight: 600;
                 }
               `}
             >
               <div
                 css={css`
                   display: flex;
-                  justify-content: space-between;
                   background-color: lightblue;
                 `}
               >
@@ -81,7 +97,12 @@ export default () => {
                   <p>Your name</p>
                   <input name="text" maxLength="100" {...name} />
                 </div>
-                <div>
+                <div
+                  css={css`
+                    flex-grow: 1;
+                    margin-left: 30px;
+                  `}
+                >
                   <p>Your email</p>
                   <input name="email" maxLength="100" {...email} />
                 </div>
@@ -90,6 +111,7 @@ export default () => {
                 css={css`
                   display: flex;
                   justify-content: space-between;
+                  margin-top: 20px;
                 `}
               >
                 <p>Describe your needs</p>
@@ -98,37 +120,15 @@ export default () => {
               <textarea
                 name="message"
                 cols="50"
-                rows="6"
+                rows="7"
                 maxLength="255"
                 {...description}
               />
             </fieldset>
+            <Button CTA>Send</Button>
           </form>
         </Content>
       </RouterAnchor>
     </section>
   );
 };
-
-// <div
-//   css={css`
-//     margin: 100px 0;
-//     display: flex;
-//     width: 100%;
-//     justify-content: space-around;
-//     & a {
-//       text-decoration: none;
-//       font-size: 45px;
-//       color: #3f3f3f;
-//       font-weight: bold;
-//       line-height: 1.33;
-//     }
-//   `}
-// >
-//   <a href="mailto:contact@hiiyar.com" >
-//     contact@hiiyar.com
-//   </a>
-//   <a href="tel:8188572905" >
-//     forwardphonenumber
-//   </a>
-//   </div>
