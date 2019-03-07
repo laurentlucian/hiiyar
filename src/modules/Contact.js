@@ -14,10 +14,28 @@ const useInputValue = initialValue => {
   };
 };
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 export default () => {
   const name = useInputValue("");
   const email = useInputValue("");
   const message = useInputValue("");
+
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...name, ...email, ...message }),
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
 
   return (
     <section
@@ -40,7 +58,6 @@ export default () => {
             min-height: 300px;
             flex-direction: column;
             align-items: center;
-            background-color: lightgoldenrodyellow;
           `}
         >
           <Heading3 red style={{ margin: 0 }}>
@@ -53,9 +70,10 @@ export default () => {
           <form
             name="contact"
             method="post"
-            action="#contact"
+            action="#"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
             css={css`
               display: flex;
               width: 600px;
@@ -126,7 +144,7 @@ export default () => {
             <Button
               type="submit"
               style={{ width: "90px", height: "40px" }}
-              /* onClick={e => e.preventDefault()} */
+              onClick={handleSubmit}
               CTA
             >
               Send
