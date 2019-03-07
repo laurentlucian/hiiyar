@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { animated, Transition } from "react-spring";
+import { animated, Transition } from "react-spring/renderprops";
 import { useInterval } from "./hooks/useInterval";
 
 export default props => {

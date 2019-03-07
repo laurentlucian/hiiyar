@@ -29,6 +29,7 @@ const Area = ({ children, className }) => {
         justify-content: space-between;
         max-width: 1000px;
         width: 100%;
+        position: relative;
       `}
     >
       {children}
