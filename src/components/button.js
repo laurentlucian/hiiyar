@@ -61,10 +61,12 @@ const raised = css`
 `;
 
 const CTA = css`
-  background-image: linear-gradient(287deg, #a11846, #4d1226);
-  color: #fff;
+  background: none;
+  border: 2px solid grey;
+  font-size: 14px;
+  padding: 5px 10px;
   &:hover {
-    box-shadow: 0 6px 15px 0 rgba(77, 18, 38, 0.56);
+    /* box-shadow: 0 6px 15px 0 rgba(77, 18, 38, 0.56); */
   }
 `;
 
