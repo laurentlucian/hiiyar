@@ -5,7 +5,6 @@ import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
 import Button from "../components/button";
-import { encodingExists } from "iconv-lite";
 
 const useInputValue = initialValue => {
   const [text, setText] = useState(initialValue);
@@ -20,22 +19,11 @@ export default () => {
   const email = useInputValue("");
   const message = useInputValue("");
 
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   fetch("/", {
-  //     method: "POST",
-  //     headers: {"Content-Type": "application/x-www-form-urlencoded"},
-  //     body: encode({
-  //       "form-name": form.getAttribute("name"),
-  //       {name.text},
-
-  //     })
-  // }
-
   return (
     <section
       css={css`
         position: relative;
+        background-color: lightgray;
       `}
     >
       <FifthCurveSvg
@@ -53,6 +41,7 @@ export default () => {
             min-height: 300px;
             flex-direction: column;
             align-items: center;
+            background-color: lightgoldenrodyellow;
           `}
         >
           <Heading3 red style={{ margin: 0 }}>
@@ -65,7 +54,7 @@ export default () => {
           <form
             name="contact"
             method="post"
-            action="#"
+            action="#contact"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             css={css`
@@ -74,6 +63,7 @@ export default () => {
               flex-direction: column;
               align-content: center;
               align-items: center;
+              background-color: lightblue;
             `}
           >
             <input type="hidden" name="bot-field" />
@@ -138,7 +128,7 @@ export default () => {
             <Button
               type="submit"
               style={{ width: "90px", height: "40px" }}
-              onClick={e => e.preventDefault()}
+              /* onClick={e => e.preventDefault()} */
               CTA
             >
               Send
