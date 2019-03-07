@@ -23,7 +23,6 @@ export default () => {
     <section
       css={css`
         position: relative;
-        background-color: lightgray;
       `}
     >
       <FifthCurveSvg
@@ -63,7 +62,6 @@ export default () => {
               flex-direction: column;
               align-content: center;
               align-items: center;
-              background-color: lightblue;
             `}
           >
             <input type="hidden" name="bot-field" />
