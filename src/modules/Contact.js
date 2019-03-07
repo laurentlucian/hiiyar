@@ -139,7 +139,19 @@ export default () => {
                 <label htmlFor="message">Describe your needs</label>
                 <label>{255 - message.text.length} characters remaining</label>
               </label>
-              <textarea name="message" cols="50" rows="7" maxLength="255" {...message} />
+              <textarea
+                name="message"
+                cols="50"
+                rows="7"
+                maxLength="255"
+                style={{
+                  minWidth: "576px",
+                  maxWidth: "1100px",
+                  minHeight: "153px",
+                  maxHeight: "400px",
+                }}
+                {...message}
+              />
             </fieldset>
             <Button
               type="submit"
