@@ -14,16 +14,33 @@ const useInputValue = initialValue => {
   };
 };
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 export default () => {
   const name = useInputValue("");
   const email = useInputValue("");
   const message = useInputValue("");
 
+  const handleSubmit = e => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...name, ...email, ...message }),
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    e.preventDefault();
+  };
+
   return (
     <section
       css={css`
         position: relative;
-        background-color: lightgray;
       `}
     >
       <FifthCurveSvg
@@ -41,7 +58,6 @@ export default () => {
             min-height: 300px;
             flex-direction: column;
             align-items: center;
-            background-color: lightgoldenrodyellow;
           `}
         >
           <Heading3 red style={{ margin: 0 }}>
@@ -54,16 +70,16 @@ export default () => {
           <form
             name="contact"
             method="post"
-            action="#contact"
+            action="#"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
             css={css`
               display: flex;
               width: 600px;
               flex-direction: column;
               align-content: center;
               align-items: center;
-              background-color: lightblue;
             `}
           >
             <input type="hidden" name="bot-field" />
@@ -123,12 +139,24 @@ export default () => {
                 <label htmlFor="message">Describe your needs</label>
                 <label>{255 - message.text.length} characters remaining</label>
               </label>
-              <textarea name="message" cols="50" rows="7" maxLength="255" {...message} />
+              <textarea
+                name="message"
+                cols="50"
+                rows="7"
+                maxLength="255"
+                style={{
+                  minWidth: "576px",
+                  maxWidth: "1100px",
+                  minHeight: "153px",
+                  maxHeight: "400px",
+                }}
+                {...message}
+              />
             </fieldset>
             <Button
               type="submit"
               style={{ width: "90px", height: "40px" }}
-              /* onClick={e => e.preventDefault()} */
+              onClick={handleSubmit}
               CTA
             >
               Send
