@@ -84,7 +84,7 @@ export default () => (
               delivers your brand’s unique campaign objectives across all channels.
               <br /> <br />
               Our mission to tap into first-to-market territories have cemented us as the
-              go-to for clients
+              go-to for clients.
             </Paragraph>
           </div>
         </div>

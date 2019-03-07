@@ -45,8 +45,8 @@ export default () => {
             Ready when you are.
           </Heading3>
           <Paragraph heading center style={{ fontSize: "30px", color: "#4d4d4d" }}>
-            We're based in LA with a global network of influencers spanning in NA, SA and
-            SEA
+            We're based in Los Angeles with a global network of influencers spanning in
+            North America, South America and South East Asia.
           </Paragraph>
           <form
             name="contact"
