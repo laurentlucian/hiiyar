@@ -28,16 +28,16 @@ export default props => {
     partialVisibility: true,
   });
 
-  const [trail, set] = useTrail(React.Children.count(props.children), () => ({
-    opacity: 0,
-    transform: "translate3d(-80px,0,0)",
-  }));
+  const [trail, set] = useTrail(
+    React.Children.count(props.children),
+    () => props.recipe.stop
+  );
 
   if (isVisible) {
     set(props.recipe.start);
   }
   if (!isVisible) {
-    set(props.recipe.stop);
+    // set(props.recipe.stop);
   }
 
   const childrenArray = React.Children.toArray(props.children);
