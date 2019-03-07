@@ -3,6 +3,21 @@ import useVisibilitySensor from "@rooks/use-visibility-sensor";
 
 import { animated, useTrail } from "react-spring";
 
+export const Recipes = {
+  fadeInLeft: {
+    start: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    stop: { opacity: 0, transform: "translate3d(-80px, 0, 0)" },
+  },
+  fadeInRight: {
+    start: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    stop: { opacity: 0, transform: "translate3d(80px, 0, 0)" },
+  },
+  fadeInDown: {
+    start: { opacity: 1, transform: "translate3d(0, 0, 0)" },
+    stop: { opacity: 0, transform: "translate3d(0, -40px, 0)" },
+  },
+};
+
 export default props => {
   const rootNode = useRef(null);
 
@@ -19,11 +34,13 @@ export default props => {
   }));
 
   if (isVisible) {
-    set({ opacity: 1, transform: "translate3d(0, 0, 0)" });
+    set(props.recipe.start);
   }
   if (!isVisible) {
-    set({ opacity: 0, transform: "translate3d(-80px, 0, 0)" });
+    set(props.recipe.stop);
   }
+
+  const childrenArray = React.Children.toArray(props.children);
 
   return (
     <>
@@ -39,7 +56,7 @@ export default props => {
         }}
       />
       {trail.map((style, index) => (
-        <animated.div style={style}>{props.children[index]}</animated.div>
+        <animated.div style={style}>{childrenArray[index]}</animated.div>
       ))}
     </>
   );
