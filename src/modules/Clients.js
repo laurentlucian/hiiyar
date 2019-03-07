@@ -1,4 +1,5 @@
 import React from "react";
+import { useTrail, animated } from "react-spring";
 import { css } from "@emotion/core";
 import Content from "../components/content";
 
@@ -10,6 +11,8 @@ import ClientIdeaSvg from "../vectors/client-idea";
 import ClientPizzaSvg from "../vectors/client-pizza";
 import RouterAnchor from "../components/routerAnchor";
 import Grid from "../components/grid";
+
+import TrailAnimate from "../components/trailanimate";
 
 export default () => (
   <section
@@ -56,87 +59,82 @@ export default () => (
               }
             `}
           >
-            <div
-              css={css`
-                display: flex;
-                align-items: flex-start;
-              `}
-            >
-              <ClientChatSvg
+            <TrailAnimate>
+              <div
                 css={css`
-                  width: 50px;
-                  margin-right: 25px;
-                  flex-shrink: 0;
+                  display: flex;
+                  align-items: flex-start;
                 `}
-              />
-              <div>
-                <SubHeading2>Influencers</SubHeading2>
-                <Paragraph white>
-                  {/* We have found that turn key solutions deliver minimal impact with the
+              >
+                <ClientChatSvg
+                  css={css`
+                    width: 50px;
+                    margin-right: 25px;
+                    flex-shrink: 0;
+                  `}
+                />
+                <div>
+                  <SubHeading2>Influencers</SubHeading2>
+                  <Paragraph white>
+                    {/* We have found that turn key solutions deliver minimal impact with the
                   noise in today’s influencer market. */}
-                  Work with talent that’s actually fit for your brand, not only do we
-                  craft unique campaigns but we tailor it down for each Influencer to best
-                  craft your message within their words.
-                </Paragraph>
+                    Work with talent that’s actually fit for your brand, not only do we
+                    craft unique campaigns but we tailor it down for each Influencer to
+                    best craft your message within their words.
+                  </Paragraph>
+                </div>
               </div>
-            </div>
-            <div
-              css={css`
-                display: flex;
-                align-items: flex-start;
-              `}
-            >
-              <ClientIdeaSvg
+              <div
                 css={css`
-                  width: 50px;
-                  margin-right: 25px;
-                  flex-shrink: 0;
+                  display: flex;
+                  align-items: flex-start;
                 `}
-              />
-              <div>
-                <SubHeading2>Content</SubHeading2>
-                <Paragraph white>
-                  {/* Our internal team consists of creative, design and production staff to
+              >
+                <ClientIdeaSvg
+                  css={css`
+                    width: 50px;
+                    margin-right: 25px;
+                    flex-shrink: 0;
+                  `}
+                />
+                <div>
+                  <SubHeading2>Content</SubHeading2>
+                  <Paragraph white>
+                    {/* Our internal team consists of creative, design and production staff to
                   produce anything you may need.  */}
-                  Ranging from a handful of different deliverables, our speciality is
-                  tackling first-to-market strategies and ultimately creating memorable
-                  lasting content.
-                </Paragraph>
+                    Ranging from a handful of different deliverables, our speciality is
+                    tackling first-to-market strategies and ultimately creating memorable
+                    lasting content.
+                  </Paragraph>
+                </div>
               </div>
-            </div>
-            <div
-              css={css`
-                display: flex;
-                align-items: flex-start;
-              `}
-            >
-              <ClientPizzaSvg
+              <div
                 css={css`
-                  width: 50px;
-                  margin-right: 25px;
-                  flex-shrink: 0;
+                  display: flex;
+                  align-items: flex-start;
                 `}
-              />
-              <div>
-                <SubHeading2>Performance</SubHeading2>
-                <Paragraph white as="div">
-                  Our experience working as both brand and developer have shown us that
-                  metrics are a two way street. While many in the industry tap into
-                  touch-point impressions, we design campaigns that result in actual
-                  conversions.
-                </Paragraph>
+              >
+                <ClientPizzaSvg
+                  css={css`
+                    width: 50px;
+                    margin-right: 25px;
+                    flex-shrink: 0;
+                  `}
+                />
+                <div>
+                  <SubHeading2>Performance</SubHeading2>
+                  <Paragraph white as="div">
+                    Our experience working as both brand and developer have shown us that
+                    metrics are a two way street. While many in the industry tap into
+                    touch-point impressions, we design campaigns that result in actual
+                    conversions.
+                  </Paragraph>
+                </div>
               </div>
-            </div>
+            </TrailAnimate>
           </Grid.Text>
           <ClientBoySvg />
         </Grid.Area>
-        <div
-          css={css`
-            display: flex;
-            justify-content: center;
-            padding-top: 50px;
-          `}
-        />
       </Content>
     </RouterAnchor>
   </section>

@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.6",
     "@emotion/core": "^10.0.6",
+    "@rooks/use-visibility-sensor": "^1.1.1",
     "gatsby": "^2.0.98",
     "gatsby-image": "^2.0.28",
     "gatsby-plugin-emotion": "^4.0.1",
@@ -24,7 +25,7 @@
     "react-countup": "^4.0.0",
     "react-dom": "^16.8.1",
     "react-helmet": "^5.2.0",
-    "react-spring": "7.2.8",
+    "react-spring": "^8.0.11",
     "react-visibility-sensor": "^5.0.2",
     "smoothscroll-polyfill": "^0.4.3"
   },

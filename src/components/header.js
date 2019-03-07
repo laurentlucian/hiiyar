@@ -40,7 +40,7 @@ const Header = () => {
           width: 100%;
           margin-top: 49px;
           background: transparent;
-          /* animation: fadeInDown both 1s; */
+          animation: fadeInDown both 1s;
         `,
         isFixed && stickHeader,
       ]}
@@ -51,16 +51,8 @@ const Header = () => {
           width: 100%;
           height: 70px;
           align-items: center;
-          /* background-color: red; */
         `}
       >
-        {/* <LogoSvg
-          onClick={goTo("hero")}
-          css={css`
-            width: 100.8px;
-            cursor: pointer;
-          `}
-        /> */}
         <HiiyarSvg
           onClick={goTo("hero")}
           css={css`
