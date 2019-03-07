@@ -12,7 +12,7 @@ import ClientPizzaSvg from "../vectors/client-pizza";
 import RouterAnchor from "../components/routerAnchor";
 import Grid from "../components/grid";
 
-import TrailAnimate from "../components/trailanimate";
+import TrailAnimate, { Recipes } from "../components/trailanimate";
 
 export default () => (
   <section
@@ -59,7 +59,7 @@ export default () => (
               }
             `}
           >
-            <TrailAnimate>
+            <TrailAnimate recipe={Recipes.fadeInLeft}>
               <div
                 css={css`
                   display: flex;
@@ -133,7 +133,11 @@ export default () => (
               </div>
             </TrailAnimate>
           </Grid.Text>
-          <ClientBoySvg />
+          <div style={{ width: "100%" }}>
+            <TrailAnimate recipe={Recipes.fadeInRight}>
+              <ClientBoySvg />
+            </TrailAnimate>
+          </div>
         </Grid.Area>
       </Content>
     </RouterAnchor>

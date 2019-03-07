@@ -10,7 +10,7 @@ import TalentGraphSvg from "../vectors/talent-graph";
 import { ThirdCurve as ThirdCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
 import Grid from "../components/grid";
-import TrailAnimate from "../components/trailanimate";
+import TrailAnimate, { Recipes } from "../components/trailanimate";
 
 export default () => (
   <section
@@ -55,7 +55,7 @@ export default () => (
               }
             `}
           >
-            <TrailAnimate>
+            <TrailAnimate recipe={Recipes.fadeInLeft}>
               <div
                 css={css`
                   display: flex;
@@ -130,7 +130,11 @@ export default () => (
               </div>
             </TrailAnimate>
           </Grid.Text>
-          <TalentBoySvg />
+          <div style={{ width: "100%" }}>
+            <TrailAnimate recipe={Recipes.fadeInRight}>
+              <TalentBoySvg />
+            </TrailAnimate>
+          </div>
         </Grid.Area>
         {/* <div
           css={css`
