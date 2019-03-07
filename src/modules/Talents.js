@@ -49,6 +49,8 @@ export default () => (
           css={css`
             display: flex;
             justify-content: space-between;
+            max-width: 1000px;
+            width: 100%;
           `}
         >
           <div
@@ -56,7 +58,13 @@ export default () => (
               display: flex;
               flex-flow: column nowrap;
               justify-content: space-around;
-              margin-right: 50px;
+              flex-shrink: 0;
+              width: 100%;
+              max-width: 450px;
+              margin-right: 60px;
+              & > div {
+                margin: 15px 0;
+              }
             `}
           >
             <div
@@ -132,23 +140,19 @@ export default () => (
               </div>
             </div>
           </div>
-          <TalentBoySvg
-            css={css`
-              height: 500px;
-            `}
-          />
+          <TalentBoySvg />
         </div>
-        <div
+        {/* <div
           css={css`
             display: flex;
             justify-content: center;
             padding-top: 50px;
           `}
         >
-          {/* <Button CTA style={{ width: "160px" }}>
+          <Button CTA style={{ width: "160px" }}>
             Let's Talk
-          </Button> */}
-        </div>
+          </Button> 
+        </div>  */}
       </Content>
     </RouterAnchor>
   </section>

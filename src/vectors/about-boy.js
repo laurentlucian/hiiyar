@@ -3,26 +3,12 @@ import React from "react";
 export default props => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="551.441"
-    height="499.362"
+    width="100%"
+    height="auto"
     viewBox="0 0 551.441 499.362"
     {...props}
   >
     <defs>
-      <style>
-        {/*.cls-1,.cls-10{fill:#fff}
-      .cls-2,.cls-8{fill:#a11846}
-      .cls-3{fill:#ec5d81}
-      .cls-4,.cls-7{fill:#4d1226}
-      .cls-5{fill:#ffb500}
-      .cls-6{fill:none;stroke:#ec5d81;stroke-linecap:round;stroke-linejoin:round;strokeWidth:.333px}
-      .cls-7{opacity:.4}
-      .cls-8{opacity:.15}
-      .cls-9{clip-path:url(#clip-path)}
-      .cls-10{fillRule:evenodd}
-      .cls-11{clip-path:url(#clip-path-2)} */}
-        {/* {style={{clipPath:url("#clip-path-2")}} /* 11 */} */}
-      </style>
       <clipPath id="clip-path">
         <path
           id="Rectangle_131"

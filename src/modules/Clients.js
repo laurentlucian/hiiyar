@@ -35,7 +35,6 @@ export default () => (
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 48px;
           flex-direction: column;
         `}
       >
@@ -52,6 +51,8 @@ export default () => (
           css={css`
             display: flex;
             justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
           `}
         >
           <div
@@ -59,7 +60,13 @@ export default () => (
               display: flex;
               flex-flow: column nowrap;
               justify-content: space-around;
-              margin-right: 50px;
+              flex-shrink: 0;
+              width: 100%;
+              max-width: 450px;
+              margin-right: 60px;
+              & > div {
+                margin: 15px 0;
+              }
             `}
           >
             <div
@@ -134,11 +141,7 @@ export default () => (
               </div>
             </div>
           </div>
-          <ClientBoySvg
-            css={css`
-              height: 500px;
-            `}
-          />
+          <ClientBoySvg />
         </div>
         <div
           css={css`

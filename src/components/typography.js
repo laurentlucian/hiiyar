@@ -88,17 +88,27 @@ export const Paragraph = ({ children, as, ...props }) => {
     <Component
       css={css`
         margin: 5px 0;
-        font-size: ${props.heading ? "21px" : "16px"};
+        font-size: ${props.heading ? "21px" : "17px"};
         font-weight: ${props.bold ? "bold" : "normal"};
         font-style: normal;
         font-stretch: normal;
-        line-height: ${props.heading ? 1.3 : 1.5};
+        line-height: ${props.heading ? 1.3 : "28px"};
         letter-spacing: normal;
         max-width: 600px;
         text-align: ${props.center ? "center" : "left"};
-        color: ${props.white ? "rgba(255, 255, 255, .8)" : "#4d4d4d"};
+        color: ${props.white ? "rgba(255, 255, 255, .8)" : "#484143"};
         animation: ${props.fadeIn ? "fadeInUp 0.5s both" : "none"};
         animation-delay: ${typeof props.fadeIn === "string" ? props.fadeIn : 0};
+        & > a {
+          font-weight: bold;
+          text-decoration: none;
+          color: #a11846;
+          transition: color 0.1s ease;
+          cursor: pointer;
+          &:hover {
+            color: #4d1226;
+          }
+        }
       `}
     >
       {children}
