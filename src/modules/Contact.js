@@ -5,6 +5,7 @@ import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
 import Button from "../components/button";
+import { encodingExists } from "iconv-lite";
 
 const useInputValue = initialValue => {
   const [text, setText] = useState(initialValue);
@@ -17,7 +18,19 @@ const useInputValue = initialValue => {
 export default () => {
   const name = useInputValue("");
   const email = useInputValue("");
-  const description = useInputValue("");
+  const message = useInputValue("");
+
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: {"Content-Type": "application/x-www-form-urlencoded"},
+  //     body: encode({
+  //       "form-name": form.getAttribute("name"),
+  //       {name.text},
+
+  //     })
+  // }
 
   return (
     <section
@@ -37,7 +50,7 @@ export default () => {
         <Content
           css={css`
             display: flex;
-            height: 300px;
+            min-height: 300px;
             flex-direction: column;
             align-items: center;
           `}
@@ -52,7 +65,7 @@ export default () => {
           <form
             name="contact"
             method="post"
-            action="/thanks/"
+            action="#"
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             css={css`
@@ -60,15 +73,17 @@ export default () => {
               width: 600px;
               flex-direction: column;
               align-content: center;
+              align-items: center;
             `}
           >
+            <input type="hidden" name="bot-field" />
             <fieldset
               css={css`
                 display: flex;
                 flex-direction: column;
-                background-color: lightgreen;
                 text-decoration: none;
                 border: 0;
+                margin: 30px 0;
 
                 & input,
                 textarea {
@@ -77,36 +92,37 @@ export default () => {
                   outline: none;
                   width: 100%;
                   font-size: 17px;
+                  padding: 10px;
+                  background-color: #e8e8e8;
                 }
                 & input {
                   height: 44px;
                 }
-                & p {
+                & label {
                   margin: 5px;
                   font-weight: 600;
                 }
               `}
             >
-              <div
+              <span
                 css={css`
                   display: flex;
-                  background-color: lightblue;
                 `}
               >
-                <div>
-                  <p>Your name</p>
-                  <input name="text" maxLength="100" {...name} />
-                </div>
-                <div
+                <span>
+                  <label htmlFor="name">Your name</label>
+                  <input type="text" name="text" maxLength="100" {...name} />
+                </span>
+                <span
                   css={css`
                     flex-grow: 1;
                     margin-left: 30px;
                   `}
                 >
-                  <p>Your email</p>
+                  <label htmlFor="email">Your email</label>
                   <input name="email" maxLength="100" {...email} />
-                </div>
-              </div>
+                </span>
+              </span>
               <label
                 css={css`
                   display: flex;
@@ -114,18 +130,19 @@ export default () => {
                   margin-top: 20px;
                 `}
               >
-                <p>Describe your needs</p>
-                <p>{255 - description.text.length} characters remaining</p>
+                <label htmlFor="message">Describe your needs</label>
+                <label>{255 - message.text.length} characters remaining</label>
               </label>
-              <textarea
-                name="message"
-                cols="50"
-                rows="7"
-                maxLength="255"
-                {...description}
-              />
+              <textarea name="message" cols="50" rows="7" maxLength="255" {...message} />
             </fieldset>
-            <Button CTA>Send</Button>
+            <Button
+              type="submit"
+              style={{ width: "90px", height: "40px" }}
+              onClick={e => e.preventDefault()}
+              CTA
+            >
+              Send
+            </Button>
           </form>
         </Content>
       </RouterAnchor>
