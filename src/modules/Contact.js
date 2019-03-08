@@ -10,24 +10,26 @@ const useInputValue = initialValue => {
   const [text, setText] = useState(initialValue);
   return {
     text,
-    onChange: e => setText({ [e.target.name]: e.target.value }),
+    onChange: e => setText(e.target.value),
   };
 };
 
 const encode = data => {
   const obj = Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .map(key => {
+      console.log("key", key);
+      console.log("data[key]", data[key]);
+      return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]);
+    })
     .join("&");
   console.log(obj);
   return obj;
 };
 
 export default () => {
-  const name = useInputValue({});
-  const email = useInputValue({});
-  const message = useInputValue({});
-
-  console.log(message.text);
+  const name = useInputValue("");
+  const email = useInputValue("");
+  const message = useInputValue("");
 
   const handleSubmit = e => {
     fetch("/", {
@@ -35,9 +37,9 @@ export default () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        ...name.text,
-        ...email.text,
-        ...message.text,
+        name: name.text,
+        email: email.text,
+        message: message.text,
       }),
     })
       .then(() => alert("Success!"))
