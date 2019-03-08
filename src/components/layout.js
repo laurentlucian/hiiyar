@@ -6,10 +6,7 @@ import Header from "./header";
 import Footer from "./footer";
 import "./normalize.css";
 import { Global, css } from "@emotion/core";
-import { useRouter } from "../routerUtils";
 const Layout = ({ children }) => {
-  const [routerValue, RouterProvider, providerValue] = useRouter();
-
   return (
     <StaticQuery
       query={graphql`
@@ -61,12 +58,10 @@ const Layout = ({ children }) => {
               }
             `}
           />
-          <RouterProvider value={providerValue}>
-            <Header siteTitle={data.site.siteMetadata.title} />
+          <Header siteTitle={data.site.siteMetadata.title} />
 
-            <main>{children}</main>
-            <Footer />
-          </RouterProvider>
+          <main>{children}</main>
+          <Footer />
         </>
       )}
     />

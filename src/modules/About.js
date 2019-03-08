@@ -15,7 +15,6 @@ export default () => (
   <section
     css={css`
       position: relative;
-      padding: 100px 0 10px;
     `}
   >
     <RouterAnchor name="about">
