@@ -26,6 +26,8 @@ export default () => {
   const email = useInputValue({});
   const message = useInputValue({});
 
+  console.log(message.text.message);
+
   const handleSubmit = e => {
     console.log("message", ...message.text);
     fetch("/", {
@@ -122,13 +124,17 @@ export default () => {
                   display: flex;
                 `}
               >
-                <span>
+                <span
+                  css={css`
+                    flex: 1 1 auto;
+                  `}
+                >
                   <label htmlFor="name">Name</label>
                   <input type="text" name="name" maxLength="100" {...name} />
                 </span>
                 <span
                   css={css`
-                    flex-grow: 1;
+                    flex: 4 1 350px;
                     margin-left: 30px;
                   `}
                 >
@@ -144,7 +150,10 @@ export default () => {
                 `}
               >
                 <label htmlFor="message">Describe your needs</label>
-                <label>{255 - message.text.message.length} characters remaining</label>
+                <label>
+                  {255 - (message.text.message ? message.text.message.length : 0)}{" "}
+                  characters remaining
+                </label>
               </label>
               <textarea
                 name="message"
