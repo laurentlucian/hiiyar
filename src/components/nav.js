@@ -62,31 +62,46 @@ const Nav = props => {
     <nav
       css={css`
         margin-left: auto;
+        @media only screen and (max-width: 720px) {
+          margin: 5px auto;
+        }
       `}
     >
-      <NavLink onClick={goTo("about")} href="#about" active={activeRouter === "about"}>
-        WHAT WE DO
-      </NavLink>
-      <NavLink
-        onClick={goTo("clients")}
-        href="#clients"
-        active={activeRouter === "clients"}
-      >
-        CLIENTS
-      </NavLink>
-      <NavLink
-        onClick={goTo("talents")}
-        href="#talents"
-        active={activeRouter === "talents"}
-      >
-        TALENTS
-      </NavLink>
+      <span>
+        <NavLink onClick={goTo("about")} href="#about" active={activeRouter === "about"}>
+          WHAT WE DO
+        </NavLink>
+        <NavLink
+          onClick={goTo("clients")}
+          href="#clients"
+          active={activeRouter === "clients"}
+        >
+          CLIENTS
+        </NavLink>
+        <NavLink
+          onClick={goTo("talents")}
+          href="#talents"
+          active={activeRouter === "talents"}
+        >
+          TALENTS
+        </NavLink>
+      </span>
       <Button
         onClick={goTo("contact")}
         href="#contact"
         raised={!props.isFixed}
         primary={props.isFixed}
-        style={{ marginLeft: 64 }}
+        style={css`
+          margin-left: 54px;
+          @media only screen and (max-width: 720px) {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 14px;
+          }
+        `}
         shadow={
           props.isFixed &&
           css`

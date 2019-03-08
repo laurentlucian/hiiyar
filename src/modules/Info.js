@@ -62,7 +62,7 @@ export default () => (
       <div
         css={css`
           display: flex;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
           justify-content: space-around;
         `}
       >
@@ -130,6 +130,7 @@ export default () => (
         css={css`
           display: flex;
           justify-content: space-around;
+          flex-flow: row wrap;
           img {
             opacity: 0.6;
             margin: 0 30px;

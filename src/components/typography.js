@@ -12,6 +12,7 @@ export const Heading1 = ({ children }) => (
       letter-spacing: 0.1px;
       color: white;
       margin: 20px 0;
+      text-align: center;
     `}
   >
     {children}

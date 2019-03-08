@@ -100,6 +100,9 @@ export default () => {
           left: 10%;
           top: 250px;
           width: 350px;
+          @media only screen and (max-width: 1700px) {
+            display: none;
+          }
         `}
       />
       <JumpingGirlSvg
@@ -108,6 +111,9 @@ export default () => {
           right: 10%;
           top: 130px;
           width: 380px;
+          @media only screen and (max-width: 1700px) {
+            display: none;
+          }
         `}
       />
     </section>

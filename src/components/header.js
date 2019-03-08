@@ -41,6 +41,9 @@ const Header = () => {
           margin-top: 49px;
           background: transparent;
           animation: fadeInDown both 1s;
+          @media only screen and (max-width: 720px) {
+            margin-top: 0px;
+          }
         `,
         isFixed && stickHeader,
       ]}
@@ -48,9 +51,17 @@ const Header = () => {
       <Content
         css={css`
           display: flex;
-          width: 100%;
+          flex-flow: row wrap;
+          /* width: 100%; */
           height: 70px;
           align-items: center;
+          padding: 0 10px;
+          @media only screen and (max-width: 720px) {
+            padding-bottom: 100px;
+            > svg {
+              flex: 1 100%;
+            }
+          }
         `}
       >
         <HiiyarSvg
@@ -59,6 +70,9 @@ const Header = () => {
             width: 134px;
             fill: ${isFixed ? "#83163B" : "white"};
             cursor: pointer;
+            @media only screen and (max-width: 720px) {
+              margin-top: 5px;
+            }
           `}
         />
         <Nav isFixed={isFixed} />

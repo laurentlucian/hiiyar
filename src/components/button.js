@@ -28,7 +28,6 @@ const primary = css`
   line-height: 1.38;
   transition: all 50ms;
   &:hover {
-    /* box-shadow: 0 10px 15px 0 rgba(74, 219, 194, 0.3); */
     box-shadow: 0 10px 15px 0 rgba(77, 18, 38, 0.56);
   }
 `;
@@ -82,8 +81,8 @@ export default ({ href, children, style, shadow, onClick, ...props }) => {
     <Component
       href={href}
       onClick={onClick}
-      css={[base, modifier, shadow]}
-      style={style}
+      css={[base, modifier, shadow, style]}
+      /* style={style} */
       data-button="yes"
     >
       {children}
