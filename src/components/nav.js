@@ -1,13 +1,62 @@
-import React from "react";
+import React, { useEffect, useCallback, useState } from "react";
+import _throttle from "lodash.throttle";
 import { css } from "@emotion/core";
 import Button from "./../components/button";
 import { NavLink } from "./typography";
-import { goTo, useRouter } from "../routerUtils";
+import { goTo } from "../routerUtils";
+
+/* Feature detection */
+var passiveIfSupported = false;
+
+try {
+  window.addEventListener(
+    "test",
+    null,
+    Object.defineProperty({}, "passive", {
+      // eslint-disable-next-line getter-return
+      get: function() {
+        passiveIfSupported = { passive: true };
+      },
+    })
+  );
+} catch (err) {}
+
+const isInViewport = function(elem) {
+  const bounding = elem.getBoundingClientRect();
+  return (
+    bounding.top >= 0 &&
+    bounding.left >= 0 &&
+    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
+
+const useActiveRouter = () => {
+  const [activeRouter, setActiveRouter] = useState();
+
+  const checkActiveSection = useCallback(
+    _throttle(() => {
+      const sections = document.querySelectorAll("[data-router-section]");
+      sections.forEach(element => {
+        if (!isInViewport(element)) return;
+        const name = element.id;
+
+        setActiveRouter(name);
+      });
+    }, 50),
+    []
+  );
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkActiveSection, passiveIfSupported);
+    return window.removeEventListener("onscroll", checkActiveSection, passiveIfSupported);
+  }, []);
+
+  return activeRouter;
+};
 
 const Nav = props => {
-  const [routerActions] = useRouter();
-  const activeRouter = routerActions.value;
-  console.log(activeRouter);
+  const activeRouter = useActiveRouter();
 
   return (
     <nav

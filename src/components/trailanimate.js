@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import useVisibilitySensor from "@rooks/use-visibility-sensor";
 
 import { animated, useTrail } from "react-spring";
