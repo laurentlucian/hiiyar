@@ -34,10 +34,7 @@ export default () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "contact",
-        name: name.text,
-        email: email.text,
-        message: message.text,
+        "form-name": "contact", ...name.text, ...email.text, ...message.text,
       }),
     })
       .then(() => alert("Success!"))
