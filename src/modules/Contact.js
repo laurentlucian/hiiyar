@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { css } from "@emotion/core";
-import { Heading3, Paragraph } from "../components/typography";
+import { Heading3, Paragraph, SubHeading } from "../components/typography";
 import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
@@ -14,22 +14,18 @@ const useInputValue = initialValue => {
   };
 };
 
-const encode = data => {
-  const obj = Object.keys(data)
+const encode = data =>
+  Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
-  return obj;
-};
 
 export default () => {
   const name = useInputValue({});
   const email = useInputValue({});
   const message = useInputValue({});
-
-  console.log(message.text.message);
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = e => {
-    console.log("message", ...message.text);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -40,8 +36,8 @@ export default () => {
         ...message.text,
       }),
     })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
+      .then(() => setSent(true))
+      .catch(error => setSent(null));
 
     e.preventDefault();
   };
@@ -64,7 +60,6 @@ export default () => {
         <Content
           css={css`
             display: flex;
-            min-height: 300px;
             flex-direction: column;
             align-items: center;
           `}
@@ -73,112 +68,130 @@ export default () => {
             Ready when you are.
           </Heading3>
           <Paragraph heading center style={{ fontSize: "30px", color: "#4d4d4d" }}>
-            We're based in LA with a global network of influencers spanning in NA, SA and
-            SEA
+            We're based in LA with a global network of influencers spanning NA, SA and SEA
           </Paragraph>
-          <form
-            name="contact"
-            method="post"
-            action="#"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-            css={css`
-              display: flex;
-              width: 600px;
-              flex-direction: column;
-              align-content: center;
-              align-items: center;
-            `}
-          >
-            <input type="hidden" name="bot-field" />
-            <fieldset
+          {sent ? (
+            <>
+              <Heading3 red>Thank you!</Heading3>
+            </>
+          ) : sent === null ? (
+            <Heading3>
+              Oh no, an error has occurred. Please, send an email to us instead.
+            </Heading3>
+          ) : (
+            <form
+              name="contact"
+              method="post"
+              action="#"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
               css={css`
                 display: flex;
+                width: 600px;
                 flex-direction: column;
-                text-decoration: none;
-                border: 0;
-                margin: 30px 0;
-
-                & input,
-                textarea {
-                  border-radius: 5px;
-                  border-width: 0;
-                  outline: none;
-                  width: 100%;
-                  font-size: 17px;
-                  padding: 10px;
-                  background-color: #e8e8e8;
-                }
-                & input {
-                  height: 44px;
-                }
-                & label {
-                  margin: 5px 0;
-                  font-weight: 600;
-                }
+                align-content: center;
+                align-items: center;
               `}
             >
-              <span
+              <input type="hidden" name="bot-field" />
+              <fieldset
                 css={css`
                   display: flex;
+                  flex-direction: column;
+                  text-decoration: none;
+                  border: 0;
+                  margin: 30px 0;
+
+                  & input,
+                  textarea {
+                    border-radius: 5px;
+                    border-width: 0;
+                    outline: none;
+                    width: 100%;
+                    font-size: 17px;
+                    padding: 10px;
+                    background-color: #e8e8e8;
+                  }
+                  & input {
+                    height: 44px;
+                  }
+                  & label {
+                    margin: 5px 0;
+                    font-weight: 600;
+                  }
                 `}
               >
                 <span
                   css={css`
-                    flex: 1 1 auto;
+                    display: flex;
                   `}
                 >
-                  <label htmlFor="name">Name</label>
-                  <input type="text" name="name" maxLength="100" {...name} />
+                  <span
+                    css={css`
+                      flex: 1 1 auto;
+                    `}
+                  >
+                    <label htmlFor="name">Name</label>
+                    <input type="text" name="name" maxLength="100" {...name} />
+                  </span>
+                  <span
+                    css={css`
+                      flex: 2 1 350px;
+                      margin-left: 30px;
+                    `}
+                  >
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" maxLength="100" {...email} />
+                  </span>
                 </span>
-                <span
+                <label
                   css={css`
-                    flex: 4 1 350px;
-                    margin-left: 30px;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
                   `}
                 >
-                  <label htmlFor="email">Email</label>
-                  <input type="text" name="email" maxLength="100" {...email} />
-                </span>
-              </span>
-              <label
-                css={css`
-                  display: flex;
-                  justify-content: space-between;
-                  margin-top: 20px;
-                `}
-              >
-                <label htmlFor="message">Describe your needs</label>
-                <label>
-                  {255 - (message.text.message ? message.text.message.length : 0)}{" "}
-                  characters remaining
+                  <label htmlFor="message">Describe your needs</label>
+                  <label>
+                    {255 - (message.text.message ? message.text.message.length : 0)}{" "}
+                    characters remaining
+                  </label>
                 </label>
-              </label>
-              <textarea
-                name="message"
-                type="text"
-                cols="50"
-                rows="7"
-                maxLength="255"
-                style={{
-                  minWidth: "576px",
-                  maxWidth: "1100px",
-                  minHeight: "153px",
-                  maxHeight: "400px",
-                }}
-                {...message}
-              />
-            </fieldset>
-            <Button
-              type="submit"
-              style={{ width: "90px", height: "40px" }}
-              onClick={handleSubmit}
-              CTA
-            >
-              Send
-            </Button>
-          </form>
+                <textarea
+                  name="message"
+                  type="text"
+                  cols="50"
+                  rows="7"
+                  maxLength="255"
+                  style={{
+                    minWidth: "576px",
+                    maxWidth: "1100px",
+                    minHeight: "153px",
+                    maxHeight: "400px",
+                  }}
+                  {...message}
+                />
+              </fieldset>
+              <Button
+                type="submit"
+                style={{ width: "100px", height: "40px" }}
+                onClick={handleSubmit}
+                CTA
+              >
+                Send
+              </Button>
+            </form>
+          )}
+          <Paragraph
+            css={css`
+              margin-top: 30px;
+            `}
+            center
+            heading
+          >
+            You could also directly email us at <a>contact@hiiyar.com</a>
+          </Paragraph>
         </Content>
       </RouterAnchor>
     </section>

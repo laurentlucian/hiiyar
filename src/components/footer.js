@@ -12,9 +12,8 @@ const Footer = () => {
     <footer
       css={css`
         width: 100%;
-        height: 350px;
-        padding-top: 150px;
-        margin-top: 100px;
+        /* height: 350px; */
+        padding: 150px 0 50px 0;
         background-image: linear-gradient(82deg, #a11846, #4d1226);
         display: flex;
         position: relative;
@@ -79,17 +78,15 @@ const Footer = () => {
             <NavLink onClick={goTo("about")} href="#about">
               WHAT WE DO
             </NavLink>
-          </div>
-          <div>
-            <NavLink onClick={goTo("clients")} href="#clients">
-              CLIENTS
-            </NavLink>
             <NavLink onClick={goTo("talents")} href="#talents">
               TALENTS
             </NavLink>
           </div>
           <div>
             <NavLink>SOCIAL:</NavLink>
+            <NavLink onClick={goTo("clients")} href="#clients">
+              CLIENTS
+            </NavLink>
           </div>
         </div>
       </Content>

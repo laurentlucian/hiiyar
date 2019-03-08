@@ -110,6 +110,7 @@ export const Paragraph = ({ children, as, ...props }) => {
           }
         }
       `}
+      {...props}
     >
       {children}
     </Component>
