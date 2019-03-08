@@ -5,7 +5,6 @@ import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
 import Button from "../components/button";
-import Textarea from "react-textarea-autosize";
 
 const useInputValue = initialValue => {
   const [value, setValue] = useState(initialValue);
@@ -21,9 +20,10 @@ const encode = data =>
     .join("&");
 
 export default () => {
-  const inputs = useInputValue({});
-  // const email = useInputValue({});
-  // const message = useInputValue({});
+  // const inputs = useInputValue({ name: "", email: "", message: "" });
+  const name = useInputValue({});
+  const email = useInputValue({});
+  const message = useInputValue({});
   const [sent, setSent] = useState(false);
 
   const handleSubmit = e => {
@@ -34,9 +34,9 @@ export default () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        ...inputs.value.name,
-        ...inputs.value.email,
-        ...inputs.value.message,
+        ...name.value,
+        ...email.value,
+        ...message.value,
       }),
     })
       .then(() => setSent(true))
@@ -140,8 +140,8 @@ export default () => {
                     name="name"
                     maxLength="30"
                     placeholder="Name"
-                    value={inputs.value.name}
-                    onChange={inputs.onChange}
+                    value={name.value.name}
+                    onChange={name.onChange}
                     css={css`
                       flex: 1 1 80%;
                     `}
@@ -155,8 +155,8 @@ export default () => {
                       flex: 2 1 100%;
                       margin-left: 30px;
                     `}
-                    value={inputs.value.email}
-                    onChange={inputs.onChange}
+                    value={email.value.email}
+                    onChange={email.onChange}
                   />
                 </span>
                 <label
@@ -168,17 +168,17 @@ export default () => {
                 >
                   <label htmlFor="message">Describe your needs</label>
                   <label>
-                    {400 - (inputs.value.message ? inputs.value.message.length : 0)}{" "}
+                    {400 - (message.value.message ? message.value.message.length : 0)}{" "}
                     characters remaining
                   </label>
                 </label>
-                <Textarea
+                <textarea
                   name="message"
                   type="text"
                   maxLength="400"
-                  minRows="6"
-                  value={inputs.value.message}
-                  onChange={inputs.onChange}
+                  rows="6"
+                  value={message.value.message}
+                  onChange={message.onChange}
                   css={css`
                     resize: none;
                   `}
