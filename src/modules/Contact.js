@@ -29,7 +29,12 @@ export default () => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...name, ...email, ...message }),
+      body: encode({
+        "form-name": "Contact",
+        Name: name.text,
+        Email: email.text,
+        Message: message.text,
+      }),
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
@@ -116,7 +121,7 @@ export default () => {
                 `}
               >
                 <span>
-                  <label htmlFor="name">Your name</label>
+                  <label htmlFor="name">Name</label>
                   <input type="text" name="text" maxLength="100" {...name} />
                 </span>
                 <span
@@ -125,7 +130,7 @@ export default () => {
                     margin-left: 30px;
                   `}
                 >
-                  <label htmlFor="email">Your email</label>
+                  <label htmlFor="email">Email</label>
                   <input name="email" maxLength="100" {...email} />
                 </span>
               </span>
