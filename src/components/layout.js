@@ -32,6 +32,12 @@ const Layout = ({ children }) => {
                 color: #000;
                 text-shadow: none;
               }
+              /* ghosting */
+              /* * {
+                background: #000 !important;
+                color: #0f0 !important;
+                outline: solid #f00 1px !important;
+              } */
 
               @keyframes fadeInUp {
                 from {

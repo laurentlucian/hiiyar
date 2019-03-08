@@ -5,12 +5,13 @@ import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
 import Button from "../components/button";
+import Textarea from "react-textarea-autosize";
 
 const useInputValue = initialValue => {
-  const [text, setText] = useState(initialValue);
+  const [value, setValue] = useState(initialValue);
   return {
-    text,
-    onChange: e => setText({ [e.target.name]: e.target.value }),
+    value,
+    onChange: e => setValue({ [e.target.name]: e.target.value }),
   };
 };
 
@@ -31,9 +32,9 @@ export default () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        ...name.text,
-        ...email.text,
-        ...message.text,
+        ...name.value,
+        ...email.value,
+        ...message.value,
       }),
     })
       .then(() => setSent(true))
@@ -41,6 +42,7 @@ export default () => {
 
     e.preventDefault();
   };
+  console.log("test", ...message.value);
 
   return (
     <section
@@ -88,20 +90,25 @@ export default () => {
               onSubmit={handleSubmit}
               css={css`
                 display: flex;
-                width: 600px;
+                width: 100%;
+                max-width: 600px;
                 flex-direction: column;
                 align-content: center;
                 align-items: center;
+                /* @media only screen and (max-width: 610px) {
+                  width: 200px;
+                } */
               `}
             >
               <input type="hidden" name="bot-field" />
-              <fieldset
+              <div
                 css={css`
                   display: flex;
-                  flex-direction: column;
+                  flex-flow: column nowrap;
                   text-decoration: none;
                   border: 0;
                   margin: 30px 0;
+                  /* width: 200px; */
 
                   & input,
                   textarea {
@@ -125,25 +132,44 @@ export default () => {
                 <span
                   css={css`
                     display: flex;
+                    @media only screen and (max-width: 610px) {
+                      flex-direction: column;
+                    }
                   `}
                 >
-                  <span
+                  <input
+                    type="text"
+                    name="name"
+                    maxLength="100"
+                    placeholder="Name"
+                    value={name.value.name}
+                    onChange={name.onChange}
                     css={css`
                       flex: 1 1 auto;
                     `}
-                  >
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" maxLength="100" {...name} />
-                  </span>
-                  <span
+                  />
+                  {/* <span
+                    css={css`
+                      flex: 2 1 350px;
+                      margin-left: 30px;
+                      @media only screen and (max-width: 610px) {
+                        margin: 0;
+                        flex: 2 1 auto;
+                      }
+                    `}
+                  > */}
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    maxLength="100"
                     css={css`
                       flex: 2 1 350px;
                       margin-left: 30px;
                     `}
-                  >
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" maxLength="100" {...email} />
-                  </span>
+                    value={email.value.email}
+                    onChange={email.onChange}
+                  />
                 </span>
                 <label
                   css={css`
@@ -154,25 +180,31 @@ export default () => {
                 >
                   <label htmlFor="message">Describe your needs</label>
                   <label>
-                    {255 - (message.text.message ? message.text.message.length : 0)}{" "}
+                    {255 - (message.value.message ? message.value.message.length : 0)}{" "}
                     characters remaining
                   </label>
                 </label>
-                <textarea
-                  name="message"
-                  type="text"
-                  cols="50"
-                  rows="7"
-                  maxLength="255"
-                  style={{
-                    minWidth: "576px",
-                    maxWidth: "1100px",
-                    minHeight: "153px",
-                    maxHeight: "400px",
-                  }}
-                  {...message}
-                />
-              </fieldset>
+                <div
+                  css={css`
+                    min-width: 556px;
+                    max-width: 1100px;
+                    min-height: 153px;
+                    max-height: 400px;
+                  `}
+                >
+                  <Textarea
+                    name="message"
+                    type="text"
+                    maxLength="255"
+                    minRows="6"
+                    value={message.value.message}
+                    onChange={message.onChange}
+                    css={css`
+                      resize: none;
+                    `}
+                  />
+                </div>
+              </div>
               <Button
                 type="submit"
                 style={{ width: "100px", height: "40px" }}
