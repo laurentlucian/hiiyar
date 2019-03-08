@@ -98,9 +98,14 @@ export default () => {
         css={css`
           position: absolute;
           left: 10%;
-          top: 250px;
+          top: 34%;
           width: 350px;
-          @media only screen and (max-width: 1700px) {
+          @media only screen and (max-width: 1500px) {
+            left: 4%;
+            top: 40%;
+            width: 290px;
+          }
+          @media only screen and (max-width: 1100px) {
             display: none;
           }
         `}
@@ -109,9 +114,14 @@ export default () => {
         css={css`
           position: absolute;
           right: 10%;
-          top: 130px;
+          top: 18%;
           width: 380px;
-          @media only screen and (max-width: 1700px) {
+          @media only screen and (max-width: 1500px) {
+            right: 4%;
+            top: 25%;
+            width: 310px;
+          }
+          @media only screen and (max-width: 1100px) {
             display: none;
           }
         `}

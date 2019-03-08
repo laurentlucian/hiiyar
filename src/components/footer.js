@@ -12,12 +12,9 @@ const Footer = () => {
     <footer
       css={css`
         width: 100%;
-        /* height: 350px; */
         padding: 150px 0 50px 0;
         background-image: linear-gradient(82deg, #a11846, #4d1226);
-        display: flex;
         position: relative;
-        align-items: center;
       `}
     >
       <CurveSvg
@@ -31,8 +28,11 @@ const Footer = () => {
       <Content
         css={css`
           display: flex;
-          height: 100px;
           justify-content: center;
+          @media only screen and (max-width: 650px) {
+            flex-direction: column;
+            align-content: center;
+          }
         `}
       >
         <div

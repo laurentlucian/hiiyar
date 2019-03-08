@@ -70,6 +70,9 @@ export default () => (
                     width: 50px;
                     margin-right: 25px;
                     flex-shrink: 0;
+                    @media only screen and (max-width: 700px) {
+                      display: none;
+                    }
                   `}
                 />
                 <div>

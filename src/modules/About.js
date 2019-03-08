@@ -20,12 +20,21 @@ export default () => (
       <Content>
         <Grid.Area
           css={css`
-            justify-content: center;
             align-items: center;
             margin: 100px auto;
+            width: 100%;
+            @media only screen and (max-width: 700px) {
+              flex-flow: column nowrap;
+            }
           `}
         >
-          <Grid.Text>
+          <Grid.Text
+            css={css`
+              @media only screen and (max-width: 700px) {
+                margin: 0 auto;
+              }
+            `}
+          >
             <TrailAnimate recipe={Recipes.fadeInLeft}>
               <SubHeading red>For Talents</SubHeading>
               <Paragraph>
@@ -39,7 +48,14 @@ export default () => (
               </Paragraph>
             </TrailAnimate>
           </Grid.Text>
-          <div style={{ width: "100%" }}>
+          <div
+            css={css`
+              width: 100%;
+              @media only screen and (max-width: 700px) {
+                width: 50%;
+              }
+            `}
+          >
             <TrailAnimate recipe={Recipes.fadeInRight}>
               <AboutGirlSvg />
             </TrailAnimate>
@@ -50,9 +66,20 @@ export default () => (
             margin: 0 auto;
             justify-content: center;
             align-items: center;
+            @media only screen and (max-width: 700px) {
+              flex-flow: column wrap;
+            }
           `}
         >
-          <div style={{ width: "100%" }}>
+          <div
+            css={css`
+              width: 100%;
+              @media only screen and (max-width: 700px) {
+                order: 1;
+                width: 50%;
+              }
+            `}
+          >
             <TrailAnimate recipe={Recipes.fadeInLeft}>
               <AboutBoySvg />
             </TrailAnimate>
@@ -61,6 +88,9 @@ export default () => (
             css={css`
               margin-right: 0;
               margin-left: 60px;
+              @media only screen and (max-width: 700px) {
+                margin: 0 auto;
+              }
             `}
           >
             <TrailAnimate recipe={Recipes.fadeInRight}>
