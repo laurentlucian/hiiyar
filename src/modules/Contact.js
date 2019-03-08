@@ -10,26 +10,35 @@ const useInputValue = initialValue => {
   const [text, setText] = useState(initialValue);
   return {
     text,
-    onChange: e => setText(e.target.value),
+    onChange: e => setText({ [e.target.name]: e.target.value }),
   };
 };
 
 const encode = data => {
-  return Object.keys(data)
+  const obj = Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
+  return obj;
 };
 
 export default () => {
-  const name = useInputValue("");
-  const email = useInputValue("");
-  const message = useInputValue("");
+  const name = useInputValue({});
+  const email = useInputValue({});
+  const message = useInputValue({});
+
+  console.log(message.text.message);
 
   const handleSubmit = e => {
+    console.log("message", ...message.text);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...name, ...email, ...message }),
+      body: encode({
+        "form-name": "contact",
+        ...name.text,
+        ...email.text,
+        ...message.text,
+      }),
     })
       .then(() => alert("Success!"))
       .catch(error => alert(error));
@@ -105,7 +114,7 @@ export default () => {
                   height: 44px;
                 }
                 & label {
-                  margin: 5px;
+                  margin: 5px 0;
                   font-weight: 600;
                 }
               `}
@@ -115,18 +124,22 @@ export default () => {
                   display: flex;
                 `}
               >
-                <span>
-                  <label htmlFor="name">Your name</label>
-                  <input type="text" name="text" maxLength="100" {...name} />
+                <span
+                  css={css`
+                    flex: 1 1 auto;
+                  `}
+                >
+                  <label htmlFor="name">Name</label>
+                  <input type="text" name="name" maxLength="100" {...name} />
                 </span>
                 <span
                   css={css`
-                    flex-grow: 1;
+                    flex: 4 1 350px;
                     margin-left: 30px;
                   `}
                 >
-                  <label htmlFor="email">Your email</label>
-                  <input name="email" maxLength="100" {...email} />
+                  <label htmlFor="email">Email</label>
+                  <input type="text" name="email" maxLength="100" {...email} />
                 </span>
               </span>
               <label
@@ -137,10 +150,14 @@ export default () => {
                 `}
               >
                 <label htmlFor="message">Describe your needs</label>
-                <label>{255 - message.text.length} characters remaining</label>
+                <label>
+                  {255 - (message.text.message ? message.text.message.length : 0)}{" "}
+                  characters remaining
+                </label>
               </label>
               <textarea
                 name="message"
+                type="text"
                 cols="50"
                 rows="7"
                 maxLength="255"
