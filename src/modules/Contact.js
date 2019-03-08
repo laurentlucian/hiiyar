@@ -44,7 +44,6 @@ export default () => {
 
     e.preventDefault();
   };
-  console.log("test", ...message.value);
 
   return (
     <section
