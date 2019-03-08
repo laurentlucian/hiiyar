@@ -1,6 +1,5 @@
 import React from "react";
 import { css } from "@emotion/core";
-import LazyLoad from "react-lazyload";
 
 export default ({ children, className, ...props }) => {
   return (

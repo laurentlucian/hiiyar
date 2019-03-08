@@ -6,7 +6,6 @@ import { Paragraph, SubHeading } from "../components/typography";
 import AboutGirlSvg from "../vectors/about-girl";
 import AboutBoySvg from "../vectors/about-boy";
 import RouterAnchor from "../components/routerAnchor";
-import Button from "../components/button";
 import { goTo } from "../routerUtils";
 import Grid from "../components/grid";
 import TrailAnimate, { Recipes } from "../components/trailanimate";

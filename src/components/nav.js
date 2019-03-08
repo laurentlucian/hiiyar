@@ -13,6 +13,7 @@ try {
     "test",
     null,
     Object.defineProperty({}, "passive", {
+      // eslint-disable-next-line getter-return
       get: function() {
         passiveIfSupported = { passive: true };
       },
@@ -32,7 +33,6 @@ const isInViewport = function(elem) {
 
 const useActiveRouter = () => {
   const [activeRouter, setActiveRouter] = useState();
-  console.log("lol", activeRouter);
 
   const checkActiveSection = useCallback(
     _throttle(() => {
