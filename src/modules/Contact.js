@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { css } from "@emotion/core";
-import { Heading3, Paragraph, SubHeading } from "../components/typography";
+import { Heading3, Paragraph } from "../components/typography";
 import Content from "../components/content";
 import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
@@ -21,9 +21,9 @@ const encode = data =>
     .join("&");
 
 export default () => {
-  const name = useInputValue({});
-  const email = useInputValue({});
-  const message = useInputValue({});
+  const inputs = useInputValue({});
+  // const email = useInputValue({});
+  // const message = useInputValue({});
   const [sent, setSent] = useState(false);
 
   const handleSubmit = e => {
@@ -34,9 +34,9 @@ export default () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        ...name.value,
-        ...email.value,
-        ...message.value,
+        ...inputs.value.name,
+        ...inputs.value.email,
+        ...inputs.value.message,
       }),
     })
       .then(() => setSent(true))
@@ -141,8 +141,8 @@ export default () => {
                     name="name"
                     maxLength="30"
                     placeholder="Name"
-                    value={name.value.name}
-                    onChange={name.onChange}
+                    value={inputs.value.name}
+                    onChange={inputs.onChange}
                     css={css`
                       flex: 1 1 80%;
                     `}
@@ -156,8 +156,8 @@ export default () => {
                       flex: 2 1 100%;
                       margin-left: 30px;
                     `}
-                    value={email.value.email}
-                    onChange={email.onChange}
+                    value={inputs.value.email}
+                    onChange={inputs.onChange}
                   />
                 </span>
                 <label
@@ -169,7 +169,7 @@ export default () => {
                 >
                   <label htmlFor="message">Describe your needs</label>
                   <label>
-                    {400 - (message.value.message ? message.value.message.length : 0)}{" "}
+                    {400 - (inputs.value.message ? inputs.value.message.length : 0)}{" "}
                     characters remaining
                   </label>
                 </label>
@@ -178,8 +178,8 @@ export default () => {
                   type="text"
                   maxLength="400"
                   minRows="6"
-                  value={message.value.message}
-                  onChange={message.onChange}
+                  value={inputs.value.message}
+                  onChange={inputs.onChange}
                   css={css`
                     resize: none;
                   `}
