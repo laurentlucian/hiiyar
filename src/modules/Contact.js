@@ -25,15 +25,17 @@ export default () => {
   const email = useInputValue("");
   const message = useInputValue("");
 
+  console.log(message.text);
+
   const handleSubmit = e => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "Contact",
-        Name: name.text,
-        Email: email.text,
-        Message: message.text,
+        "form-name": "contact",
+        name: name.text,
+        email: email.text,
+        message: message.text,
       }),
     })
       .then(() => alert("Success!"))
