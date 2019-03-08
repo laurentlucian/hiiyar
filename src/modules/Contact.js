@@ -10,7 +10,7 @@ const useInputValue = initialValue => {
   const [text, setText] = useState(initialValue);
   return {
     text,
-    onChange: e => setText(e.target.value),
+    onChange: e => setText({ [e.target.name]: e.target.value }),
   };
 };
 
@@ -23,9 +23,9 @@ const encode = data => {
 };
 
 export default () => {
-  const name = useInputValue("");
-  const email = useInputValue("");
-  const message = useInputValue("");
+  const name = useInputValue({});
+  const email = useInputValue({});
+  const message = useInputValue({});
 
   console.log(message.text);
 
@@ -34,7 +34,10 @@ export default () => {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        "form-name": "contact", ...name.text, ...email.text, ...message.text,
+        "form-name": "contact",
+        ...name.text,
+        ...email.text,
+        ...message.text,
       }),
     })
       .then(() => alert("Success!"))
