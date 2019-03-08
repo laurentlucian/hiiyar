@@ -27,6 +27,8 @@ export default () => {
   const [sent, setSent] = useState(false);
 
   const handleSubmit = e => {
+    //@todo verify if empty & @email.com
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -96,7 +98,6 @@ export default () => {
                 align-content: center;
                 align-items: center;
                 /* @media only screen and (max-width: 610px) {
-                  width: 200px;
                 } */
               `}
             >
@@ -108,8 +109,6 @@ export default () => {
                   text-decoration: none;
                   border: 0;
                   margin: 30px 0;
-                  /* width: 200px; */
-
                   & input,
                   textarea {
                     border-radius: 5px;
@@ -140,31 +139,21 @@ export default () => {
                   <input
                     type="text"
                     name="name"
-                    maxLength="100"
+                    maxLength="30"
                     placeholder="Name"
                     value={name.value.name}
                     onChange={name.onChange}
                     css={css`
-                      flex: 1 1 auto;
+                      flex: 1 1 80%;
                     `}
                   />
-                  {/* <span
-                    css={css`
-                      flex: 2 1 350px;
-                      margin-left: 30px;
-                      @media only screen and (max-width: 610px) {
-                        margin: 0;
-                        flex: 2 1 auto;
-                      }
-                    `}
-                  > */}
                   <input
                     type="text"
                     name="email"
                     placeholder="Email"
-                    maxLength="100"
+                    maxLength="40"
                     css={css`
-                      flex: 2 1 350px;
+                      flex: 2 1 100%;
                       margin-left: 30px;
                     `}
                     value={email.value.email}
@@ -180,30 +169,21 @@ export default () => {
                 >
                   <label htmlFor="message">Describe your needs</label>
                   <label>
-                    {255 - (message.value.message ? message.value.message.length : 0)}{" "}
+                    {400 - (message.value.message ? message.value.message.length : 0)}{" "}
                     characters remaining
                   </label>
                 </label>
-                <div
+                <Textarea
+                  name="message"
+                  type="text"
+                  maxLength="400"
+                  minRows="6"
+                  value={message.value.message}
+                  onChange={message.onChange}
                   css={css`
-                    min-width: 556px;
-                    max-width: 1100px;
-                    min-height: 153px;
-                    max-height: 400px;
+                    resize: none;
                   `}
-                >
-                  <Textarea
-                    name="message"
-                    type="text"
-                    maxLength="255"
-                    minRows="6"
-                    value={message.value.message}
-                    onChange={message.onChange}
-                    css={css`
-                      resize: none;
-                    `}
-                  />
-                </div>
+                />
               </div>
               <Button
                 type="submit"
