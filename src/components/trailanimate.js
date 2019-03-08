@@ -56,7 +56,9 @@ export default props => {
         }}
       />
       {trail.map((style, index) => (
-        <animated.div style={style}>{childrenArray[index]}</animated.div>
+        <animated.div key={index} style={style}>
+          {childrenArray[index]}
+        </animated.div>
       ))}
     </>
   );

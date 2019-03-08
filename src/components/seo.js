@@ -49,16 +49,16 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
                 name: `twitter:description`,
                 content: metaDescription,
               },
-            ]
-              .concat(
+              ...meta,
+              ...[
                 keywords.length > 0
                   ? {
                       name: `keywords`,
                       content: keywords.join(`, `),
                     }
-                  : []
-              )
-              .concat(meta)}
+                  : null,
+              ],
+            ].filter(Boolean)}
           />
         );
       }}
@@ -69,14 +69,14 @@ const SEO = ({ description, lang, meta, keywords, title }) => {
 SEO.defaultProps = {
   title: "Hiiyar",
   lang: `en`,
-  meta: ["content", "hiiyar"],
+  meta: [],
   keywords: ["hiiyar", "content creator", "youtube ads", "twitch ads"],
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.array,
+  meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
 };
