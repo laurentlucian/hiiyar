@@ -10,36 +10,32 @@ const useInputValue = initialValue => {
   const [text, setText] = useState(initialValue);
   return {
     text,
-    onChange: e => setText(e.target.value),
+    onChange: e => setText({ [e.target.name]: e.target.value }),
   };
 };
 
 const encode = data => {
   const obj = Object.keys(data)
-    .map(key => {
-      console.log("key", key);
-      console.log("data[key]", data[key]);
-      return encodeURIComponent(key) + "=" + encodeURIComponent(data[key]);
-    })
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
-  console.log(obj);
   return obj;
 };
 
 export default () => {
-  const name = useInputValue("");
-  const email = useInputValue("");
-  const message = useInputValue("");
+  const name = useInputValue({});
+  const email = useInputValue({});
+  const message = useInputValue({});
 
   const handleSubmit = e => {
+    console.log("message", ...message.text);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        name: name.text,
-        email: email.text,
-        message: message.text,
+        ...name.text,
+        ...email.text,
+        ...message.text,
       }),
     })
       .then(() => alert("Success!"))
@@ -148,7 +144,7 @@ export default () => {
                 `}
               >
                 <label htmlFor="message">Describe your needs</label>
-                <label>{255 - message.text.length} characters remaining</label>
+                <label>{255 - message.text.message.length} characters remaining</label>
               </label>
               <textarea
                 name="message"
