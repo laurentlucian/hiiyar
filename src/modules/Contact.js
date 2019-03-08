@@ -15,9 +15,11 @@ const useInputValue = initialValue => {
 };
 
 const encode = data => {
-  return Object.keys(data)
+  const obj = Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
+  console.log(obj);
+  return obj;
 };
 
 export default () => {
@@ -112,7 +114,7 @@ export default () => {
                   height: 44px;
                 }
                 & label {
-                  margin: 5px;
+                  margin: 5px 0;
                   font-weight: 600;
                 }
               `}
@@ -124,7 +126,7 @@ export default () => {
               >
                 <span>
                   <label htmlFor="name">Name</label>
-                  <input type="text" name="text" maxLength="100" {...name} />
+                  <input type="text" name="name" maxLength="100" {...name} />
                 </span>
                 <span
                   css={css`
@@ -133,7 +135,7 @@ export default () => {
                   `}
                 >
                   <label htmlFor="email">Email</label>
-                  <input name="email" maxLength="100" {...email} />
+                  <input type="text" name="email" maxLength="100" {...email} />
                 </span>
               </span>
               <label
@@ -148,6 +150,7 @@ export default () => {
               </label>
               <textarea
                 name="message"
+                type="text"
                 cols="50"
                 rows="7"
                 maxLength="255"
