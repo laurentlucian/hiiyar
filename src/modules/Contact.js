@@ -47,6 +47,8 @@ export default () => {
       body: encode({
         "form-name": "contact",
         name: name.value,
+        email: email.value,
+        message: message.value,
       }),
     })
       .then(() => setSent(true))
@@ -155,8 +157,8 @@ export default () => {
                     `}
                   />
                   <input
-                    type="text"
                     name="email"
+                    type="email"
                     placeholder="Email"
                     maxLength="40"
                     css={css`
@@ -182,7 +184,6 @@ export default () => {
                 </label>
                 <textarea
                   name="message"
-                  type="text"
                   maxLength="400"
                   rows="6"
                   value={message.value}
