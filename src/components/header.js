@@ -52,14 +52,14 @@ const Header = () => {
         css={css`
           display: flex;
           flex-flow: row wrap;
-          /* width: 100%; */
           height: 70px;
           align-items: center;
           padding: 0 10px;
           @media only screen and (max-width: 720px) {
             padding-bottom: 100px;
             > svg {
-              flex: 1 100%;
+              align-self: flex-start;
+              flex: 1 0 100%;
             }
           }
         `}
@@ -72,6 +72,7 @@ const Header = () => {
             cursor: pointer;
             @media only screen and (max-width: 720px) {
               margin-top: 5px;
+              padding-right: 50%;
             }
           `}
         />

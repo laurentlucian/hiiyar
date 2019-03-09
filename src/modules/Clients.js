@@ -70,9 +70,6 @@ export default () => (
                     width: 50px;
                     margin-right: 25px;
                     flex-shrink: 0;
-                    @media only screen and (max-width: 700px) {
-                      display: none;
-                    }
                   `}
                 />
                 <div>
@@ -137,7 +134,13 @@ export default () => (
           </Grid.Text>
           <div style={{ width: "100%" }}>
             <TrailAnimate recipe={Recipes.fadeInRight}>
-              <ClientBoySvg />
+              <ClientBoySvg
+                css={css`
+                  @media only screen and (max-width: 700px) {
+                    display: none;
+                  }
+                `}
+              />
             </TrailAnimate>
           </div>
         </Grid.Area>

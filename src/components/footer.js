@@ -41,6 +41,11 @@ const Footer = () => {
             border-right: 1px solid hsl(340, 74%, 36%);
             display: flex;
             align-items: center;
+            justify-content: center;
+            @media only screen and (max-width: 650px) {
+              border: none;
+              margin: 0 0 15px 35px;
+            }
           `}
         >
           <Logo
@@ -59,9 +64,6 @@ const Footer = () => {
         <div
           css={css`
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: flex-start;
             margin-left: 50px;
             & > div {
               height: auto;
@@ -71,6 +73,10 @@ const Footer = () => {
               & > a {
                 margin: 5px 0;
               }
+            }
+            @media only screen and (max-width: 650px) {
+              margin-left: 0;
+              justify-content: center;
             }
           `}
         >

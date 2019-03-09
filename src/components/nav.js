@@ -96,7 +96,7 @@ const Nav = props => {
           @media only screen and (max-width: 720px) {
             position: absolute;
             top: 10px;
-            right: 15px;
+            right: 20px;
             text-align: center;
             padding: 10px 15px;
             font-size: 14px;

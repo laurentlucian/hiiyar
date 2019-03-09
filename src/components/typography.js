@@ -5,6 +5,9 @@ export const Heading1 = ({ children }) => (
   <h1
     css={css`
       font-size: 51px;
+      @media only screen and (max-width: 650px) {
+        font-size: 40px;
+      }
       font-weight: 900;
       font-style: normal;
       font-stretch: normal;

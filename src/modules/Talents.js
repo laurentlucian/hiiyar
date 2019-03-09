@@ -132,7 +132,13 @@ export default () => (
           </Grid.Text>
           <div style={{ width: "100%" }}>
             <TrailAnimate recipe={Recipes.fadeInRight}>
-              <TalentBoySvg />
+              <TalentBoySvg
+                css={css`
+                  @media only screen and (max-width: 700px) {
+                    display: none;
+                  }
+                `}
+              />
             </TrailAnimate>
           </div>
         </Grid.Area>
