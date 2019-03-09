@@ -82,7 +82,7 @@ export default () => (
               margin-bottom: 15px;
             `}
           />
-          <div style={numberCss}>600 Million</div>
+          <div style={numberCss}>10,305,409 </div>
           <div css={numberLabelCss}>Views on Twitch</div>
         </div>
         <div
@@ -101,7 +101,7 @@ export default () => (
               margin-bottom: 15px;
             `}
           />
-          <div style={numberCss}>25 Million</div>
+          <div style={numberCss}>75,708,795</div>
           <div css={numberLabelCss}>Views on Youtube</div>
         </div>
         <div
@@ -120,7 +120,7 @@ export default () => (
               margin-bottom: 15px;
             `}
           />
-          <div style={numberCss}>2.3 Billion</div>
+          <div style={numberCss}>114,045,679</div>
           <div css={numberLabelCss}>Total Reach</div>
         </div>
       </div>

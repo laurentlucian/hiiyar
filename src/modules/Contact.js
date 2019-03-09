@@ -10,7 +10,7 @@ const useInputValue = initialValue => {
   const [value, setValue] = useState(initialValue);
   return {
     value,
-    onChange: e => setValue({ [e.target.name]: e.target.value }),
+    onChange: e => setValue(e.target.value),
   };
 };
 
@@ -20,10 +20,9 @@ const encode = data =>
     .join("&");
 
 export default () => {
-  // const inputs = useInputValue({ name: "", email: "", message: "" });
-  const name = useInputValue({});
-  const email = useInputValue({});
-  const message = useInputValue({});
+  const name = useInputValue("");
+  const email = useInputValue("");
+  const message = useInputValue("");
   const [sent, setSent] = useState(false);
 
   const handleSubmit = e => {
@@ -34,9 +33,9 @@ export default () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        ...name.value,
-        ...email.value,
-        ...message.value,
+        "name": name.value,
+        "email": email.value,
+        "message": message.value,
       }),
     })
       .then(() => setSent(true))
@@ -140,7 +139,7 @@ export default () => {
                     name="name"
                     maxLength="30"
                     placeholder="Name"
-                    value={name.value.name}
+                    value={name.value}
                     onChange={name.onChange}
                     css={css`
                       flex: 1 1 80%;
@@ -155,7 +154,7 @@ export default () => {
                       flex: 2 1 100%;
                       margin-left: 30px;
                     `}
-                    value={email.value.email}
+                    value={email.value}
                     onChange={email.onChange}
                   />
                 </span>
@@ -168,7 +167,7 @@ export default () => {
                 >
                   <label htmlFor="message">Describe your needs</label>
                   <label>
-                    {400 - (message.value.message ? message.value.message.length : 0)}{" "}
+                    {400 - (message.value ? message.value.length : 0)}{" "}
                     characters remaining
                   </label>
                 </label>
@@ -177,7 +176,7 @@ export default () => {
                   type="text"
                   maxLength="400"
                   rows="6"
-                  value={message.value.message}
+                  value={message.value}
                   onChange={message.onChange}
                   css={css`
                     resize: none;
