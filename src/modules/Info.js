@@ -82,8 +82,8 @@ export default () => (
               margin-bottom: 15px;
             `}
           />
-          <div style={numberCss}>10,305,409 </div>
-          <div css={numberLabelCss}>Views on Twitch</div>
+          <div style={numberCss}>10,305,409</div>
+          <div css={numberLabelCss}>Streaming views</div>
         </div>
         <div
           css={css`
@@ -102,7 +102,7 @@ export default () => (
             `}
           />
           <div style={numberCss}>75,708,795</div>
-          <div css={numberLabelCss}>Views on Youtube</div>
+          <div css={numberLabelCss}>Youtube views</div>
         </div>
         <div
           css={css`

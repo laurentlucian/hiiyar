@@ -15,10 +15,10 @@ const useInputValue = initialValue => {
 };
 
 const encode = data => {
+  //@todo make it direct just testing
   const obj = Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
-  console.log("obj", obj);
   return obj;
 };
 
@@ -30,7 +30,6 @@ export default () => {
   const [error, setError] = useState(false);
 
   const handleSubmit = e => {
-    //@todo verify if empty & @email.com
     e.preventDefault();
 
     if (
@@ -106,7 +105,7 @@ export default () => {
                 flex-direction: column;
                 align-content: center;
                 align-items: center;
-                /* @media only screen and (max-width: 610px) {
+                /* @media only screen and (max-width: 400px) {
                 } */
               `}
             >
@@ -140,7 +139,7 @@ export default () => {
                 <span
                   css={css`
                     display: flex;
-                    @media only screen and (max-width: 610px) {
+                    @media only screen and (max-width: 400px) {
                       flex-direction: column;
                     }
                   `}
@@ -164,38 +163,57 @@ export default () => {
                     css={css`
                       flex: 2 1 100%;
                       margin-left: 30px;
+                      @media only screen and (max-width: 400px) {
+                        margin: 15px 0;
+                      }
                     `}
                     value={email.value}
                     onChange={email.onChange}
                   />
                 </span>
-                <label
+                <div
                   css={css`
                     display: flex;
-                    justify-content: space-between;
+                    flex-flow: row wrap;
                     margin-top: 20px;
+                    & textarea {
+                      flex: 1 100%;
+                    }
+                    & span {
+                      flex: 1 0;
+                    }
+                    @media only screen and (max-width: 400px) {
+                      & span,
+                      dt {
+                        flex: 1 100%;
+                        text-align: center;
+                      }
+                      & dt {
+                        order: 3;
+                      }
+                    }
                   `}
                 >
-                  <label htmlFor="message">Describe your needs</label>
-                  <label>
+                  <span htmlFor="message">Describe your needs</span>
+                  <dt>
                     {400 - (message.value ? message.value.length : 0)} characters
                     remaining
-                  </label>
-                </label>
-                <textarea
-                  name="message"
-                  maxLength="400"
-                  rows="6"
-                  value={message.value}
-                  onChange={message.onChange}
-                  css={css`
-                    resize: none;
-                  `}
-                />
+                  </dt>
+
+                  <textarea
+                    name="message"
+                    maxLength="400"
+                    rows="6"
+                    value={message.value}
+                    onChange={message.onChange}
+                    css={css`
+                      resize: none;
+                    `}
+                  />
+                </div>
               </div>
               <Button
                 type="submit"
-                /* style={{ width: "100px", height: "40px" }} */
                 style={css`
                   width: 100px;
                   height: 40px;
