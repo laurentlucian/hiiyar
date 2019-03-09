@@ -14,34 +14,43 @@ const useInputValue = initialValue => {
   };
 };
 
-const encode = data =>
-  Object.keys(data)
+const encode = data => {
+  const obj = Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
+  console.log("obj", obj);
+  return obj;
+};
 
 export default () => {
   const name = useInputValue("");
   const email = useInputValue("");
   const message = useInputValue("");
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSubmit = e => {
     //@todo verify if empty & @email.com
+    e.preventDefault();
+
+    if (
+      !email.value.includes("@") ||
+      name.value === "" ||
+      email.value === "" ||
+      message.value === ""
+    )
+      return setError(true);
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        "name": name.value,
-        "email": email.value,
-        "message": message.value,
+        name: name.value,
       }),
     })
       .then(() => setSent(true))
       .catch(error => setSent(null));
-
-    e.preventDefault();
   };
 
   return (
@@ -167,8 +176,8 @@ export default () => {
                 >
                   <label htmlFor="message">Describe your needs</label>
                   <label>
-                    {400 - (message.value ? message.value.length : 0)}{" "}
-                    characters remaining
+                    {400 - (message.value ? message.value.length : 0)} characters
+                    remaining
                   </label>
                 </label>
                 <textarea
@@ -185,7 +194,14 @@ export default () => {
               </div>
               <Button
                 type="submit"
-                style={{ width: "100px", height: "40px" }}
+                /* style={{ width: "100px", height: "40px" }} */
+                style={css`
+                  width: 100px;
+                  height: 40px;
+                  border: ${error ? "2px solid #FF3056" : ""};
+                  background-color: ${error ? "#FF3056" : ""};
+                  color: ${error ? "white" : ""};
+                `}
                 onClick={handleSubmit}
                 CTA
               >
