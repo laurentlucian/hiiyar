@@ -22,13 +22,18 @@ try {
 } catch (err) {}
 
 const isInViewport = function(elem) {
-  const bounding = elem.getBoundingClientRect();
-  return (
-    bounding.top >= 0 &&
-    bounding.left >= 0 &&
-    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+  const rect = elem.getBoundingClientRect();
+  // should be visible at least half of the screen
+  const winH = window.innerHeight / 2;
+  const scrollTop =
+    document.documentElement.scrollTop ||
+    document.body.parentNode.scrollTop ||
+    document.body.scrollTop;
+  const scrollBottom = scrollTop + winH;
+  const elTop = rect.top + scrollTop;
+  const elBottom = elTop + elem.offsetHeight;
+
+  return elTop < scrollBottom && elBottom > scrollTop;
 };
 
 const useActiveRouter = () => {

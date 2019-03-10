@@ -66,7 +66,7 @@ export const ForthCurve = props => (
 
 export const FifthCurve = props => (
   <svg
-    viewBox="0 0 1600 52"
+    viewBox="0 0 1599 49"
     style={{ pointerEvents: "none" }}
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"

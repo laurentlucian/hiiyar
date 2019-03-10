@@ -43,8 +43,8 @@ export default () => (
             Solutions for Talents
           </Heading3>
           <Paragraph heading center>
-            As a tecnology focused company, Hiiyar gives talents the tools and technology
-            to build better and reach higher.
+            As a technology focused company, Hiiyar gives its talents the framework and
+            tools to create better and reach higher.
           </Paragraph>
         </div>
         <Grid.Area>

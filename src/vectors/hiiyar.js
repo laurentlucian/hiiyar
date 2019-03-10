@@ -1,13 +1,7 @@
 import React from "react";
 
 export default props => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="134"
-    height="49.219"
-    viewBox="0 0 133.611 49.219"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 133.611 49.219" {...props}>
     <g id="Group_1251" data-name="Group 1251" transform="translate(-234.225 -105.211)">
       <path
         id="Path_1319"

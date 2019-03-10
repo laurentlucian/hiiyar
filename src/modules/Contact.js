@@ -63,7 +63,6 @@ export default () => {
       <FifthCurveSvg
         css={css`
           position: absolute;
-          top: 0;
           transform: translateY(-100%);
           fill: white;
         `}
@@ -79,7 +78,7 @@ export default () => {
           <Heading3 red style={{ margin: 0 }}>
             Ready when you are.
           </Heading3>
-          <Paragraph heading center style={{ fontSize: "30px", color: "#4d4d4d" }}>
+          <Paragraph heading center>
             We're based in LA with a global network of influencers spanning NA, SA and SEA
           </Paragraph>
           {sent ? (

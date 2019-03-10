@@ -42,7 +42,7 @@ const Header = () => {
           background: transparent;
           animation: fadeInDown both 1s;
           @media only screen and (max-width: 720px) {
-            margin-top: 0px;
+            padding-top: 15px;
           }
         `,
         isFixed && stickHeader,
@@ -67,12 +67,13 @@ const Header = () => {
         <HiiyarSvg
           onClick={goTo("hero")}
           css={css`
-            width: 134px;
+            height: 50px;
             fill: ${isFixed ? "#83163B" : "white"};
             cursor: pointer;
-            @media only screen and (max-width: 720px) {
+            @media screen and (max-width: 720px) {
               margin-top: 5px;
               padding-right: 50%;
+              height: 40px;
             }
           `}
         />

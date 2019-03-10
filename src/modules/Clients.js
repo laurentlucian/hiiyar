@@ -46,8 +46,8 @@ export default () => (
             Solutions for Clients
           </Heading3>
           <Paragraph white heading center>
-            As a tecnology focused company, Hiiyar gives talents the tools and technology
-            to build better and reach higher.
+            We don’t just tell your brand story through our top influencers, we craft
+            creatives where our influencers embody your brand’s identity.
           </Paragraph>
         </div>
         <Grid.Area>

@@ -8,6 +8,7 @@ export default ({ children, className, ...props }) => {
       css={css`
         width: 100%;
         max-width: 1300px;
+        padding: 15px;
         margin: 0 auto;
       `}
     >

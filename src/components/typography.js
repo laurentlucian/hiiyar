@@ -32,6 +32,9 @@ export const Heading2 = ({ children, style, ...props }) => (
       letter-spacing: normal;
       color: ${props.red ? "#a11846" : "white"};
       margin: 0;
+      @media screen and (max-width: 800px) {
+        font-size: 38px;
+      }
     `}
     style={style}
   >
@@ -47,6 +50,9 @@ export const Heading3 = ({ children, style, ...props }) => (
       line-height: 1.38;
       color: ${props.red ? "#841738" : "rgba(255, 255, 255, 1)"};
       margin-bottom: 10px;
+      @media screen and (max-width: 800px) {
+        font-size: 32px;
+      }
     `}
     style={style}
   >
@@ -112,6 +118,9 @@ export const Paragraph = ({ children, as, ...props }) => {
           &:hover {
             color: #4d1226;
           }
+        }
+        @media screen and (max-width: 800px) {
+          font-size: ${props.heading ? "19px" : "16px"};
         }
       `}
       {...props}

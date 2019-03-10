@@ -89,10 +89,10 @@ const Footer = () => {
             </NavLink>
           </div>
           <div>
-            <NavLink>SOCIAL:</NavLink>
             <NavLink onClick={goTo("clients")} href="#clients">
               CLIENTS
             </NavLink>
+            <NavLink>SOCIAL:</NavLink>
           </div>
         </div>
       </Content>
