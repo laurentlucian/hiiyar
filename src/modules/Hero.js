@@ -19,7 +19,7 @@ export default () => {
     <section
       css={css`
         width: 100%;
-        height: 750px;
+        /* height: 750px; */
         background-size: 100%;
         object-fit: contain;
         background-image: linear-gradient(354deg, #8f1840, #8f1840 52%, #4d1226);
@@ -33,7 +33,10 @@ export default () => {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding-top: 150px;
+            padding: 150px 0 150px 0;
+            @media only screen and (max-width: 600px) {
+              padding-bottom: 50px;
+            }
           `}
         >
           <WhiteLogoSvg
@@ -75,6 +78,15 @@ export default () => {
               justify-content: space-between;
               animation: fadeInUp both 1s;
               animation-delay: 1200ms;
+              @media screen and (max-width: 360px) {
+                flex-direction: column;
+                align-items: center;
+                width: auto;
+                & button {
+                  flex-grow: 0;
+                  margin: 5px;
+                }
+              }
             `}
           >
             <Button onClick={goTo("talents")}>For Talents</Button>

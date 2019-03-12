@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://hardcore-liskov-c0cd43.netlify.com/* https://hiiyar.com/:splat 301!

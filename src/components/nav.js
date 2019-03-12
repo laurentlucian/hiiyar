@@ -70,6 +70,11 @@ const Nav = props => {
         @media only screen and (max-width: 720px) {
           margin: 5px auto;
         }
+        @media screen and (max-width: 360px) {
+          & a {
+            font-size: 13px;
+          }
+        }
       `}
     >
       <span>

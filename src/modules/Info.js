@@ -46,7 +46,7 @@ export default () => (
     <ForthCurveSvg
       css={css`
         position: absolute;
-        top: 0;
+        top: -1px;
         transform: rotate(180deg);
         fill: white;
       `}

@@ -6,11 +6,14 @@ import { FifthCurve as FifthCurveSvg } from "../vectors/curves";
 import RouterAnchor from "../components/routerAnchor";
 import Button from "../components/button";
 
-const useInputValue = initialValue => {
+const useInputValue = (initialValue, setError) => {
   const [value, setValue] = useState(initialValue);
   return {
     value,
-    onChange: e => setValue(e.target.value),
+    onChange: e => {
+      setValue(e.target.value);
+      setError(false);
+    },
   };
 };
 
@@ -23,11 +26,11 @@ const encode = data => {
 };
 
 export default () => {
-  const name = useInputValue("");
-  const email = useInputValue("");
-  const message = useInputValue("");
-  const [sent, setSent] = useState(false);
   const [error, setError] = useState(false);
+  const name = useInputValue("", setError);
+  const email = useInputValue("", setError);
+  const message = useInputValue("", setError);
+  const [sent, setSent] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -63,7 +66,7 @@ export default () => {
       <FifthCurveSvg
         css={css`
           position: absolute;
-          transform: translateY(-100%);
+          transform: translateY(-95%);
           fill: white;
         `}
       />
@@ -216,14 +219,14 @@ export default () => {
                 style={css`
                   width: 100px;
                   height: 40px;
-                  border: ${error ? "2px solid #FF3056" : ""};
-                  background-color: ${error ? "#FF3056" : ""};
+                  border: ${error ? "2px solid #96173D" : ""};
+                  background-color: ${error ? "#96173D" : ""};
                   color: ${error ? "white" : ""};
                 `}
                 onClick={handleSubmit}
                 CTA
               >
-                Send
+                {error ? "ERROR" : "SEND"}
               </Button>
             </form>
           )}
